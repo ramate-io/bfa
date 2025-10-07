@@ -100,6 +100,11 @@
             ulem
             soul
             xcolor
+            totpages
+            hyperxmp
+            ncctools
+            comment
+            preprint
           ]))
         ] ++ lib.optionals stdenv.isDarwin [
           frameworks.Security
@@ -167,8 +172,8 @@
               # chafa --size 30x30 --animate false --colors 8 --center true ./assets/ramate-transparent.png
 
               echo ""
-              echo "Roadline"
-              echo "Create roadmaps from Markdown."
+              echo "BFA"
+              echo "Byzantine Fault Allowing parametric state machine replicas."
             '';
           };
         };

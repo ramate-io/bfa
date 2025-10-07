@@ -1,0 +1,1130 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  7 OCT 2025 11:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-10-09>
+(./acmart.cls
+Document Class: acmart 2025/08/27 v2.16 Typesetting articles for the Associatio
+n for Computing Machinery
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/xkeyval/xkeyval.tex
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/xkeyval/keyval.tex))
+\XKV@depth=\count194
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/xstring/xstring.sty
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/xstring/xstring.tex
+\xs_counta=\count195
+\xs_countb=\count196
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+Package acmart Info: Not using screen mode on input line 77.
+Package acmart Info: Using breaking urls on hyphens on input line 85.
+Package acmart Info: Requiring acmthm on input line 93.
+Package acmart Info: Not using review mode on input line 102.
+Package acmart Info: Not using authorversion mode on input line 110.
+Package acmart Info: Not using nonacm mode on input line 122.
+Package acmart Info: Explicitly selecting natbib mode on input line 138.
+Package acmart Info: Not using anonymous mode on input line 146.
+Package acmart Info: Not using timestamp mode on input line 154.
+Package acmart Info: Not using authordraft mode on input line 164.
+Class acmart Info: Using format sigconf, number 4 on input line 179.
+Class acmart Info: Using fontsize 9pt on input line 281.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amscls/amsart.cls
+Document Class: amsart 2020/05/29 v2.20.6
+\linespacing=\dimen141
+\normalparindent=\dimen142
+\normaltopskip=\skip49
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsmath/amsmath.sty
+Package: amsmath 2024/05/23 v2.17q AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen143
+))
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen144
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count197
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count198
+\leftroot@=\count199
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count266
+\DOTSCASE@=\count267
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen145
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count268
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count269
+\dotsspace@=\muskip17
+\c@parentequation=\count270
+\dspbrk@lvl=\count271
+\tag@help=\toks20
+\row@=\count272
+\column@=\count273
+\maxfields@=\count274
+\andhelp@=\toks21
+\eqnshift@=\dimen146
+\alignsep@=\dimen147
+\tagshift@=\dimen148
+\tagwidth@=\dimen149
+\totwidth@=\dimen150
+\lineht@=\dimen151
+\@envbody=\toks22
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 397
+.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+\copyins=\insert252
+\abstractbox=\box54
+\listisep=\skip53
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip54
+\belowcaptionskip=\skip55
+\captionindent=\dimen152
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip56
+\thm@postskip=\skip57
+\thm@headsep=\skip58
+\dth@everypar=\toks29
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/microtype/microtype.sty
+Package: microtype 2024/03/29 v3.1b Micro-typographical refinements (RS)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count283
+)
+\MT@toks=\toks30
+\MT@tempbox=\box55
+\MT@count=\count284
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1061.
+LaTeX Info: Redefining \leftprotrusion on input line 1062.
+\MT@prot@toks=\toks31
+LaTeX Info: Redefining \rightprotrusion on input line 1081.
+LaTeX Info: Redefining \textls on input line 1392.
+\MT@outer@kern=\dimen153
+LaTeX Info: Redefining \textmicrotypecontext on input line 2013.
+\MT@listname@count=\count285
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2024/03/29 v3.1b Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 902.
+LaTeX Info: Redefining \lslig on input line 902.
+\MT@outer@space=\skip59
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/microtype/microtype.cfg
+File: microtype.cfg 2024/03/29 v3.1b microtype main configuration file (RS)
+))
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen154
+\lightrulewidth=\dimen155
+\cmidrulewidth=\dimen156
+\belowrulesep=\dimen157
+\belowbottomsep=\dimen158
+\aboverulesep=\dimen159
+\abovetopsep=\dimen160
+\cmidrulesep=\dimen161
+\cmidrulekern=\dimen162
+\defaultaddspace=\dimen163
+\@cmidla=\count286
+\@cmidlb=\count287
+\@aboverulesep=\dimen164
+\@belowrulesep=\dimen165
+\@thisruleclass=\count288
+\@lastruleclass=\count289
+\@thisrulewidth=\dimen166
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+))
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/totpages/totpages.sty
+Package: totpages 2005/09/19 v2.00 Totpages Package (muewi)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/everyshi/everyshi.sty
+Package: everyshi 2020/11/18 v4.00 EveryShipout Package
+))
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\@ACM@acmcp@delta=\dimen167
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip60
+\bibsep=\skip61
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count290
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/hyperref/hyperref.sty
+Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count291
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen168
+\Hy@linkcounter=\count292
+\Hy@pagecounter=\count293
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/hyperref/pd1enc.def
+File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count294
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/hyperref/puenc.def
+File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4040
+.
+Package hyperref Info: Option `unicode' set `true' on input line 4040.
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count295
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen169
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count296
+\Field@Width=\dimen170
+\Fld@charsize=\dimen171
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count297
+\c@Item=\count298
+\c@Hfootnote=\count299
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/hyperref/hpdftex.def
+File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count300
+\c@bookmark@seq@number=\count301
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip62
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/hyperxmp/hyperxmp.sty
+Package: hyperxmp 2024/03/17 v5.13 Store hyperref metadata in XMP format
+\hyxmp@aep@toks=\toks32
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\@hyxmp@count=\count302
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/oberdiek/ifdraft.sty
+Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+))
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/graphics/graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count303
+\Gm@cntv=\count304
+\c@Gm@tempcnt=\count305
+\Gm@bindingoffset=\dimen174
+\Gm@wd@mp=\dimen175
+\Gm@odd@mp=\dimen176
+\Gm@even@mp=\dimen177
+\Gm@layoutwidth=\dimen178
+\Gm@layoutheight=\dimen179
+\Gm@layouthoffset=\dimen180
+\Gm@layoutvoffset=\dimen181
+\Gm@dimlist=\toks33
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/ncctools/manyfoot.sty
+Package: manyfoot 2019/08/03 v1.11 Many Footnote Levels Package (NCC)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/ncctools/nccfoots.sty
+Package: nccfoots 2005/02/03 v1.2 NCC Footnotes Package (NCC)
+)
+\MFL@columnwidth=\dimen182
+)
+\footinsauthorsaddresses=\insert251
+\c@footnoteauthorsaddresses=\count306
+\footinscopyrightpermission=\insert250
+\c@footnotecopyrightpermission=\count307
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/pdftex/glyphtounicode.tex)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/cmap/cmap.sty
+Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
+)
+
+Class acmart Warning: You do not have the inconsolata (zi4.sty) package install
+ed. Please upgrade your TeX on input line 857.
+
+
+Class acmart Warning: You do not have the newtxmath package installed. Please u
+pgrade your TeX on input line 860.
+
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen183
+\captionmargin=\dimen184
+\caption@leftmargin=\dimen185
+\caption@rightmargin=\dimen186
+\caption@width=\dimen187
+\caption@indent=\dimen188
+\caption@parindent=\dimen189
+\caption@hangindent=\dimen190
+Package caption Info: AMS or SMF document class detected.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/caption/caption-ams-smf.sto
+File: caption-ams-smf.sto 2020/08/22 v2.0 Adaption of the caption package to th
+e AMS and SMF document classes (AR)
+))
+\c@caption@flags=\count308
+\c@continuedfloat=\count309
+Package caption Info: hyperref package is loaded.
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count310
+\float@exts=\toks34
+\float@box=\box56
+\@float@everytoks=\toks35
+\@floatcapt=\box57
+)
+\@float@every@sidebar=\toks36
+\c@sidebar=\count311
+\fulltextwidth=\dimen191
+\@ACM@labelwidth=\dimen192
+\listisep=\skip63
+\num@authorgroups=\count312
+\num@authors=\count313
+\@ACM@badge@width=\skip64
+\@ACM@title@width=\skip65
+\@ACM@badge@skip=\skip66
+Class acmart Info: Printing CCS on input line 1848.
+Class acmart Info: Printing bibformat on input line 1848.
+Class acmart Info: Suppressing folios on input line 1855.
+Class acmart Info: Setting authorsperrow to 0 on input line 1858.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/comment/comment.sty
+\CommentStream=\write3
+ Excluding comment 'comment') Excluding comment 'CCSXML'
+\c@@concepts=\count314
+\mktitle@bx=\box58
+\@ACM@acmcpbox=\box59
+\@ACM@commabox=\box60
+\author@bx=\box61
+\author@bx@wd=\dimen193
+\author@bx@sep=\skip67
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip68
+\f@nch@O@elh=\skip69
+\f@nch@O@erh=\skip70
+\f@nch@O@olh=\skip71
+\f@nch@O@orh=\skip72
+\f@nch@O@elf=\skip73
+\f@nch@O@erf=\skip74
+\f@nch@O@olf=\skip75
+\f@nch@O@orf=\skip76
+) Special comment 'acks')
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 111
+.
+\c@theorem=\count315
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen194
+) Excluding comment 'screenonly'
+Include comment 'printonly' Include comment 'anonsuppress'
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count316
+\l__pdf_internal_box=\box62
+) (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+<<ot1.cmap>>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 111
+.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 111
+.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Info: Redefining \microtypecontext on input line 111.
+Package microtype Info: Applying patch `item' on input line 111.
+Package microtype Info: Applying patch `toc' on input line 111.
+Package microtype Info: Applying patch `eqnum' on input line 111.
+Package microtype Info: Applying patch `footnote' on input line 111.
+Package microtype Info: Applying patch `verbatim' on input line 111.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 111.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+Package hyperref Info: Link coloring OFF on input line 111.
+ (./main.out) (./main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/con
+text/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count317
+\scratchdimen=\dimen195
+\scratchbox=\box63
+\nofMPsegments=\count318
+\nofMParguments=\count319
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count320
+\MPscratchDim=\dimen196
+\MPnumerator=\count321
+\makeMPintoPDFobject=\count322
+\everyMPtoPDFconversion=\toks38
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot twoside heightrounded 
+* h-part:(L,W,R)=(54.0pt, 506.295pt, 54.0pt)
+* v-part:(T,H,B)=(57.0pt, 664.96999pt, 73.0pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=506.295pt
+* \textheight=626.0pt
+* \oddsidemargin=-18.26999pt
+* \evensidemargin=-18.26999pt
+* \topmargin=-15.26999pt
+* \headheight=13.0pt
+* \headsep=14.0pt
+* \topskip=10.0pt
+* \footskip=12.0pt
+* \marginparwidth=24.0pt
+* \marginparsep=11.0pt
+* \columnsep=24.0pt
+* \skip\footins=7.0pt plus 11.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Excluding 'CCSXML' comment.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)<<ot1tt.cmap>>
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+
+Underfull \vbox (badness 1496) has occurred while \output is active []
+
+
+
+[1.1{/nix/store/cqa6akwx2rkpckgvqwh5f2wqyi989iv7-texlive-2024-env/share/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map}
+
+{/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/e
+nc/dvips/cm-super/cm-super-ts1.enc}]
+
+
+Underfull \vbox (badness 4391) has occurred while \output is active []
+
+
+
+[2.2]
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <9> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 405.
+
+
+
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+491.
+
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/lat
+ex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+Package natbib Warning: Citation `Lamport:LaTeX' on page 3 undefined on input l
+ine 493.
+
+<sample-franklin.png, id=176, 411.5375pt x 323.2075pt>
+File: sample-franklin.png Graphic file (type png)
+<use sample-franklin.png>
+Package pdftex.def Info: sample-franklin.png  used on input line 534.
+(pdftex.def)             Requested size: 241.14749pt x 189.3888pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[3.3]
+Overfull \hbox (4.54965pt too wide) in paragraph at lines 578--578
+[]    \OT1/cmtt/m/n/9 \includegraphics[width=\textwidth]{sampleteaser}[] 
+ []
+
+
+
+
+Package natbib Warning: Citation `Abril07' on page 4 undefined on input line 60
+8.
+
+
+Package natbib Warning: Citation `Cohen07' on page 4 undefined on input line 60
+9.
+
+
+Package natbib Warning: Citation `JCohen96' on page 4 undefined on input line 6
+10.
+
+
+Package natbib Warning: Citation `Kosiur01' on page 4 undefined on input line 6
+10.
+
+
+Package natbib Warning: Citation `Harel79' on page 4 undefined on input line 61
+2.
+
+
+Package natbib Warning: Citation `Editor00' on page 4 undefined on input line 6
+13.
+
+
+Package natbib Warning: Citation `Editor00a' on page 4 undefined on input line 
+614.
+
+
+Package natbib Warning: Citation `Spector90' on page 4 undefined on input line 
+616.
+
+
+Package natbib Warning: Citation `Douglass98' on page 4 undefined on input line
+ 617.
+
+
+Package natbib Warning: Citation `Knuth97' on page 4 undefined on input line 61
+8.
+
+
+Package natbib Warning: Citation `Andler79' on page 4 undefined on input line 6
+20.
+
+
+Package natbib Warning: Citation `Hagerup1993' on page 4 undefined on input lin
+e 620.
+
+
+Package natbib Warning: Citation `Smith10' on page 4 undefined on input line 62
+1.
+
+
+Package natbib Warning: Citation `VanGundy07' on page 4 undefined on input line
+ 622.
+
+
+Package natbib Warning: Citation `Harel78' on page 4 undefined on input line 62
+3.
+
+
+Package natbib Warning: Citation `Bornmann2019' on page 4 undefined on input li
+ne 624.
+
+
+Package natbib Warning: Citation `AnzarootPBM14' on page 4 undefined on input l
+ine 624.
+
+
+Package natbib Warning: Citation `Clarkson85' on page 4 undefined on input line
+ 624.
+
+
+Package natbib Warning: Citation `anisi03' on page 4 undefined on input line 62
+5.
+
+
+Package natbib Warning: Citation `Thornburg01' on page 4 undefined on input lin
+e 626.
+
+
+Package natbib Warning: Citation `Ablamowicz07' on page 4 undefined on input li
+ne 626.
+
+
+Package natbib Warning: Citation `Poker06' on page 4 undefined on input line 62
+6.
+
+
+Package natbib Warning: Citation `Obama08' on page 4 undefined on input line 62
+7.
+
+
+Package natbib Warning: Citation `Novak03' on page 4 undefined on input line 62
+7.
+
+
+Package natbib Warning: Citation `Lee05' on page 4 undefined on input line 627.
+
+
+
+Package natbib Warning: Citation `JoeScientist001' on page 4 undefined on input
+ line 628.
+
+
+Package natbib Warning: Citation `rous08' on page 4 undefined on input line 629
+.
+
+
+Package natbib Warning: Citation `SaeediMEJ10' on page 4 undefined on input lin
+e 630.
+
+
+Package natbib Warning: Citation `SaeediJETC10' on page 4 undefined on input li
+ne 630.
+
+
+Package natbib Warning: Citation `Kirschmer:2010:AEI:1958016.1958018' on page 4
+ undefined on input line 632.
+
+
+Package natbib Warning: Citation `MR781536' on page 4 undefined on input line 6
+33.
+
+
+Package natbib Warning: Citation `MR781537' on page 4 undefined on input line 6
+33.
+
+
+Package natbib Warning: Citation `Reiser2014' on page 4 undefined on input line
+ 634.
+
+
+Package natbib Warning: Citation `Baggett2025' on page 4 undefined on input lin
+e 635.
+
+
+Package natbib Warning: Citation `2004:ITE:1009386.1010128' on page 4 undefined
+ on input line 637.
+
+
+Package natbib Warning: Citation `Kirschmer:2010:AEI:1958016.1958018' on page 4
+ undefined on input line 637.
+
+
+Package natbib Warning: Citation `TUGInstmem' on page 4 undefined on input line
+ 638.
+
+
+Package natbib Warning: Citation `Thornburg01' on page 4 undefined on input lin
+e 638.
+
+
+Package natbib Warning: Citation `CTANacmart' on page 4 undefined on input line
+ 638.
+
+
+Package natbib Warning: Citation `R' on page 4 undefined on input line 639.
+
+
+Package natbib Warning: Citation `UMassCitations' on page 4 undefined on input 
+line 639.
+
+
+
+[4.4 <./sample-franklin.png>]
+Overfull \hbox (22.1981pt too wide) in paragraph at lines 663--666
+\OT1/cmr/m/n/9 (-20) If your work needs an ap-pen-dix, add it be-fore the ``[][
+]\OT1/cmtt/m/n/9 \end{document}[]\OT1/cmr/m/n/9 (-20) ''
+ []
+
+
+Overfull \hbox (32.89932pt too wide) in paragraph at lines 688--688
+[]\OT1/cmtt/m/n/9 \documentclass[sigconf, language=english, language=german,[] 
+
+ []
+
+
+Overfull \hbox (11.98958pt too wide) in paragraph at lines 690--698
+\OT1/cmr/m/n/9 (-20) the main lan-guage of the pa-per. The com-mands [][]\OT1/c
+mtt/m/n/9 \translatedXXX[]\OT1/cmr/m/n/9 (-20) ,
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 707.
+Processing 'acks' comment.
+\openout3 = `comment.cut'.
+
+ Comment 'acks' writing to comment.cut.
+Straight input of comment.cut. (./comment.cut)
+No file main.bbl.
+
+
+
+Package natbib Warning: There were undefined citations.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 762.
+
+
+
+
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
+
+[5.5]
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/stringenc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+)
+(/nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/tex/gen
+eric/stringenc/se-utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+) [6.5] (./main.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-10-09>
+ ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 60D78CF2DC3C438FA943FF2DA32954C2;4574
+(rerunfilecheck)             After:  D0BAA84CD9C75802252854FC4B076AD1;4575.
+ ) 
+Here is how much of TeX's memory you used:
+ 17178 strings out of 474986
+ 283311 string characters out of 5757256
+ 795134 words of memory out of 5000000
+ 39287 multiletter control sequences out of 15000+600000
+ 576074 words of font info for 179 fonts, out of 8000000 for 9000
+ 447 hyphenation exceptions out of 8191
+ 90i,12n,131p,1001b,652s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{table.caption.5} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{table.caption.4} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{page.10} has been referenced but does not exist, re
+placed by a fixed one
+
+
+pdfTeX warning (dest): name{section*.8} has been referenced but does not exist,
+ replaced by a fixed one
+
+</nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9
+-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></nix/stor
+e/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type1/publi
+c/amsfonts/cm/cmbx9.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-20
+24-env-texmfdist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></nix/store/h524
+jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/amsf
+onts/cm/cmmi6.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env
+-texmfdist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></nix/store/h524jqd6k80dpxs
+a8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va
+4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix
+/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type1/
+public/amsfonts/cm/cmr7.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texliv
+e-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/h524jq
+d6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/amsfon
+ts/cm/cmr9.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-te
+xmfdist/fonts/type1/public/amsfonts/cm/cmss8.pfb></nix/store/h524jqd6k80dpxsa8v
+6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmssbx
+10.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/
+fonts/type1/public/amsfonts/cm/cmssi9.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53v
+a4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></n
+ix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type
+1/public/amsfonts/cm/cmsy9.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-tex
+live-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmti7.pfb></nix/store/h5
+24jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/am
+sfonts/cm/cmti8.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-e
+nv-texmfdist/fonts/type1/public/amsfonts/cm/cmti9.pfb></nix/store/h524jqd6k80dp
+xsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/c
+mtt9.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdis
+t/fonts/type1/public/cm-super/sfrm0700.pfb></nix/store/h524jqd6k80dpxsa8v6rdm53
+va4lgib9-texlive-2024-env-texmfdist/fonts/type1/public/cm-super/sfrm0900.pfb></
+nix/store/h524jqd6k80dpxsa8v6rdm53va4lgib9-texlive-2024-env-texmfdist/fonts/typ
+e1/public/cm-super/sftt0900.pfb>
+Output written on main.pdf (6 pages, 447167 bytes).
+PDF statistics:
+ 316 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 46346 words of extra memory for PDF output out of 51595 (max. 10000000)
+

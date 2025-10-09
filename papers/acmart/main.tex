@@ -136,13 +136,13 @@
 %% other information printed in the page headers. This command allows
 %% the author to define a more concise list
 %% of authors' names for this purpose.
-\renewcommand{\shortauthors}{Trovato et al.}
+\renewcommand{\shortauthors}{Monninger}
 
 %%
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-    We describe a class of parametric BFT state machine replica protocols, BFA, which includes popular consensus protocols such as PBFT. We motivate BFA by first considering parametric BFT state machine replica protocols generally. We then formalize a parametric interpretation of PBFT by continuously relaxing constraints relating to quorum structure and atomic broadcast. From this, we develop the class BFA and use our formalization to consider several phenomena relating to performance, safety, and liveness. We assess these in a real-world setting by performing benchmarks on several example algorithms from the class BFA. We then use BFA descriptively to analyze the common architectures in blockchain, including cross-chain atomic transactions, multi-chain architectures, and geographic partitions.  Finally, we motivate a category-theoretic consideration of BFA we call Post-BFA, providing some initial formalism. 
+    We describe a class of parametric state machine replica protocols, BFA, which includes popular consensus protocols such as PBFT. We first formalize a parametric interpretation of PBFT by continuously relaxing constraints relating to quorum structure and atomic broadcast. From this, we develop the class BFA and use our formalization to consider several phenomena relating to performance, safety, and liveness. We assess these in a real-world setting by performing benchmarks on several example algorithms from the class BFA. Finally, we motivate a category-theoretic consideration of BFA, providing some initial formalism. 
 \end{abstract}
 
 %%
@@ -200,19 +200,149 @@
 
 \subsection{Industry}
 
-\section{Template Overview}
-As noted in the introduction, the ``\verb|acmart|'' document class can
-be used to prepare many different kinds of documentation --- a
-double-anonymous initial submission of a full-length technical paper, a
-two-page SIGGRAPH Emerging Technologies abstract, a ``camera-ready''
-journal article, a SIGCHI Extended Abstract, and more --- all by
-selecting the appropriate {\itshape template style} and {\itshape
-  template parameters}.
+\section{Motivation}
+There are set of simple exercises one can perform to begin to unravel implicit parameters in state machine replica protocols. 
 
-This document will explain the major features of the document
-class. For further information, the {\itshape \LaTeX\ User's Guide} is
-available from
-\url{https://www.acm.org/publications/proceedings-template}.
+\subsection{Expert Models and the Byzantine Generals Problem}
+Coordinating state machine replicas presents an online decision problem. Because we cannot know which state machine replicas are Byzantine beforehand, nor what the correct state $r'$ should be, we must use some online heuristic to decide.
+
+Though the literature covering expert models of such decision problems is rich, it centers on learning models wherein the co-domain of the expert is meaningful metric space, for example, the rational numbers representing stock prices. State machine replicas, generally, do not present such a co-domain. Consider the example below from a machine encoding of account balances:
+
+While not clearly stated in the works of Schneider and Lamport, we argue that Byzantine fault-tolerant state machine replicas contend with this problem by making the assumption that there exists a perfect expert $p' \in P$. 
+
+Consider the Byzantine Assumption, which is that for $3f + 1$ replicas, at most $f$ replicas are Byzantine. For any single state transition, $r \to r'$, this assumes that there are $2f + 1$ replicas which compute and broadcast a correct state transition. These replicas would be considered "perfect experts" w.r.t. $r \to r'$. 
+
+As identified by Lamport [1987], the Byzantine Assumption ensures that any two state transitions will intersect in at least one honest expert.
+
+\begin{theorem}
+Given honest nodes compute and broadcast a correct state transition and that the set of replicas $P$ contains:
+
+\begin{itemize}
+    \item at least $2f + 1$ honest replicas,
+    \item at most $f$ Byzantine replicas.
+\end{itemize}
+
+Any two quora $Q(r'_1), Q(r'_2)$ will intersect in at least one honest replica.
+\end{theorem}
+
+\begin{proof}
+
+Let...
+\begin{itemize}
+    \item $P$ be the set of replicas,
+    \item $H$ be the subset of honest replicas,
+    \item $F$ be the subset of Byzantine replicas.
+\end{itemize}
+
+\begin{flalign*}
+P = H \cup F \\
+H \cap F = \emptyset \\
+\end{flalign*}
+
+
+Let $Q: R' \to 2^P$ be the function which maps a state transition to the quorum obtained by the replicas which compute and broadcast a correct state transition.
+
+Apply the Byzantine constraints that...
+
+\begin{itemize}
+    \item $|Q(r')| \geq 2f + 1 \forall r' \in R'$.
+    \item $|H| \geq 2f + 1$.
+    \item $|F| \leq f$.
+    \item $|H| + |F| = |P| = 3f + 1$.
+\end{itemize}
+
+For any two state transitions $r'_1, r'_2 \in R'$ by definition of the Byzantine constraints $|Q(r'_1)| \geq 2f + 1$ and $|Q(r'_2)| \geq 2f + 1$. It also follows that $3f + 1 \geq |Q(r'_1) \cup Q(r'_2)|$ as there cannot be more than $3f + 1$ replicas in total, of which the honest replicas $H$ are a subset.
+
+Two quora must then intersect in at least $f+1$ replicas:
+
+\begin{align*}
+|Q(r'_1) \cap Q(r'_2)| = |Q(r'_1)| + |Q(r'_2)| - |Q(r'_1) \cup Q(r'_2)| \\
+\geq (2f + 1) + (2f + 1) - (3f + 1) = f + 1 \\
+\end{align*}
+
+Likewise, the intersection of two quora must intersect in at least one honest replica:
+
+\begin{align*}
+|Q(r'_1) \cap Q(r'_2)| = |Q(r'_1) \cap Q(r'_2) \cap H| + |Q(r'_1) \cap Q(r'_2) \cap F| \\
+Q(r'_1) \cap Q(r'_2) \cap H| = |Q(r'_1) \cap Q(r'_2)| - |Q(r'_1) \cap Q(r'_2) \cap F| \\
+f \geq |Q(r'_1) \cap Q(r'_2) \cap F| \\
+|Q(r'_1) \cap Q(r'_2) \cap H| \geq f + 1 - f = 1 \\
+\end{align*}
+
+\end{proof}
+
+We now consider what it would mean for a participant $p \in P$ to be a perfect expert and what loss from this expert would mean. 
+
+It is common to define a perfect expert as an expert which records the correct result at any given step $t_1, t_2, \cdots, t_n$. Given that, for any view of consensus, our results are recorded in quora, we argue that a perfect expert would be a member of all quora $p' \in Q(r') \forall r' \in R'$. This implies both correctness and liveness, which address both separately and jointly. 
+
+By itself, correctness of a given replica for a single state transition $r' \in R'$ is simply whether it computes the same result as the honest replicas, i.e., whether the quorum of which it is a member intersects with the honest set $H$:
+
+\begin{align*}
+  Correct: P \times R' \to {0, 1} \\
+  Correct(p, r') = p \in Q(r') \land Q(r') \cap H \neq \emptyset \\
+\end{align*}
+
+The liveness of a given replica for a single state transition $r' \in R'$ is more abstract. We argue for a particular framework of liveness in this paper's main theory. For simplicity, in this section, consider that quora mark units in time. We can measure a participant's liveness between any two quora as follows:
+
+\begin{align*}
+  Live: P \times R' \times R' \to {0, 1} \\
+  Live(p, r_1', r_2') = p \in Q(r_1') \cap Q(r_2') \\
+\end{align*}
+
+For any two state transitions $r'_1, r'_2 \in R'$, we would like for our 
+
+\begin{align*}
+  p \in Q(r_1') \land Q(r_1') \cap H \neq \emptyset 
+    \land p \in Q(r_2') \land Q(r_2') \cap H \neq \emptyset 
+    \land p \in Q(r_1') \cap Q(r_2')
+  Simplifies to:
+
+  Q(r_1') \cap H \neq \emptyset 
+  Q(r_2') \cap H \neq \emptyset 
+    \land p \in Q(r_1') \cap Q(r_2')
+
+  p \in Q(r_1') \cap Q(r_2') \cap H
+
+\end{align*}
+
+\begin{align*}
+  Score: P \times R' \times R' \to {0, 1} \\
+  Score(p, r_1', r_2') = \begin{cases}
+    0 & p \in Q(r_1') \cap Q(r_2') \cap H \\
+    1 & p \notin Q(r_1') \cap Q(r_2') \cap H \\
+  \end{cases} \\
+  = \begin{cases}
+    0 & p \in Q(r_1') \cap Q(r_2') \cap H \\
+    1 & p \notin Q(r_1') \cap Q(r_2') \cap H \\
+  \end{cases} \\
+\end{align*}
+
+Summing this score for all pairs of state transitions $r'_1, r'_2 \in R'$, we can compute the loss of the perfect expert to be $0$ as intended. 
+
+\begin{align*}
+  Loss: P \times 2^{R'} \to \mathbb{C} \\
+  Loss(p, R') = \sum_{r'_1, r'_2 \in R'} Score(p, r'_1, r'_2) \\
+  p'in Q(r'_1) \cap Q(r'_2) \cap H \implies Loss(p, R') = \\
+  \sum_{r'_1, r'_2 \in R'} (Score(p', r'_1, r'_2) = 0) = 0 \\
+\end{align*}
+
+Under our Byzantine assumption, from Theorem 1, we have that any two quora must intersect in at least one honest replica. This does not generalize to all quora, so we do not have a single perfect expert. However, if we generalize our loss function to the quora itself, we can show that a BFT state machine replica protocol is a lossless expert model. 
+
+\begin{proposition}
+BFT state machine replicas are lossless expert models.
+\end{proposition}
+
+\begin{proof}
+First we define the correctness component of our quorum score. Because the quorum agrees on $r'$ and any $h \in H$ correctly computes $r'$, if the quorum intersects with $r'$ then the quorum is correct.
+
+Observe that if 
+
+\end{proof}
+
+\section{Byzantine Fault Allowance}
+The titular concept of Byzantine Fault Allowance can be thought of idiomatically as referring to a state machine replica protocol which may propagate state changes with some known probability. A BFA protocol thus intentionally "allows" Byzantine faults.
+
+In Motivation, we noted several combinatorial properties which could be relaxed in order to increase the Byzantine fault allowance of a state machine replica protocol. We will now formalize these properties and develop the class BFA.
 
 \subsection{Template Styles}
 

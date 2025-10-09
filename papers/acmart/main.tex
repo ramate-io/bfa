@@ -204,15 +204,57 @@
 There are set of simple exercises one can perform to begin to unravel implicit parameters in state machine replica protocols. 
 
 \subsection{Expert Models and the Byzantine Generals Problem}
-Coordinating state machine replicas presents an online decision problem. Because we cannot know which state machine replicas are Byzantine beforehand, nor what the correct state $r'$ should be, we must use some online heuristic to decide.
+We argue that coordinating state machine replicas presents an online decision problem for which Byzantine majority presents a lossless expert model.
 
-Though the literature covering expert models of such decision problems is rich, it centers on learning models wherein the co-domain of the expert is meaningful metric space, for example, the rational numbers representing stock prices. State machine replicas, generally, do not present such a co-domain. Consider the example below from a machine encoding of account balances:
+First, consider the information available in a state machine replica protocol. We know the following:
 
-While not clearly stated in the works of Schneider and Lamport, we argue that Byzantine fault-tolerant state machine replicas contend with this problem by making the assumption that there exists a perfect expert $p' \in P$. 
+\begin{itemize}
+    \item There exists a set of replicas $P$ which has disjoint subsets $H$ and $F$ such that $H \cap F = \emptyset$ and $H \cup F = P$.
+    \item A client of the system will be able to obtain certificates of computed state transitions $r' \in R'$ from the replicas. We will denote these as $Q: R' \to 2^P$. Note that the value of $Val(Q(r')) = r'$ for all $r' \in R'$.
+    \item To be a member of a quorum $Q(r')$, a replica must compute and broadcast the value $r'$.
+    \item Honest nodes compute a correct state transition. Tautologically, a state transition is correct if the quorum of which it is a member intersects with the honest set $Q(r') \cap H \neq \emptyset$.
+\end{itemize}
 
-Consider the Byzantine Assumption, which is that for $3f + 1$ replicas, at most $f$ replicas are Byzantine. For any single state transition, $r \to r'$, this assumes that there are $2f + 1$ replicas which compute and broadcast a correct state transition. These replicas would be considered "perfect experts" w.r.t. $r \to r'$. 
+Now consider our objectives. We want:
 
-As identified by Lamport [1987], the Byzantine Assumption ensures that any two state transitions will intersect in at least one honest expert.
+\begin{itemize}
+    \item Our state transition is correct. 
+    \item Our state transition is consistent, i.e., records the past effects of previous state transitions.
+\end{itemize}
+
+The determination for correctness is given to us by our tautology above:
+
+\begin{flalign*}
+&Correct(Q(r')) = Q(r') \cap H \neq \emptyset \\
+\end{flalign*}
+
+Consistency is less obvious. For the purpose of this motivation, we will assume a sequence of state transitions $r'_1, r'_2, \cdots, r'_n$ which we will denote as $R'$. We will say that a quorum $Q(r'_j)$ is consistent if and only if its predecessor $Q(r'_{j-1})$ is consistent and the two quora intersect, i.e., $Q(r'_j) \cap Q(r'_{j-1}) \neq \emptyset$. Observe that the expansion records all the effects of previous state transitions satisfying our original semantic intent:
+
+\begin{flalign*}
+  &Consistent(Q(r'_j), R') = Consistent(Q(r'_{j-1})) \land Q(r'_j) \cap Q(r'_{j-1}) \neq \emptyset \\
+  &= Q(r'_{0}) \cap Q(r'_{1}) \neq \emptyset \land \cdots \land Q(r'_{j-1}) \cap Q(r'_j) \neq \emptyset \\
+\end{flalign*}
+
+We combine these definitions of correctness and consistency to form our objective $Obj$. Observe that the expansion records all correct effects of previous state transitions:
+
+\begin{flalign*}
+  &Obj(Q(r'), R') = Obj(Q(r'_{j-1}), R') \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset \\
+  &= Obj(Q(r'_{0}), R') \land Q(r'_{1}) \cap Q(r'_{0}) \cap H \neq \emptyset \land \cdots \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset \\
+\end{flalign*}
+
+We transform this into a loss function $Loss$ which counts the number of incorrect or inconsistent quora for our expert model as below. Note that later we will discuss alternative definitions of loss:
+
+\begin{flalign*}
+  &Loss(Q(r'), R') = \sum_{r'_i \in R'} Obj(Q(r'_i), R') \\
+  &= \sum_{r'_i \in R'} Obj(Q(r'_{i-1}), R') \land Q(r'_i) \cap Q(r'_{i-1}) \neq \emptyset \land Q(r'_i) \cap H \neq \emptyset \\
+  &= \sum_{r'_i \in R'} Obj(Q(r'_{i-2}), R') \land Q(r'_{i-1}) \cap Q(r'_{i-2}) \neq \emptyset \land Q(r'_{i-1}) \cap H \neq \emptyset \land \cdots \land Q(r'_i) \cap Q(r'_{i-1}) \neq \emptyset \land Q(r'_i) \cap H \neq \emptyset \\
+\end{flalign*}
+
+Observe that the loss function $Loss$ is 0 if and only if the quorum $Q(r')$ is consistent and correct, i.e., $Obj(Q(r'), R') = 0$.
+
+We now consider the Byzantine majority algorithm which certifies any quorum surpassing $2f + 1$ replicas, under the assumption that at most $f$ replicas are Byzantine. As we will show, this is a lossless expert model.
+
+First, we restate the proof that any two quora must intersect in at least one honest replica:
 
 \begin{theorem}
 Given honest nodes compute and broadcast a correct state transition and that the set of replicas $P$ contains:
@@ -271,71 +313,31 @@ f \geq |Q(r'_1) \cap Q(r'_2) \cap F| \\
 
 \end{proof}
 
-We now consider what it would mean for a participant $p \in P$ to be a perfect expert and what loss from this expert would mean. 
+We now show inductively that the Byzantine majority is lossless.
 
-It is common to define a perfect expert as an expert which records the correct result at any given step $t_1, t_2, \cdots, t_n$. Given that, for any view of consensus, our results are recorded in quora, we argue that a perfect expert would be a member of all quora $p' \in Q(r') \forall r' \in R'$. This implies both correctness and liveness, which address both separately and jointly. 
-
-By itself, correctness of a given replica for a single state transition $r' \in R'$ is simply whether it computes the same result as the honest replicas, i.e., whether the quorum of which it is a member intersects with the honest set $H$:
-
-\begin{align*}
-  Correct: P \times R' \to {0, 1} \\
-  Correct(p, r') = p \in Q(r') \land Q(r') \cap H \neq \emptyset \\
-\end{align*}
-
-The liveness of a given replica for a single state transition $r' \in R'$ is more abstract. We argue for a particular framework of liveness in this paper's main theory. For simplicity, in this section, consider that quora mark units in time. We can measure a participant's liveness between any two quora as follows:
-
-\begin{align*}
-  Live: P \times R' \times R' \to {0, 1} \\
-  Live(p, r_1', r_2') = p \in Q(r_1') \cap Q(r_2') \\
-\end{align*}
-
-For any two state transitions $r'_1, r'_2 \in R'$, we would like for our 
-
-\begin{align*}
-  p \in Q(r_1') \land Q(r_1') \cap H \neq \emptyset 
-    \land p \in Q(r_2') \land Q(r_2') \cap H \neq \emptyset 
-    \land p \in Q(r_1') \cap Q(r_2')
-  Simplifies to:
-
-  Q(r_1') \cap H \neq \emptyset 
-  Q(r_2') \cap H \neq \emptyset 
-    \land p \in Q(r_1') \cap Q(r_2')
-
-  p \in Q(r_1') \cap Q(r_2') \cap H
-
-\end{align*}
-
-\begin{align*}
-  Score: P \times R' \times R' \to {0, 1} \\
-  Score(p, r_1', r_2') = \begin{cases}
-    0 & p \in Q(r_1') \cap Q(r_2') \cap H \\
-    1 & p \notin Q(r_1') \cap Q(r_2') \cap H \\
-  \end{cases} \\
-  = \begin{cases}
-    0 & p \in Q(r_1') \cap Q(r_2') \cap H \\
-    1 & p \notin Q(r_1') \cap Q(r_2') \cap H \\
-  \end{cases} \\
-\end{align*}
-
-Summing this score for all pairs of state transitions $r'_1, r'_2 \in R'$, we can compute the loss of the perfect expert to be $0$ as intended. 
-
-\begin{align*}
-  Loss: P \times 2^{R'} \to \mathbb{C} \\
-  Loss(p, R') = \sum_{r'_1, r'_2 \in R'} Score(p, r'_1, r'_2) \\
-  p'in Q(r'_1) \cap Q(r'_2) \cap H \implies Loss(p, R') = \\
-  \sum_{r'_1, r'_2 \in R'} (Score(p', r'_1, r'_2) = 0) = 0 \\
-\end{align*}
-
-Under our Byzantine assumption, from Theorem 1, we have that any two quora must intersect in at least one honest replica. This does not generalize to all quora, so we do not have a single perfect expert. However, if we generalize our loss function to the quora itself, we can show that a BFT state machine replica protocol is a lossless expert model. 
-
-\begin{proposition}
-BFT state machine replicas are lossless expert models.
-\end{proposition}
+\begin{theorem}
+The Byzantine majority is lossless under the assumption that $Obj(Q(r'_0), R') = 1$.
+\end{theorem}
 
 \begin{proof}
-First we define the correctness component of our quorum score. Because the quorum agrees on $r'$ and any $h \in H$ correctly computes $r'$, if the quorum intersects with $r'$ then the quorum is correct.
 
-Observe that if 
+\textbf{Base cases:}
+\begin{itemize}
+    \item We asssume $Q(r'_0)$ is correct and consistent. We argue that any quorum surpassing $2f + 1$ replicas must contain at least $f+1$ honest replicas and is thus correct. We argue that it is consistent as does not have any predecessors. Thus, $Obj(Q(r'_0), R') = 1 \implies Loss(Q(r'_0), R') = 0$.
+    \item $Obj(Q(r'_1), R') = Q(r'_1) \cap Q(r'_0) \cap H \neq \emptyset \implies Loss(Q(r'_1), R')$. By Thereom 1, any two quora must intersect in at least one honest replica. Thus, $Q(r'_1) \cap Q(r'_0) \cap H \neq \emptyset$. Thus, $Obj(Q(r'_1), R') = 1 \implies Loss(Q(r'_1), R') = 0$. All other inductive steps no longer need to directly consider the assumption that $Obj(Q(r'_0), R') = 1$.
+\end{itemize}
+
+\textbf{Inductive step:} Assume $Obj(Q(r'_{j-1}), R') = 1$. 
+
+From our definition of $Obj$, we have that:
+
+\begin{flalign*}
+&Obj(Q(r'_j), R') = Obj(Q(r'_{j-1}), R') \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset \\
+&Obj(Q(r'_{j-1}), R') = 1 \implies \\
+&Obj(Q(r'_j), R') = 1 \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset \\
+\end{flalign*}
+
+Substituting from Thereom~1 we have $(Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset) = 1$. Thus, $Obj(Q(r'_j), R') = 1 \implies Loss(Q(r'_j), R') = 0$.
 
 \end{proof}
 

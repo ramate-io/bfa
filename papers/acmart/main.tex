@@ -108,6 +108,8 @@
 
 %%
 %% end of the preamble, start of the body of the document source.
+\usepackage{amssymb}
+\usepackage{amsmath}
 \begin{document}
 
 %%
@@ -222,32 +224,42 @@ Now consider our objectives. We want:
     \item Our state transition is consistent, i.e., records the past effects of previous state transitions.
 \end{itemize}
 
-The determination for correctness is given to us by our tautology above:
+Our determination for correctness $Cor$ is given to us by our tautology above:
 
 \begin{flalign*}
-&Correct(Q(r')) = Q(r') \cap H \neq \emptyset \\
+&Cor(r') \triangleq (Q(r') \cap H \neq \emptyset) \\
 \end{flalign*}
 
-Consistency is less obvious. For the purpose of this motivation, we will assume a sequence of state transitions $r'_1, r'_2, \cdots, r'_n$ which we will denote as $R'$. We will say that a quorum $Q(r'_j)$ is consistent if and only if its predecessor $Q(r'_{j-1})$ is consistent and the two quora intersect, i.e., $Q(r'_j) \cap Q(r'_{j-1}) \neq \emptyset$. Observe that the expansion records all the effects of previous state transitions satisfying our original semantic intent:
+Consistency is less obvious. For the purpose of this motivation, we will assume a sequence of state transitions $r'_1, r'_2, \cdots, r'_n$ which we will denote as $R'$. We will say that a quorum $Q(r'_j)$ is consistent if and only if its predecessor $Q(r'_{j-1})$ is consistent and the two quora intersect, i.e., $Q(r'_j) \cap Q(r'_{j-1}) \neq \emptyset$. Observe that the expansion of our consistency function $Con$ records all the effects of previous state transitions satisfying our original semantic intent:
 
 \begin{flalign*}
-  &Consistent(Q(r'_j), R') = Consistent(Q(r'_{j-1})) \land Q(r'_j) \cap Q(r'_{j-1}) \neq \emptyset \\
-  &= Q(r'_{0}) \cap Q(r'_{1}) \neq \emptyset \land \cdots \land Q(r'_{j-1}) \cap Q(r'_j) \neq \emptyset \\
+  &C(r'_i, r'_j) \triangleq (Q(r'_i) \cap Q(r'_j) \neq \emptyset) \\
+  &Con(r'_j) = Con(r'_{j-1}) \land C(r'_{j-1}, r'_j) \\
+  &\quad = C(r'_0, r'_1) \land \cdots \land  C(r'_{j-1}, r'_j) \\
 \end{flalign*}
 
 We combine these definitions of correctness and consistency to form our objective $Obj$. Observe that the expansion records all correct effects of previous state transitions:
 
 \begin{flalign*}
-  &Obj(Q(r'), R') = Obj(Q(r'_{j-1}), R') \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset \\
-  &= Obj(Q(r'_{0}), R') \land Q(r'_{1}) \cap Q(r'_{0}) \cap H \neq \emptyset \land \cdots \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset \\
+  &O(r'_i, r'_j) \triangleq (Q(r'_i) \cap Q(r'_j) \cap H \neq \emptyset) \\
+  &Obj(r'_j) = Obj(r'_{j-1}) \land O(r'_{j-1}, r'_j) \\
+  &\quad = Obj(r'_0) \land O(r'_0, r'_1) \land \cdots \land O(r'_{j-1}, r'_j) \\
+  &\quad = Obj(r'_0)\\
+  &\qquad \land (Q(r'_0) \cap Q(r'_1) \cap H \neq \emptyset)\\
+  &\qquad \cdots\\
+  &\qquad \land (Q(r'_{j-1}) \cap Q(r'_j) \cap H \neq \emptyset)\\
 \end{flalign*}
 
 We transform this into a loss function $Loss$ which counts the number of incorrect or inconsistent quora for our expert model as below. Note that later we will discuss alternative definitions of loss:
 
 \begin{flalign*}
-  &Loss(Q(r'), R') = \sum_{r'_i \in R'} Obj(Q(r'_i), R') \\
-  &= \sum_{r'_i \in R'} Obj(Q(r'_{i-1}), R') \land Q(r'_i) \cap Q(r'_{i-1}) \neq \emptyset \land Q(r'_i) \cap H \neq \emptyset \\
-  &= \sum_{r'_i \in R'} Obj(Q(r'_{i-2}), R') \land Q(r'_{i-1}) \cap Q(r'_{i-2}) \neq \emptyset \land Q(r'_{i-1}) \cap H \neq \emptyset \land \cdots \land Q(r'_i) \cap Q(r'_{i-1}) \neq \emptyset \land Q(r'_i) \cap H \neq \emptyset \\
+  &Loss(r'_j) = \\
+  &\quad \sum_{r'_i \in [r'_0, r'_j]} [\neg Obj(r'_i) ] \\
+  &\quad = [\neg Obj(r'_0)] + [\neg Obj(r'_1)] + \cdots + [\neg Obj(r'_j)] \\
+  &\quad = [\neg Obj(r'_0)] \\
+  &\qquad + [Q(r'_{1}) \cap Q(r'_{0}) \cap H = \emptyset]\\
+  &\qquad \cdots\\
+  &\qquad + [Q(r'_j) \cap Q(r'_{j-1}) \cap H = \emptyset] \\
 \end{flalign*}
 
 Observe that the loss function $Loss$ is 0 if and only if the quorum $Q(r')$ is consistent and correct, i.e., $Obj(Q(r'), R') = 0$.
@@ -297,19 +309,27 @@ For any two state transitions $r'_1, r'_2 \in R'$ by definition of the Byzantine
 
 Two quora must then intersect in at least $f+1$ replicas:
 
-\begin{align*}
-|Q(r'_1) \cap Q(r'_2)| = |Q(r'_1)| + |Q(r'_2)| - |Q(r'_1) \cup Q(r'_2)| \\
-\geq (2f + 1) + (2f + 1) - (3f + 1) = f + 1 \\
-\end{align*}
+\begin{flalign*}
+&|Q(r'_1) \cap Q(r'_2)|=\\
+&\quad |Q(r'_1)| + |Q(r'_2)|\\
+&\quad - |Q(r'_1) \cup Q(r'_2)| \\
+&\quad \geq (2f + 1) + (2f + 1)\\
+&\quad - (3f + 1)\\
+&= f + 1 \\
+\end{flalign*}
 
 Likewise, the intersection of two quora must intersect in at least one honest replica:
 
-\begin{align*}
-|Q(r'_1) \cap Q(r'_2)| = |Q(r'_1) \cap Q(r'_2) \cap H| + |Q(r'_1) \cap Q(r'_2) \cap F| \\
-Q(r'_1) \cap Q(r'_2) \cap H| = |Q(r'_1) \cap Q(r'_2)| - |Q(r'_1) \cap Q(r'_2) \cap F| \\
-f \geq |Q(r'_1) \cap Q(r'_2) \cap F| \\
-|Q(r'_1) \cap Q(r'_2) \cap H| \geq f + 1 - f = 1 \\
-\end{align*}
+\begin{flalign*}
+&|Q(r'_1) \cap Q(r'_2)|\\
+&\quad = |Q(r'_1) \cap Q(r'_2) \cap H|\\
+&\quad + |Q(r'_1) \cap Q(r'_2) \cap F|\\
+&Q(r'_1) \cap Q(r'_2) \cap H|\\
+&\quad = |Q(r'_1) \cap Q(r'_2)|\\
+&\quad - |Q(r'_1) \cap Q(r'_2) \cap F|\\
+&f \geq |Q(r'_1) \cap Q(r'_2) \cap F|\\
+&|Q(r'_1) \cap Q(r'_2) \cap H| \geq f + 1 - f = 1\\
+\end{flalign*}
 
 \end{proof}
 
@@ -332,9 +352,12 @@ The Byzantine majority is lossless under the assumption that $Obj(Q(r'_0), R') =
 From our definition of $Obj$, we have that:
 
 \begin{flalign*}
-&Obj(Q(r'_j), R') = Obj(Q(r'_{j-1}), R') \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset \\
-&Obj(Q(r'_{j-1}), R') = 1 \implies \\
-&Obj(Q(r'_j), R') = 1 \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset \\
+&Obj(Q(r'_j), R')\\
+&\quad = Obj(Q(r'_{j-1}), R')\\ 
+&\quad \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset\\
+&Obj(Q(r'_{j-1}), R') = 1 \implies\\
+&Obj(Q(r'_j), R')\\ 
+&\quad = 1 \land Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset\\
 \end{flalign*}
 
 Substituting from Thereom~1 we have $(Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset) = 1$. Thus, $Obj(Q(r'_j), R') = 1 \implies Loss(Q(r'_j), R') = 0$.

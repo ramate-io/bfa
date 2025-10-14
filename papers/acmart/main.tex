@@ -366,10 +366,11 @@ From our definition of $Obj$, we have that:
 Substituting from Thereom~1 we have $(Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset) = 1$. Thus, $Obj(Q(r'_j), R') = 1 \implies Loss(Q(r'_j), R') = 0$.
 
 \end{proof}
-By definition, $B$ is a lossless expert model. In Appendix B, we further motivate the necessity of the Byzantine assumptions for any such lossless model to exist. However, given these assumptions, we may now consider how to approximate $B$.
 
-\subsection{Sampling}
-One simple approach to approximating $B$ which may spring to the mind of the statistician is to sample the quora of $B$. That is, to pick at random from all possible quora and consider this in place of $B$. As we will show, though this is trivial, it has appealing combinatorial properties. 
+$B$ is a lossless expert model. In Appendix B, we further motivate the necessity of the Byzantine assumptions for any such lossless model to exist. However, given these assumptions, we may now consider how to approximate $B$.
+
+\subsection{Sampling Approximations of $B$}
+One simple approach to approximating $B$ which may spring to the mind of the statistician is to sample those replicas which participate in the quora of $B$. That is, to pick at random from $P$ a subset of replicas needed for a quorum and consider this in place of the supermajority of replicas required by $B$. As we will show, though this is trivial, it has appealing combinatorial properties. 
 
 For the sake of explanation, let our initial sampling algorithm be defined as follows:
 
@@ -382,7 +383,7 @@ Observe the following possible outcomes for selection of this subcommittee:
 
 \begin{itemize}
     \item $|K_n \cap H| \geq 2k + 1$. This represents a subcommittee which has an honest supermajority which computes $r'$ correctly. For ease of reference, we shall refer to this as kind of subcommittee as $Right$ and use the symbol $\mathcal{R}$.
-    \item $k < |K_n \cap H| < 2k + 1$. This represents neither has an honest nor dishonest supermajority and may either compute $r'$ correctly or disagree internally and not render a supermajority. For ease of reference, we shall refer to this as kind of subcommittee as $Hung$ and use the symbol $\mathcal{H}$.
+    \item $k < |K_n \cap H| < 2k + 1$. This represents a subcommittee that has neither an honest nor dishonest supermajority and may either compute $r'$ correctly or disagree internally and not render a supermajority. For ease of reference, we shall refer to this as kind of subcommittee as $Hung$ and use the symbol $\mathcal{H}$.
     \item $|K_n \cap H| \leq k$. This represents a subcommittee which has a dishonest supermajority and may compute $r'$ incorrectly. For ease of reference, we shall refer to this as kind of subcommittee as $Corrupt$ and use the symbol $\mathcal{C}$.
 \end{itemize}
 
@@ -481,7 +482,7 @@ Since each resampling is independent and our $Q'(r')$ after resampling cannot be
   &\quad = 1 - Pr[\mathcal{C}](f, k) \\ 
 \end{flalign*}
 
-Substituting and rearranging, we can describe the lost on $Cor$ term of $B$ due to sampling:
+Substituting and rearranging, we can describe the loss on the $Cor$ term of $B$ due to sampling:
 
 \begin{flalign*}
   &Closs_{\mathcal{B}_{f,k}}(r'_j) \triangleq \sum_{r'_i \in [r'_0, r'_j]} [\neg Cor(r'_i) ] \\
@@ -490,12 +491,13 @@ Substituting and rearranging, we can describe the lost on $Cor$ term of $B$ due 
   &\quad = (j + 1) \cdot \frac{\sum_{h = 2k + 1}^{\min(3k + 1, f)} \binom{f}{h} \cdot \binom{2f + 1}{3k + 1 - h}}{\binom{3f + 1}{3k + 1}} \\
 \end{flalign*}
 
-For concision, we define $\alpha_{f,k} \triangleq Pr[\mathcal{C}](f, k)$ and state that $\mathcal{B}_{j, k}$ is $(j \alpha_{f,k})$-approximate w.r.t. $Closs$. As shown above, $j \alpha_{f,k}$ decreases exponentially for a fixed $\gamma = \frac{k}{f}$ as $f$ increases. In practice, this implies that values of $Closs_{\mathcal{B}_{f,k}}(r'_j)$ which are comparable to cryptographic security standards can be achieved using only a fraction of the replicas. Replicas which are not involved may pre-compute elements of other state transitions, lending to horizontal scalability.
+For concision, we define $\alpha_{f,k} \triangleq Pr[\mathcal{C}](f, k)$ and state that $\mathcal{B}_{j, k}$ is $(j \alpha_{f,k})$-approximate w.r.t. $Closs$. As shown above, $j \alpha_{f,k}$ decreases exponentially for a fixed $\gamma = \frac{k}{f}$ as $f$ increases. In practice, this implies that values of $Closs_{\mathcal{B}_{f,k}}(r'_j)$ that are comparable to cryptographic security standards can be achieved using only a fraction of the replicas. Replicas that are not involved may pre-compute elements of other state transitions, lending to horizontal scalability in the context of a distributed system.
 
-Consistency, as defined by the intersection of consecutive state transitions in an honest replica by $Cons$, is not as strongly approximated by $\mathcal{B}_{f,k}$. Consequently, $\mathcal{B}_{f,k}$ exhibits higher overall loss with respect to $Hloss$ and $Obj$, which we demonstrate more thoroughly in Appendix A. 
+Consistency, as defined by $Cons$ as the intersection of consecutive state transitions in an honest replica, is not as strongly approximated by $\mathcal{B}_{f,k}$. Consequently, $\mathcal{B}_{f,k}$ exhibits higher overall loss with respect to $Hloss$ and $Obj$, which we demonstrate more thoroughly in Appendix A. 
 
-As we shall continue to motivate via the topological considerations in the proceeding and later unify this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of $B$ that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
+As we shall continue to motivate via the topological considerations in the proceeding section and later unify this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of $B$ that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
 
+\subsection{Topological Approximations of $B$}
 
 \section{Byzantine Fault Allowance}
 The titular concept of Byzantine Fault Allowance can be thought of idiomatically as referring to a state machine replica protocol which may propagate state changes with some known probability. A BFA protocol thus intentionally "allows" Byzantine faults.

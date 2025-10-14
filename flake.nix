@@ -105,6 +105,8 @@
             ncctools
             comment
             preprint
+            amsmath
+            amsfonts
           ]))
         ] ++ lib.optionals stdenv.isDarwin [
           frameworks.Security

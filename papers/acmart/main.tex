@@ -206,7 +206,7 @@
 \subsection{Industry}
 
 \section{Motivation}
-To motivate the category $\bfa$, we perform a series of exercises. First, we consider the Byzantine majority algorithm as a lossless expert model, representing a prospective fixed-point in $\bfa$. Next, we consider combinatorial parameterizations of the Byzantine majority algorithm, providing some initial morphisms on members of $\bfa$. Finally, we examine a topological approximation of the Byzantine majority algorithm, as an indication of non-trivial morphisms in $\bfa$.
+To motivate the category $\bfa$, we perform a series of exercises. First, we consider a Byzantine majority algorithm, denoted $B$, as a lossless expert model, representing a prospective fixed-point in $\bfa$. Next, we consider combinatorial parameterizations of $B$, providing some initial morphisms on members of $\bfa$. Finally, we examine a topological approximation of $B$, as an indication of non-trivial morphisms in $\bfa$.
 
 \subsection{Expert Models and the Byzantine Generals Problem}
 To begin in motivating the structures of $\bfa$, we argue that coordinating state machine replicas presents an online decision problem for which Byzantine majority presents a lossless expert model.
@@ -241,7 +241,7 @@ Consistency is less obvious. For the purpose of this motivation, we will assume 
   &\quad = C(r'_0, r'_1) \land \cdots \land  C(r'_{j-1}, r'_j) \\
 \end{flalign*}
 
-We combine these definitions of correctness and consistency to form our objective $Obj$. Observe that the expansion records all correct effects of previous state transitions:
+We combine these definitions of correctness and consistency to form our objective $Obj$. Observe that the expansion records all correct effects of previous state transitions satisfying the original semantic intent:
 
 \begin{flalign*}
   &O(r'_i, r'_j) \triangleq (Q(r'_i) \cap Q(r'_j) \cap H \neq \emptyset) \\
@@ -267,7 +267,7 @@ We transform this into a loss function $Loss$ which counts the number of incorre
 
 Observe that the loss function $Loss$ is 0 if and only if the quorum $Q(r')$ is consistent and correct, i.e., $Obj(Q(r'), R') = 0$.
 
-We now consider the Byzantine majority algorithm which certifies any quorum surpassing $2f + 1$ replicas, under the assumption that at most $f$ replicas are Byzantine. As we will show, this is a lossless expert model.
+We now consider $B$ which certifies any quorum surpassing $2f + 1$ replicas, under the assumption that at most $f$ replicas are Byzantine. As we will show, this is a lossless expert model.
 
 First, we restate the proof that any two quora must intersect in at least one honest replica:
 
@@ -366,13 +366,12 @@ From our definition of $Obj$, we have that:
 Substituting from Thereom~1 we have $(Q(r'_j) \cap Q(r'_{j-1}) \cap H \neq \emptyset) = 1$. Thus, $Obj(Q(r'_j), R') = 1 \implies Loss(Q(r'_j), R') = 0$.
 
 \end{proof}
-
-Now that we have described the Byzantine majority algorithm as a lossless expert model, we can now imagine how we might approximate it.
+By definition, $B$ is a lossless expert model. In Appendix B, we further motivate the necessity of the Byzantine assumptions for any such lossless model to exist. However, given these assumptions, we may now consider how to approximate $B$.
 
 \subsection{Sampling}
-One simple approach to approximating the Byzantine majority which may spring to the mind of the statistician is to sample the quora of the Byzantine majority. That is, to pick at random from all possible quora and consider this in place of the Byzantine majority. As we will show, though this is trivial, it has appealing combinatorial properties. 
+One simple approach to approximating $B$ which may spring to the mind of the statistician is to sample the quora of $B$. That is, to pick at random from all possible quora and consider this in place of $B$. As we will show, though this is trivial, it has appealing combinatorial properties. 
 
-Assume our sampling algorithm works as follows:
+For the sake of explanation, let our initial sampling algorithm be defined as follows:
 
 \begin{itemize}
     \item For a given index, $n$ on $R$, pick a random subcommittee $K_n \subseteq P$ s.t. $|K_n| = 3k + 1$.
@@ -449,7 +448,7 @@ Observe that the probability of rendering a decision $Pr[Accepted](f, k) \geq Pr
 
 To ensure we render a decision, we devise a simple algorithm. We first attempt to sample. If $K_n$ does not map to $Q_{K_n}$, we then ask the entire set of replicas $P$ to compute $r'$ and take the result of the supermajority. Under our Byzantine assumptions, the second step will always render a decision. Further, the second step has the complexity of the original Byzantine majority algorithm $\Theta(B_f) = 3f + 1$ as both use all replicas.
 
-The expected complexity of the updated sampling algorithm $\Theta(\mathcal{B}_{f,k})$ is bounded by the complexity of the Byzantine majority algorithm $\Theta(B_f)$. More specifically, we have that:
+The expected complexity of the updated sampling algorithm $\Theta(\mathcal{B}_{f,k})$ is bounded by the complexity of $B$ $\Theta(B_f)$. More specifically, we have that:
 
 \begin{flalign*}
   &\Theta(\mathcal{B}_{f, k}) = \\
@@ -460,7 +459,7 @@ The expected complexity of the updated sampling algorithm $\Theta(\mathcal{B}_{f
   &\quad = \frac{\Theta(B_f)}{2} + 3k + 1 \\
 \end{flalign*}
 
-Via this naive sampling approach, we have already roughly halved the expected complexity of the Byzantine majority algorithm. But, we can generalize and improve this approach by resampling. If for each $Hung$ subcommittee we sample again, we can observe that the likelihood of needing to resample at any given step is $\frac{1}{2}$. Thus, the expected complexity of the sampling algorithm is:
+Via this naive sampling approach, we have already roughly halved the expected complexity of $B$. But, we can generalize and improve this approach by resampling. If for each $Hung$ subcommittee we sample again, we can observe that the likelihood of needing to resample at any given step is $\frac{1}{2}$. Thus, the expected complexity of the sampling algorithm is:
 
 \begin{flalign*}
   Pr[\text{Resample Count} = n] &= \left(1 - \frac{1}{2}\right)^{n-1} \cdot \frac{1}{2} = \frac{1}{2^n} \\
@@ -482,7 +481,7 @@ Since each resampling is independent and our $Q'(r')$ after resampling cannot be
   &\quad = 1 - Pr[\mathcal{C}](f, k) \\ 
 \end{flalign*}
 
-Substituting and rearranging, we can describe the lost on $Cor$ term of the Byzantine majority algorithm due to sampling:
+Substituting and rearranging, we can describe the lost on $Cor$ term of $B$ due to sampling:
 
 \begin{flalign*}
   &Closs_{\mathcal{B}_{f,k}}(r'_j) \triangleq \sum_{r'_i \in [r'_0, r'_j]} [\neg Cor(r'_i) ] \\
@@ -495,7 +494,7 @@ For concision, we define $\alpha_{f,k} \triangleq Pr[\mathcal{C}](f, k)$ and sta
 
 Consistency, as defined by the intersection of consecutive state transitions in an honest replica by $Cons$, is not as strongly approximated by $\mathcal{B}_{f,k}$. Consequently, $\mathcal{B}_{f,k}$ exhibits higher overall loss with respect to $Hloss$ and $Obj$, which we demonstrate more thoroughly in Appendix A. 
 
-As we shall continue to motivate via the topological considerations in the proceeding and later unify this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of the Byzantine majority algorithm that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
+As we shall continue to motivate via the topological considerations in the proceeding and later unify this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of $B$ that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
 
 
 \section{Byzantine Fault Allowance}

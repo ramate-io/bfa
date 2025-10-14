@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  14 OCT 2025 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  14 OCT 2025 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -614,7 +614,7 @@ rs
 ex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 116
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 114
 .
 \c@theorem=\count315
 
@@ -632,52 +632,52 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
 <<ot1.cmap>>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 116
+LaTeX Font Info:    Trying to load font information for U+msa on input line 114
 .
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
 ex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 116
+LaTeX Font Info:    Trying to load font information for U+msb on input line 114
 .
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
 ex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Info: Redefining \microtypecontext on input line 116.
-Package microtype Info: Applying patch `item' on input line 116.
-Package microtype Info: Applying patch `toc' on input line 116.
-Package microtype Info: Applying patch `eqnum' on input line 116.
-Package microtype Info: Applying patch `footnote' on input line 116.
-Package microtype Info: Applying patch `verbatim' on input line 116.
+LaTeX Info: Redefining \microtypecontext on input line 114.
+Package microtype Info: Applying patch `item' on input line 114.
+Package microtype Info: Applying patch `toc' on input line 114.
+Package microtype Info: Applying patch `eqnum' on input line 114.
+Package microtype Info: Applying patch `footnote' on input line 114.
+Package microtype Info: Applying patch `verbatim' on input line 114.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 116.
+LaTeX Info: Redefining \showhyphens on input line 114.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -687,7 +687,7 @@ ex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 116.
+Package hyperref Info: Link coloring OFF on input line 114.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -770,7 +770,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+euf on input line 200
+LaTeX Font Info:    Trying to load font information for U+euf on input line 183
 .
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
@@ -785,11 +785,11 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 211.
+(hyperref)                removing `math shift' on input line 194.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 211.
+(hyperref)                removing `math shift' on input line 194.
 
 
 
@@ -802,7 +802,7 @@ nc/dvips/cm-super/cm-super-ts1.enc}]
 
 
 [2.2]
-Overfull \hbox (12.84431pt too wide) in paragraph at lines 349--350
+Overfull \hbox (12.84431pt too wide) in paragraph at lines 332--333
 \OT1/cmr/m/n/9 (-20) ces-sors. Thus, $\OML/cmm/m/it/9 Obj\OT1/cmr/m/n/9 (-20) (
 \OML/cmm/m/it/9 Q\OT1/cmr/m/n/9 (-20) (\OML/cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) 
 )\OML/cmm/m/it/9 ; R[]\OT1/cmr/m/n/9 (-20) ) = 1  =[]\OMS/cmsy/m/n/9 )  \OML/cm
@@ -812,7 +812,7 @@ cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) )\OML/cmm/m/it/9 ; R[]\OT1/cmr/m/n/9 (-20) )
  []
 
 
-Overfull \hbox (26.3439pt too wide) in paragraph at lines 350--351
+Overfull \hbox (26.3439pt too wide) in paragraph at lines 333--334
 []$\OML/cmm/m/it/9 Obj\OT1/cmr/m/n/9 (-20) (\OML/cmm/m/it/9 Q\OT1/cmr/m/n/9 (-2
 0) (\OML/cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) )\OML/cmm/m/it/9 ; R[]\OT1/cmr/m/n/
 9 (-20) ) = \OML/cmm/m/it/9 Q\OT1/cmr/m/n/9 (-20) (\OML/cmm/m/it/9 r[]\OT1/cmr/
@@ -825,7 +825,7 @@ OT1/cmr/m/n/9 (-20) )$.
  []
 
 
-Overfull \hbox (6.4078pt too wide) in paragraph at lines 366--367
+Overfull \hbox (6.4078pt too wide) in paragraph at lines 349--350
 \OML/cmm/m/it/9 H \OMS/cmsy/m/n/9 6\OT1/cmr/m/n/9 (-20) = \OMS/cmsy/m/n/9 ;\OT1
 /cmr/m/n/9 (-20) ) = 1$. Thus, $\OML/cmm/m/it/9 Obj\OT1/cmr/m/n/9 (-20) (\OML/c
 mm/m/it/9 Q\OT1/cmr/m/n/9 (-20) (\OML/cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) )\OML/
@@ -836,25 +836,25 @@ it/9 r[]\OT1/cmr/m/n/9 (-20) )\OML/cmm/m/it/9 ; R[]\OT1/cmr/m/n/9 (-20) ) =
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 372.
+(hyperref)                removing `math shift' on input line 355.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 372.
+(hyperref)                removing `math shift' on input line 355.
 
 
 
 
 
 [3.3]
-Overfull \hbox (54.00075pt too wide) in paragraph at lines 448--449
+Overfull \hbox (54.00075pt too wide) in paragraph at lines 431--432
 []\OT1/cmr/m/n/9 (-20) Observe that the prob-a-bil-ity of ren-der-ing a de-ci-s
 ion $\OML/cmm/m/it/9 Pr\OT1/cmr/m/n/9 (-20) [\OML/cmm/m/it/9 Accepted\OT1/cmr/m
 /n/9 (-20) ](\OML/cmm/m/it/9 f; k\OT1/cmr/m/n/9 (-20) ) \OMS/cmsy/m/n/9 ^^U
  []
 
 
-Overfull \hbox (17.98991pt too wide) in paragraph at lines 448--449
+Overfull \hbox (17.98991pt too wide) in paragraph at lines 431--432
 \OML/cmm/m/it/9 Pr\OT1/cmr/m/n/9 (-20) [\OMS/cmsy/m/n/9 R\OT1/cmr/m/n/9 (-20) ]
 (\OML/cmm/m/it/9 f; k\OT1/cmr/m/n/9 (-20) ) + \OML/cmm/m/it/9 Pr\OT1/cmr/m/n/9 
 (-20) [\OMS/cmsy/m/n/9 C\OT1/cmr/m/n/9 (-20) ](\OML/cmm/m/it/9 f; k\OT1/cmr/m/n
@@ -872,11 +872,11 @@ ML/cmm/m/it/9 >
 [4.4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 500.
+(hyperref)                removing `math shift' on input line 483.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 500.
+(hyperref)                removing `math shift' on input line 483.
 
 Processing 'acks' comment.
 \openout3 = `comment.cut'.
@@ -886,7 +886,7 @@ Straight input of comment.cut. (./comment.cut)
 No file main.bbl.
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 529.
+surrounding objects on input line 512.
 
 
 
@@ -896,7 +896,6 @@ surrounding objects on input line 529.
 Overfull \vbox (1.32503pt too high) has occurred while \output is active []
 
 
-[5.5]
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
 eric/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -904,181 +903,68 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
 eric/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [6.5] (./main.aux)
+) [5.5] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 67317EF9C308BE90318305A07C206BEC;5519
-(rerunfilecheck)             After:  2D6C21E3B55BA952A84939A6AC3ED604;1961.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2D6C21E3B55BA952A84939A6AC3ED604;1961.
  ) 
 Here is how much of TeX's memory you used:
- 17534 strings out of 474986
- 287036 string characters out of 5757256
- 803117 words of memory out of 5000000
- 39686 multiletter control sequences out of 15000+600000
- 576532 words of font info for 165 fonts, out of 8000000 for 9000
+ 17484 strings out of 474986
+ 286357 string characters out of 5757256
+ 809940 words of memory out of 5000000
+ 39657 multiletter control sequences out of 15000+600000
+ 576632 words of font info for 167 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
- 90i,13n,131p,1001b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{page.9} has been referenced but does not exist, rep
-laced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix.B} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.A.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.A.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{appendix.A} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section*.11} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.18} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.17} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.16} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.15} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.14} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.13.1} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.13} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.12.2} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.12.1} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.12} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.11} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.1} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.9} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.8} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.7} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.6} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.2} has been referenced but does not ex
-ist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.3.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-</nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf
--texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></nix/stor
-e/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/publi
-c/amsfonts/cm/cmbx9.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-20
-24-env-texmfdist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></nix/store/4r093j7
-h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfont
-s/cmextra/cmex9.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-e
-nv-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/store/4r093j7h49wk
-l6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/
-cmmi5.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdi
-st/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/store/4r093j7h49wkl6rvp7wy24x
-pgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><
-/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-t
-exlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/store/
-4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/
-amsfonts/cm/cmr5.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-
-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/4r093j7h49wkl
-6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgm
-j4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr9.pfb></nix
-/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/
-public/amsfonts/cm/cmss8.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texli
-ve-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></nix/store/4
-r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/a
-msfonts/cm/cmsy5.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-
-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></nix/store/4r093j7h49wk
-l6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/
-cmsy9.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdi
-st/fonts/type1/public/amsfonts/cm/cmti7.pfb></nix/store/4r093j7h49wkl6rvp7wy24x
-pgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmti8.pfb><
-/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/ty
-pe1/public/amsfonts/cm/cmti9.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-t
-exlive-2024-env-texmfdist/fonts/type1/public/amsfonts/euler/eufm10.pfb></nix/st
+ 90i,13n,131p,1001b,618s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts
+/type1/public/amsfonts/cm/cmbx10.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0
+jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></nix/st
 ore/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-te
-xlive-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></nix/s
-tore/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/pu
-blic/cm-super/sfrm0700.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive
--2024-env-texmfdist/fonts/type1/public/cm-super/sfrm0900.pfb>
-Output written on main.pdf (6 pages, 369762 bytes).
+lic/amsfonts/cm/cmbx9.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-
+2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></nix/store/4r093
+j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfo
+nts/cmextra/cmex9.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024
+-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/store/4r093j7h49
+wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/c
+m/cmmi5.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmf
+dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/store/4r093j7h49wkl6rvp7wy2
+4xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi9.pfb
+></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf
+-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr12.pfb></nix/stor
+e/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/publi
+c/amsfonts/cm/cmr5.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-202
+4-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/4r093j7h49w
+kl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm
+/cmr7.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdi
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/4r093j7h49wkl6rvp7wy24xp
+gmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr9.pfb></n
+ix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type
+1/public/amsfonts/cm/cmss8.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-tex
+live-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></nix/store
+/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public
+/amsfonts/cm/cmsy5.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-202
+4-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></nix/store/4r093j7h49
+wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmf
+dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></nix/store/4r093j7h49wkl6rvp7wy2
+4xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmti8.pfb
+></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/
+type1/public/amsfonts/cm/cmti9.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf
+-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/euler/eufm10.pfb></nix/
+store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/p
+ublic/amsfonts/symbols/msam10.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-
+texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></nix
+/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/
+public/cm-super/sfrm0700.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texli
+ve-2024-env-texmfdist/fonts/type1/public/cm-super/sfrm0900.pfb>
+Output written on main.pdf (5 pages, 364618 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 45345 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 226 PDF objects out of 1000 (max. 8388607)
+ 171 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 45161 words of extra memory for PDF output out of 51595 (max. 10000000)
 

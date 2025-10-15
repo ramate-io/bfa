@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  15 OCT 2025 22:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  15 OCT 2025 22:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1310,21 +1310,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 577--577
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 583.
+Class acmart Warning: A possible image without description on input line 616.
+
+
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 583.
+(hyperref)                removing `math shift' on input line 622.
 
 
-Overfull \hbox (3.82698pt too wide) in paragraph at lines 587--588
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 622.
+
+
+Overfull \hbox (3.82698pt too wide) in paragraph at lines 626--627
 []\OT1/cmr/m/n/9 (-20) Assume also an al-go-rithm $\OML/cmm/m/it/9 A$ \OT1/cmr/
 m/n/9 (-20) which pro-duces quora $\OML/cmm/m/it/9 Q[]\OT1/cmr/m/n/9 (-20) (\OM
 L/cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) ) \OMS/cmsy/m/n/9 ^^R
  []
-
-
 
 Processing 'acks' comment.
 \openout3 = `comment.cut'.
@@ -1333,8 +1336,23 @@ Processing 'acks' comment.
 Straight input of comment.cut. (./comment.cut)
 No file main.bbl.
 
+Class acmart Warning: Some images may lack descriptions.
+(acmart)              ACM is committed to complying with the upcoming US ADA ht
+tps://accessiblyapp.com/accessibility-compliance/ada/ and European Accessibilit
+y Act (EAA) https://accessiblyapp.com/accessibility-compliance/eaa/ regulations
+ by actively working to ensure our publications and application services are ac
+cessible to individuals with disabilities, adhering to the WCAG guidelines to p
+rovide a seamless experience for all users, and regularly reviewing our accessi
+bility practices to maintain compliance with evolving standards. 
+(acmart)              To this end, we strongly encourage our authors to provide
+ alternative text and captions for images and multimedia content. It is also im
+portant to optimize color contrast for the visually impaired. Taking these impo
+rtant steps when creating your papers will ensure that the widest possible audi
+ence can ingest your work..
+
+
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 629.
+surrounding objects on input line 668.
 
 
 
@@ -1356,14 +1374,14 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9AD529C96B76F9E1F4B999896CAE9288;2304.
+(rerunfilecheck)             Checksum: 93D38991A9153926F742E64E5BE00F1A;2304.
  ) 
 Here is how much of TeX's memory you used:
- 29000 strings out of 474986
- 554843 string characters out of 5757256
- 1038929 words of memory out of 5000000
- 50911 multiletter control sequences out of 15000+600000
- 577902 words of font info for 180 fonts, out of 8000000 for 9000
+ 29061 strings out of 474986
+ 555791 string characters out of 5757256
+ 1043161 words of memory out of 5000000
+ 50967 multiletter control sequences out of 15000+600000
+ 578014 words of font info for 182 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
  90i,15n,131p,1001b,967s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts
@@ -1410,10 +1428,10 @@ e-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store
 ve-2024-env-texmfdist/fonts/type1/public/cm-super/sfrm0700.pfb></nix/store/gmwr
 bk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/cm-s
 uper/sfrm0900.pfb>
-Output written on main.pdf (6 pages, 509585 bytes).
+Output written on main.pdf (6 pages, 511660 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
  49287 words of extra memory for PDF output out of 51595 (max. 10000000)
 

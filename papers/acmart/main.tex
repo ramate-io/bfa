@@ -576,6 +576,45 @@ Finally, we consider a Order-2 projection in which each $\phi_{r,o,p,T}: Q \to \
   Playing with writing the algorithm over the other spaces is a fun exercise. Beginning with trivial projections and implementations, and morphing to more complex ones, then approximating is a reflection of the category we're trying to build.
 }
 
+For each of these projections, we can anaylze the data of $B$ as a simplicial complex, as shown in Figure \protect\ref{fig:simplicial_complex}.
+
+\begin{figure}[hbt!]
+  \centering
+  \begin{tikzpicture}[scale=2]
+
+    % Vertices (represent quora points for one replica)
+    \node[draw, circle, fill=blue!50, inner sep=1.5pt] (v1) at (0,0) {};
+    \node[draw, circle, fill=blue!50, inner sep=1.5pt] (v2) at (1,0.2) {};
+    \node[draw, circle, fill=blue!50, inner sep=1.5pt] (v3) at (0.6,0.8) {};
+    \node[draw, circle, fill=blue!50, inner sep=1.5pt] (v4) at (0.2,0.6) {};
+    \node[draw, circle, fill=blue!50, inner sep=1.5pt] (v5) at (0.8,0.5) {};
+
+    % Edges (1-simplices)
+    \draw (v1) -- (v2);
+    \draw (v1) -- (v3);
+    \draw (v1) -- (v4);
+    \draw (v2) -- (v3);
+    \draw (v2) -- (v5);
+    \draw (v3) -- (v4);
+    \draw (v3) -- (v5);
+    \draw (v4) -- (v5);
+
+    % Filled triangle (2-simplex)
+    \filldraw[fill=green!30, opacity=0.4] (v1) -- (v3) -- (v4) -- cycle;
+    \filldraw[fill=yellow!30, opacity=0.4] (v2) -- (v3) -- (v5) -- cycle;
+
+    % Labels (optional)
+    \node at (-0.2,-0.2) {$Q'_1(r'_1)$};
+    \node at (1.3,0.1) {$Q'_2(r'_1)$};
+    \node at (0.7,1.0) {$Q'_3(r'_2)$};
+    \node at (0.1,0.8) {$Q'_1(r'_2)$};
+    \node at (1.1,0.5) {$Q'_3(r'_1)$};
+
+  \end{tikzpicture}
+  \caption{A simplicial complex representing the data of $B$ for three replicas on state transitions $r'_1$ and $r'_2$.}
+  \label{fig:simplicial_complex}
+\end{figure}
+
 
 \section{Byzantine Fault Allowing}
 We define the category Byzantine Fault Allowing, denoted $\bfa$, as the category of fault-tolerant parametric state machine replica protocols. In the proceeding subsections, we first re-examine our approximations of $B$ as categorical constructions. We then generalize to provide the definition of $\bfa$. Finally, we identify additional elementary constructions which will be leveraged in the section on constructions and implementations.

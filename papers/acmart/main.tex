@@ -111,6 +111,7 @@
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 \newcommand{\bfa}{\mathfrak{B}}
+\usepackage{subcaption}
 \begin{document}
 
 %%
@@ -428,7 +429,13 @@ This implies that the probability of selecting a $Hung$ subcommittee $Pr[\mathca
 
 We can use this information to consider the complexity of the sampling algorithm for a sampling ratio $\gamma = \frac{k}{f}$ denoted $\Theta(Sampling_{\gamma})$ and later to refine our algorithm.
 
-Observe that the probability of rendering a decision $Pr[Accepted](f, k) \geq Pr[\mathcal{R}](f, k) + Pr[\mathcal{C}](f, k)$. Since $Pr[\mathcal{R}](f, k) > \frac{1}{2}$ and $Pr[\mathcal{C}](f, k) > 0$ for all $f, k \in k < f$, we have that $Pr[Accepted](f, k) > \frac{1}{2}$.
+Observe the probability of rendering a decision $Pr[Accepted](f, k)$ which shall certainly occur if the subcommittee is either $Right$ or $Corrupt$ and may occur if the subcommittee is $Hung$.
+
+\begin{flalign*}
+& Pr[Accepted](f, k) \geq Pr[\mathcal{R}](f, k) + Pr[\mathcal{C}](f, k) \\
+\end{flalign*} 
+
+Since $Pr[\mathcal{R}](f, k) > \frac{1}{2}$ and $Pr[\mathcal{C}](f, k) > 0$ for all $f, k \in k < f$, we have that $Pr[Accepted](f, k) > \frac{1}{2}$.
 
 To ensure we render a decision, we devise a simple algorithm. We first attempt to sample. If $K_n$ does not map to $Q_{K_n}$, we then ask the entire set of replicas $P$ to compute $r'$ and take the result of the supermajority. Under our Byzantine assumptions, the second step will always render a decision. Further, the second step has the complexity of the original Byzantine majority algorithm $\Theta(B_f) = 3f + 1$ as both use all replicas.
 
@@ -465,20 +472,38 @@ Since each resampling is independent and our $Q'(r')$ after resampling cannot be
   &\quad = 1 - Pr[\mathcal{C}](f, k) \\ 
 \end{flalign*}
 
-Substituting and rearranging, we can describe the loss on the $Cor$ term of $B$ due to sampling:
+Substituting and rearranging, we can describe the loss on the $Cor$, denoted $Closs$, due to sampling:
 
 \begin{flalign*}
-  &Closs_{\mathcal{B}_{f,k}}(r'_j) \triangleq \sum_{r'_i \in [r'_0, r'_j]} [\neg Cor(r'_i) ] \\
+  &Closs(r'_j) \triangleq \sum_{r'_i \in [r'_0, r'_j]} [\neg Cor(r'_i) ] \\
   &E_{\mathcal{B}_{f,k}}[Closs(r'_j)] = \sum_{r'_i \in [r'_0, r'_j]} Pr[\mathcal{C}](f, k) \\
   &\quad = (j + 1) \cdot Pr[\mathcal{C}](f, k) \\
   &\quad = (j + 1) \cdot \frac{\sum_{h = 2k + 1}^{\min(3k + 1, f)} \binom{f}{h} \cdot \binom{2f + 1}{3k + 1 - h}}{\binom{3f + 1}{3k + 1}} \\
 \end{flalign*}
 
-For concision, we define $\alpha_{f,k} \triangleq Pr[\mathcal{C}](f, k)$ and state that $\mathcal{B}_{j, k}$ is $(j \alpha_{f,k})$-approximate w.r.t. $Closs$. As shown above, $j \alpha_{f,k}$ decreases exponentially for a fixed $\gamma = \frac{k}{f}$ as $f$ increases. In practice, this implies that values of $Closs_{\mathcal{B}_{f,k}}(r'_j)$ that are comparable to cryptographic security standards can be achieved using only a fraction of the replicas. Replicas that are not involved may pre-compute elements of other state transitions, lending to horizontal scalability in the context of a distributed system.
+For concision, we define $\alpha_{f,k} \triangleq Pr[\mathcal{C}](f, k)$ and state that $\mathcal{B}_{j, k}$ is $(j \alpha_{f,k})$-approximate w.r.t. $Closs$. As shown above, $j \alpha_{f,k}$ decreases exponentially for a fixed $\gamma = \frac{k}{f}$ as $f$ increases. In practice, this implies that values of $Closs_{\mathcal{B}_{f,k}}(r'_j)$ that are comparable to cryptographic security standards can be achieved using only a fraction of the replicas, as shown in Figure \protect\ref{fig:pr_accepted}. Replicas that are not involved may pre-compute elements of other state transitions, lending to horizontal scalability in the context of a distributed system.
 
 Consistency, as defined by $Cons$ as the intersection of consecutive state transitions in an honest replica, is not as strongly approximated by $\mathcal{B}_{f,k}$. Consequently, $\mathcal{B}_{f,k}$ exhibits higher overall loss with respect to $Hloss$ and $Obj$, which we demonstrate more thoroughly in Appendix A. 
 
-As we shall continue to motivate via the topological considerations in the proceeding section and later unify this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of $B$ that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
+As we shall continue to motivate via the topological considerations in the proceeding section and later unify in this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of $B$ that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
+
+\begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[b]{\linewidth}
+    \includegraphics[width=\linewidth]{figures/pr_accepted_faulty.png}
+    \caption{The probability of selecting a $Corrupt$ subcommittee (Accepted Faulty) as a function of $f$ and $k$ ($n$ in this out of date figure).}
+    \Description{We plot the probability of selecting a $Corrupt$ subcommittee (Accepted Faulty) as a function of $f$ and $k$ ($n$ in this out of date figure).}
+    \label{fig:pr_accepted_faulty}
+  \end{subfigure}
+  \begin{subfigure}[b]{\linewidth}
+    \includegraphics[width=\linewidth]{figures/pr_accepted_honest.png}
+    \caption{The probability of selecting a $Right$ subcommittee (Accepted Honest) as a function of $f$ and $k$ ($n$ in this out of date figure).}
+    \Description{We plot the probability of selecting a $Right$ subcommittee (Accepted Honest) as a function of $f$ and $k$ ($n$ in this out of date figure).}
+    \label{fig:pr_accepted_honest}
+  \end{subfigure}
+  \caption{Probabilities of selecting $Corrupt$ and $Right$ subcommittees as functions of $f$ and $k$.}
+  \label{fig:pr_accepted}
+\end{figure}
 
 \subsection{Topological Approximations of $B$}
 

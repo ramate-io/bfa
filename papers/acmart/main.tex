@@ -530,34 +530,34 @@ For the sake of exposition, we shall consider first several embeddings of the da
   \item We assume a bijection between the natural numbers and the values $r' \in R$ denoted $r: \mathbb{N} \twoheadrightarrow R$.
 \end{itemize}
 
-Thus, we may naively project this into $\mathbb{R}^3$ by the identity inclusion $i(n) = n$ for each datum:
+Thus, we may naively project this into $\mathbb{R}^3$ by the identity inclusion $i(n) = n$, which we elide below, for each datum:
 
 \begin{flalign*}
-\phi_{r,o,p}: Q \to \mathbb{R}^3 = (i(r), i(o), i(p))
+\phi_{r,o,p}: Q \to \mathbb{R}^3 = (r, o, p)
 \end{flalign*}
 
 This projection captures the raw values of the quora. Notably, data reflecting the same value at the same quorum index by different replicas can be arbitrarily far apart. To rectify this, we can scale the projection by $|P|$:
 
 \begin{flalign*}
-\phi_{r,o,p}: Q \to \mathbb{R}^3 = (i(r), i(o), \frac{i(p)}{|P|})
+\phi_{r,o,p}: Q \to \mathbb{R}^3 = (r, o, \frac{p}{|P|})
 \end{flalign*}
 
 This projection captures the values of the quora. Notably, however, points reflecting different quorum indexes and values from the same replica can be arbitrarily far apart. To rectify this, we can project pairwise commutations of the terms in $\phi_{r,o,p}$. We use $\cdot$ to mark an arbitrary commutator:
 
 \begin{flalign*}
-  \phi_{r,o,p,\cdot}: Q \to \mathbb{R}^3 = (i(r) \cdot i(o), i(r) \cdot \frac{i(p)}{|P|}, i(o) \cdot \frac{i(p)}{|P|})
+  \phi_{r,o,p,\cdot}: Q \to \mathbb{R}^3 = (r \cdot o, r \cdot \frac{p}{|P|}, o \cdot \frac{p}{|P|})
 \end{flalign*}
 
 This correlates all components of the projection with each other. Alternatively, we can perform a non-commutative pairwise projection, denoted by $-$:
 
 \begin{flalign*}
   &\phi_{r,o,p,-}: Q \to \mathbb{R}^6 = ( \\
-  &\quad i(r) - i(o), \\
-  &\quad i(r) - \frac{i(p)}{|P|}, \\
-  &\quad i(o) - i(r), \\
-  &\quad i(o) - \frac{i(p)}{|P|}, \\
-  &\quad \frac{i(p)}{|P|} - i(r), \\
-  &\quad \frac{i(p)}{|P|} - i(o) \\
+  &\quad r - o, \\
+  &\quad r - \frac{p}{|P|}, \\
+  &\quad o - r, \\
+  &\quad o - \frac{p}{|P|}, \\
+  &\quad \frac{p}{|P|} - r, \\
+  &\quad \frac{p}{|P|} - o \\
   &)\\
 \end{flalign*}
 
@@ -566,8 +566,8 @@ This correlates all components of the projection with each other while preservin
 Finally, we consider a Order-2 projection in which each $\phi_{r,o,p,T}: Q \to \mathbb{R}^{|P| \times 2}$ wherein each quorum index and value pair is inserted into the matrix at the index of the replica:
 
 \begin{flalign*}
-& \phi_{r,o,T}(q)*{j,1} = \mathbf{1}*{{\rho_j\in q}}, i(o_{\rho_j}),\qquad \\
-& \phi_{r,o,T}(q)*{j,2} = \mathbf{1}*{{\rho_j\in q}},\frac{i_T(p_{\rho_j})}{|P|} \\
+& \phi_{r,o,T}(q)*{j,1} = \mathbf{1}*{{\rho_j\in q}}, r_{\rho_j},\qquad \\
+& \phi_{r,o,T}(q)*{j,2} = \mathbf{1}*{{\rho_j\in q}}, o_{\rho_j}, \\
 \end{flalign*}
 
 \liam{

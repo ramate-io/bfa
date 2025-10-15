@@ -516,18 +516,18 @@ We define the category Byzantine Fault Allowing, denoted $\bfa$, as the category
 
 \subsection{Combinatorial Morphisms and the Fixed Point of $B$}
 
-For the sake of exposition, let $\mathcal{D}$ represent the subcollection of objects $\mathcal{D} \subseteq_c \mathrm{Ob}(\bfa)$ which represent resampling parameterizations of $B$ described in the previous section. We will formalize $\mathcal{D}$ later.
+For the sake of exposition, let $\mathcal{D} \hookrightarrow \bfa$ represent a subcategory of $\bfa$ s.t. $\mathrm{Ob}(\mathcal{D})$ represent resampling parameterizations of $B$ described in the previous section. We will formalize $\mathcal{D}$ later.
 
 Assume also an algorithm $A$ which produces quora $Q_B(r') \subseteq Q_A(r')$ is equivalent to $B$.
 
-We can describe a morphism $\mathcal{d}: \mathcal{D} \to \mathcal{D}$ which takes a resampling algorithm $X_{k,f}$ using the resampling parameters $k$ and $f$ and increments $k$ by 1. That is...
+We can describe a morphism $\mathcal{d}: \mathrm{Ob}(\mathcal{D}) \to \mathrm{Ob}(\mathcal{D})$ which takes a resampling algorithm $X_{k,f}$ using the resampling parameters $k$ and $f$ and increments $k$ by 1. That is...
 
 \begin{flalign*}
-  &\mathcal{d}: \mathcal{D} \to \mathcal{D} \\
+  &\mathcal{d}: \mathrm{Ob}(\mathcal{D}) \to \mathrm{Ob}(\mathcal{D}) \\
   &\mathcal{d}(X_{k,f}) = X_{k+1,f} \\
 \end{flalign*}
 
-This implies that after $f-k$ such morphisms, we will have produced the algorithm $X_{f,f}$ which is equivalent to $B$. Further application of $\mathcal{d}$ will yield the algorithm $X_{f+1,f}$ which is also equivalent to $B$. This implies that $B = X_{f,f}$ is a fixed point of $\mathcal{d}$ in the category $\bfa$.
+This implies that after $f-k$ such morphisms, we will have produced the algorithm $X_{f,f}$ which is equivalent to $B$. Further application of $\mathcal{d}$ will yield the algorithm $X_{f+1,f}$ which is also equivalent to $B$. This implies that $B = X_{f,f}$ is a fixed point of $\mathcal{D}$ in the category $\bfa$.
 
 \[
 \begin{tikzcd}[row sep=2em, column sep=3em]

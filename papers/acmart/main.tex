@@ -112,6 +112,10 @@
 
 \newcommand{\bfa}{\mathfrak{B}}
 \usepackage{subcaption}
+
+\usepackage{tikz}
+\usetikzlibrary{cd}
+
 \begin{document}
 
 %%
@@ -483,11 +487,7 @@ Substituting and rearranging, we can describe the loss on the $Cor$, denoted $Cl
 
 For concision, we define $\alpha_{f,k} \triangleq Pr[\mathcal{C}](f, k)$ and state that $\mathcal{B}_{j, k}$ is $(j \alpha_{f,k})$-approximate w.r.t. $Closs$. As shown above, $j \alpha_{f,k}$ decreases exponentially for a fixed $\gamma = \frac{k}{f}$ as $f$ increases. In practice, this implies that values of $Closs_{\mathcal{B}_{f,k}}(r'_j)$ that are comparable to cryptographic security standards can be achieved using only a fraction of the replicas, as shown in Figure \protect\ref{fig:pr_accepted}. Replicas that are not involved may pre-compute elements of other state transitions, lending to horizontal scalability in the context of a distributed system.
 
-Consistency, as defined by $Cons$ as the intersection of consecutive state transitions in an honest replica, is not as strongly approximated by $\mathcal{B}_{f,k}$. Consequently, $\mathcal{B}_{f,k}$ exhibits higher overall loss with respect to $Hloss$ and $Obj$, which we demonstrate more thoroughly in Appendix A. 
-
-As we shall continue to motivate via the topological considerations in the proceeding section and later unify in this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of $B$ that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
-
-\begin{figure}[tbp]
+\begin{figure}[hbt!]
   \centering
   \begin{subfigure}[b]{\linewidth}
     \includegraphics[width=\linewidth]{figures/pr_accepted_faulty.png}
@@ -505,10 +505,36 @@ As we shall continue to motivate via the topological considerations in the proce
   \label{fig:pr_accepted}
 \end{figure}
 
+Consistency, as defined by $Cons$ as the intersection of consecutive state transitions in an honest replica, is not as strongly approximated by $\mathcal{B}_{f,k}$. Consequently, $\mathcal{B}_{f,k}$ exhibits higher overall loss with respect to $Hloss$ and $Obj$, which we demonstrate more thoroughly in Appendix A. 
+
+As we shall continue to motivate via the topological considerations in the proceeding section and later unify in this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of $B$ that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
+
 \subsection{Topological Approximations of $B$}
 
 \section{Byzantine Fault Allowing}
-We define the category Byzantine Fault Allowing, denoted $\bfa$, as the category of fault-tolerant parametric state machine replica protocols.
+We define the category Byzantine Fault Allowing, denoted $\bfa$, as the category of fault-tolerant parametric state machine replica protocols. In the proceeding subsections, we first re-examine our approximations of $B$ as categorical constructions. We then generalize to provide the definition of $\bfa$. Finally, we identify additional elementary constructions which will be leveraged in the section on constructions and implementations.
+
+\subsection{Combinatorial Morphisms and the Fixed Point of $B$}
+
+For the sake of exposition, let $\mathcal{D}$ represent the subcollection of objects $\mathcal{D} \subseteq_c \mathrm{Ob}(\bfa)$ which represent resampling parameterizations of $B$ described in the previous section. We will formalize $\mathcal{D}$ later.
+
+Assume also an algorithm $A$ which produces quora $Q_B(r') \subseteq Q_A(r')$ is equivalent to $B$.
+
+We can describe a morphism $\mathcal{d}: \mathcal{D} \to \mathcal{D}$ which takes a resampling algorithm $X_{k,f}$ using the resampling parameters $k$ and $f$ and increments $k$ by 1. That is...
+
+\begin{flalign*}
+  &\mathcal{d}: \mathcal{D} \to \mathcal{D} \\
+  &\mathcal{d}(X_{k,f}) = X_{k+1,f} \\
+\end{flalign*}
+
+This implies that after $f-k$ such morphisms, we will have produced the algorithm $X_{f,f}$ which is equivalent to $B$. Further application of $\mathcal{d}$ will yield the algorithm $X_{f+1,f}$ which is also equivalent to $B$. This implies that $B = X_{f,f}$ is a fixed point of $\mathcal{d}$ in the category $\bfa$.
+
+\[
+\begin{tikzcd}[row sep=2em, column sep=3em]
+  X_{k,f} \in \mathcal{D} \arrow[r, "\mathcal{d}"] & \cdots f-k \cdots \arrow[r, "\mathcal{d}"] & B \arrow[loop right, "\mathcal{d}"] \\
+  X_{f-1,f} \in \mathcal{D} \arrow[urr, "\mathcal{d}"] &
+\end{tikzcd}
+\]
 
 \section{Constructions and Implementations}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  15 OCT 2025 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  15 OCT 2025 12:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -622,70 +622,393 @@ Package caption Info: New subtype `subfigure' on input line 238.
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count316
 )
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 115
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/frontendlayer/tikz.sty
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/basiclayer/pgf.sty
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/utilities/pgfrcs.sty
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks37
+\pgfutil@tempdima=\dimen194
+\pgfutil@tempdimb=\dimen195
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box62
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/utilities/pgfrcs.code.tex
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/basiclayer/pgfcore.sty
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/systemlayer/pgfsys.sty
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks38
+\pgfkeys@temptoks=\toks39
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks40
+))
+\pgf@x=\dimen196
+\pgf@y=\dimen197
+\pgf@xa=\dimen198
+\pgf@ya=\dimen199
+\pgf@xb=\dimen256
+\pgf@yb=\dimen257
+\pgf@xc=\dimen258
+\pgf@yc=\dimen259
+\pgf@xd=\dimen260
+\pgf@yd=\dimen261
+\w@pgf@writea=\write4
+\r@pgf@reada=\read2
+\c@pgf@counta=\count317
+\c@pgf@countb=\count318
+\c@pgf@countc=\count319
+\c@pgf@countd=\count320
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
+\pgf@sys@id@count=\count321
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count322
+\pgfsyssoftpath@bigbuffer@items=\count323
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmath.code.tex
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathutil.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen262
+\pgfmath@count=\count324
+\pgfmath@box=\box63
+\pgfmath@toks=\toks44
+\pgfmath@stack@operand=\toks45
+\pgfmath@stack@operation=\toks46
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.basic.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.random.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.base.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.round.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.misc.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfunctions.integerarithmetics.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathcalc.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count325
+))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfint.code.tex)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen263
+\pgf@picmaxx=\dimen264
+\pgf@picminy=\dimen265
+\pgf@picmaxy=\dimen266
+\pgf@pathminx=\dimen267
+\pgf@pathmaxx=\dimen268
+\pgf@pathminy=\dimen269
+\pgf@pathmaxy=\dimen270
+\pgf@xx=\dimen271
+\pgf@xy=\dimen272
+\pgf@yx=\dimen273
+\pgf@yy=\dimen274
+\pgf@zx=\dimen275
+\pgf@zy=\dimen276
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen277
+\pgf@path@lasty=\dimen278
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen279
+\pgf@shorten@start@additional=\dimen280
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box64
+\pgf@hbox=\box65
+\pgf@layerbox@main=\box66
+\pgf@picture@serial@count=\count326
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen281
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen282
+\pgf@pt@y=\dimen283
+\pgf@pt@temp=\dimen284
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen285
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen286
+\pgf@sys@shading@range@num=\count327
+\pgf@shadingcount=\count328
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box67
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box68
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen287
+\pgf@nodesepend=\dimen288
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/utilities/pgffor.sty
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/utilities/pgfkeys.sty
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/utilities/pgfkeys.code.tex))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
+ex/pgf/math/pgfmath.sty
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/math/pgfmath.code.tex))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen289
+\pgffor@skip=\dimen290
+\pgffor@stack=\toks47
+\pgffor@toks=\toks48
+))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count329
+\pgfplotmarksize=\dimen291
+)
+\tikz@lastx=\dimen292
+\tikz@lasty=\dimen293
+\tikz@lastxsaved=\dimen294
+\tikz@lastysaved=\dimen295
+\tikz@lastmovetox=\dimen296
+\tikz@lastmovetoy=\dimen297
+\tikzleveldistance=\dimen298
+\tikzsiblingdistance=\dimen299
+\tikz@figbox=\box69
+\tikz@figbox@bg=\box70
+\tikz@tempbox=\box71
+\tikz@tempbox@bg=\box72
+\tikztreelevel=\count330
+\tikznumberofchildren=\count331
+\tikznumberofcurrentchild=\count332
+\tikz@fig@count=\count333
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count334
+\pgfmatrixcurrentcolumn=\count335
+\pgf@matrix@numberofcolumns=\count336
+)
+\tikz@expandcount=\count337
+
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/tikz-cd/tikzlibrarycd.code.tex
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/frontendlayer/tikz/libraries/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
+eric/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen300
+\pgfarrowlength=\dimen301
+\pgfarrowwidth=\dimen302
+\pgfarrowlinewidth=\dimen303
+))
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 119
 .
-\c@theorem=\count317
+\c@theorem=\count338
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
 ex/preprint/balance.sty
 Package: balance 1999/02/23 4.3 (PWD)
-\oldvsize=\dimen194
+\oldvsize=\dimen304
 ) Excluding comment 'screenonly'
 Include comment 'printonly' Include comment 'anonsuppress'
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
 ex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count318
-\l__pdf_internal_box=\box62
+\l__color_backend_stack_int=\count339
+\l__pdf_internal_box=\box73
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
 <<ot1.cmap>>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 115
+LaTeX Font Info:    Trying to load font information for U+msa on input line 119
 .
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
 ex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 115
+LaTeX Font Info:    Trying to load font information for U+msb on input line 119
 .
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
 ex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Info: Redefining \microtypecontext on input line 115.
-Package microtype Info: Applying patch `item' on input line 115.
-Package microtype Info: Applying patch `toc' on input line 115.
-Package microtype Info: Applying patch `eqnum' on input line 115.
-Package microtype Info: Applying patch `footnote' on input line 115.
-Package microtype Info: Applying patch `verbatim' on input line 115.
+LaTeX Info: Redefining \microtypecontext on input line 119.
+Package microtype Info: Applying patch `item' on input line 119.
+Package microtype Info: Applying patch `toc' on input line 119.
+Package microtype Info: Applying patch `eqnum' on input line 119.
+Package microtype Info: Applying patch `footnote' on input line 119.
+Package microtype Info: Applying patch `verbatim' on input line 119.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 115.
+LaTeX Info: Redefining \showhyphens on input line 119.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -695,26 +1018,26 @@ ex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 115.
+Package hyperref Info: Link coloring OFF on input line 119.
  (./main.out) (./main.out)
-\@outlinefile=\write4
-\openout4 = `main.out'.
+\@outlinefile=\write5
+\openout5 = `main.out'.
 
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/con
 text/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
-\scratchdimen=\dimen195
-\scratchbox=\box63
-\nofMPsegments=\count320
-\nofMParguments=\count321
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count322
-\MPscratchDim=\dimen196
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
-\everyMPtoPDFconversion=\toks38
+\scratchcounter=\count340
+\scratchdimen=\dimen305
+\scratchbox=\box74
+\nofMPsegments=\count341
+\nofMParguments=\count342
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count343
+\MPscratchDim=\dimen306
+\MPnumerator=\count344
+\makeMPintoPDFobject=\count345
+\everyMPtoPDFconversion=\toks50
 )
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
 ex/epstopdf-pkg/epstopdf-base.sty
@@ -778,7 +1101,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+euf on input line 184
+LaTeX Font Info:    Trying to load font information for U+euf on input line 188
 .
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/lat
@@ -793,11 +1116,11 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 195.
+(hyperref)                removing `math shift' on input line 199.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 195.
+(hyperref)                removing `math shift' on input line 199.
 
 
 
@@ -810,7 +1133,7 @@ nc/dvips/cm-super/cm-super-ts1.enc}]
 
 
 [2.2]
-Overfull \hbox (12.84431pt too wide) in paragraph at lines 333--334
+Overfull \hbox (12.84431pt too wide) in paragraph at lines 337--338
 \OT1/cmr/m/n/9 (-20) ces-sors. Thus, $\OML/cmm/m/it/9 Obj\OT1/cmr/m/n/9 (-20) (
 \OML/cmm/m/it/9 Q\OT1/cmr/m/n/9 (-20) (\OML/cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) 
 )\OML/cmm/m/it/9 ; R[]\OT1/cmr/m/n/9 (-20) ) = 1  =[]\OMS/cmsy/m/n/9 )  \OML/cm
@@ -820,7 +1143,7 @@ cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) )\OML/cmm/m/it/9 ; R[]\OT1/cmr/m/n/9 (-20) )
  []
 
 
-Overfull \hbox (26.3439pt too wide) in paragraph at lines 334--335
+Overfull \hbox (26.3439pt too wide) in paragraph at lines 338--339
 []$\OML/cmm/m/it/9 Obj\OT1/cmr/m/n/9 (-20) (\OML/cmm/m/it/9 Q\OT1/cmr/m/n/9 (-2
 0) (\OML/cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) )\OML/cmm/m/it/9 ; R[]\OT1/cmr/m/n/
 9 (-20) ) = \OML/cmm/m/it/9 Q\OT1/cmr/m/n/9 (-20) (\OML/cmm/m/it/9 r[]\OT1/cmr/
@@ -833,7 +1156,7 @@ OT1/cmr/m/n/9 (-20) )$.
  []
 
 
-Overfull \hbox (6.4078pt too wide) in paragraph at lines 350--351
+Overfull \hbox (6.4078pt too wide) in paragraph at lines 354--355
 \OML/cmm/m/it/9 H \OMS/cmsy/m/n/9 6\OT1/cmr/m/n/9 (-20) = \OMS/cmsy/m/n/9 ;\OT1
 /cmr/m/n/9 (-20) ) = 1$. Thus, $\OML/cmm/m/it/9 Obj\OT1/cmr/m/n/9 (-20) (\OML/c
 mm/m/it/9 Q\OT1/cmr/m/n/9 (-20) (\OML/cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) )\OML/
@@ -844,18 +1167,18 @@ it/9 r[]\OT1/cmr/m/n/9 (-20) )\OML/cmm/m/it/9 ; R[]\OT1/cmr/m/n/9 (-20) ) =
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 356.
+(hyperref)                removing `math shift' on input line 360.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 356.
+(hyperref)                removing `math shift' on input line 360.
 
 
 
 
 
 [3.3]
-Overfull \hbox (24.48009pt too wide) in paragraph at lines 432--433
+Overfull \hbox (24.48009pt too wide) in paragraph at lines 436--437
 []\OT1/cmr/m/n/9 (-20) Observe the prob-a-bil-ity of ren-der-ing a de-ci-sion $
 \OML/cmm/m/it/9 Pr\OT1/cmr/m/n/9 (-20) [\OML/cmm/m/it/9 Accepted\OT1/cmr/m/n/9 
 (-20) ](\OML/cmm/m/it/9 f; k\OT1/cmr/m/n/9 (-20) )$
@@ -869,13 +1192,13 @@ Underfull \vbox (badness 6658) has occurred while \output is active []
 
 
 [4.4]
-<figures/pr_accepted_faulty.png, id=109, 1204.5pt x 702.625pt>
+<figures/pr_accepted_faulty.png, id=116, 1204.5pt x 702.625pt>
 File: figures/pr_accepted_faulty.png Graphic file (type png)
 <use figures/pr_accepted_faulty.png>
 Package pdftex.def Info: figures/pr_accepted_faulty.png  used on input line 493
 .
 (pdftex.def)             Requested size: 241.14749pt x 140.66188pt.
-<figures/pr_accepted_honest.png, id=110, 1204.5pt x 702.625pt>
+<figures/pr_accepted_honest.png, id=117, 1204.5pt x 702.625pt>
 File: figures/pr_accepted_honest.png Graphic file (type png)
 <use figures/pr_accepted_honest.png>
 Package pdftex.def Info: figures/pr_accepted_honest.png  used on input line 499
@@ -883,12 +1206,28 @@ Package pdftex.def Info: figures/pr_accepted_honest.png  used on input line 499
 (pdftex.def)             Requested size: 241.14749pt x 140.66188pt.
 
 
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 508.
+(hyperref)                removing `math shift' on input line 512.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 508.
+(hyperref)                removing `math shift' on input line 512.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 517.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 517.
+
+
+Overfull \hbox (3.82698pt too wide) in paragraph at lines 521--522
+[]\OT1/cmr/m/n/9 (-20) Assume also an al-go-rithm $\OML/cmm/m/it/9 A$ \OT1/cmr/
+m/n/9 (-20) which pro-duces quora $\OML/cmm/m/it/9 Q[]\OT1/cmr/m/n/9 (-20) (\OM
+L/cmm/m/it/9 r[]\OT1/cmr/m/n/9 (-20) ) \OMS/cmsy/m/n/9 ^^R
+ []
 
 Processing 'acks' comment.
 \openout3 = `comment.cut'.
@@ -898,11 +1237,13 @@ Straight input of comment.cut. (./comment.cut)
 No file main.bbl.
 
 Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 537.
+surrounding objects on input line 563.
 
 
 
 
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
 
 
 (/nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/tex/gen
@@ -919,16 +1260,16 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0AD1AD5E11086A23B8E8E529CC667651;1961.
+(rerunfilecheck)             Checksum: 66F876AB4501B8E96821001278FDB8E8;2303.
  ) 
 Here is how much of TeX's memory you used:
- 17626 strings out of 474986
- 289403 string characters out of 5757256
- 815811 words of memory out of 5000000
- 39792 multiletter control sequences out of 15000+600000
- 576764 words of font info for 169 fonts, out of 8000000 for 9000
+ 28564 strings out of 474986
+ 544274 string characters out of 5757256
+ 1031752 words of memory out of 5000000
+ 50508 multiletter control sequences out of 15000+600000
+ 576866 words of font info for 171 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
- 90i,13n,131p,1001b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,15n,131p,1001b,969s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts
 /type1/public/amsfonts/cm/cmbx10.pfb></nix/store/4r093j7h49wkl6rvp7wy24xpgmj4n0
 jf-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></nix/st
@@ -973,10 +1314,10 @@ e-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store
 ve-2024-env-texmfdist/fonts/type1/public/cm-super/sfrm0700.pfb></nix/store/4r09
 3j7h49wkl6rvp7wy24xpgmj4n0jf-texlive-2024-env-texmfdist/fonts/type1/public/cm-s
 uper/sfrm0900.pfb>
-Output written on main.pdf (5 pages, 495820 bytes).
+Output written on main.pdf (5 pages, 499942 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 45171 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 243 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 45191 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -114,6 +114,11 @@
 \usepackage{subcaption}
 
 \usepackage{tikz}
+
+\usepackage[colorinlistoftodos]{todonotes}
+
+% Define author-specific todos
+\newcommand{\liam}[1]{\todo[inline, color=blue!40]{\begin{minipage}{\textwidth-4pt}\textbf{[Liam Monninger]:} #1\end{minipage}}}
 \usetikzlibrary{cd}
 
 \begin{document}
@@ -315,7 +320,7 @@ Likewise, the intersection of two quora must intersect in at least one honest re
 &|Q(r'_1) \cap Q(r'_2)|\\
 &\quad = |Q(r'_1) \cap Q(r'_2) \cap H|\\
 &\quad + |Q(r'_1) \cap Q(r'_2) \cap F|\\
-&Q(r'_1) \cap Q(r'_2) \cap H|\\
+&|Q(r'_1) \cap Q(r'_2) \cap H|\\
 &\quad = |Q(r'_1) \cap Q(r'_2)|\\
 &\quad - |Q(r'_1) \cap Q(r'_2) \cap F|\\
 &f \geq |Q(r'_1) \cap Q(r'_2) \cap F|\\
@@ -415,6 +420,8 @@ All $Right$ subcommittees intersect with $H$ and thus satisfy $Cor(r') \forall r
 
 Unfortunately, the probability of selecting a $Right$ subcommittee $Pr[\mathcal{R}](f, k)$ tends downwards towards $\frac{1}{2}$ as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
 
+\liam{TODO: All of these limits need to re-formalized. For now, I'm just recording the results.}
+
 \begin{flalign*}
   &\lim_{f \to \infty} Pr[\mathcal{R'}](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
@@ -505,11 +512,70 @@ For concision, we define $\alpha_{f,k} \triangleq Pr[\mathcal{C}](f, k)$ and sta
   \label{fig:pr_accepted}
 \end{figure}
 
-Consistency, as defined by $Cons$ as the intersection of consecutive state transitions in an honest replica, is not as strongly approximated by $\mathcal{B}_{f,k}$. Consequently, $\mathcal{B}_{f,k}$ exhibits higher overall loss with respect to $Hloss$ and $Obj$, which we demonstrate more thoroughly in Appendix A. 
+Consistency, as defined by $Con$ as the intersection of consecutive state transitions in an honest replica, is not as strongly approximated by $\mathcal{B}_{f,k}$. Consequently, $\mathcal{B}_{f,k}$ exhibits higher overall loss with respect to $Hloss$ and $Obj$, which we demonstrate more thoroughly in Appendix A. 
 
 As we shall continue to motivate via the topological considerations in the proceeding section and later unify in this paper's main theorem, we argue that these initial properties of $\mathcal{B}_{f,k}$ should be taken as indication of structure. There exist combinatorial parameterizations of $B$ that can be composed, as we have done in our resampling construction. Ultimately, these compositions may yield algorithms with subtle but potentially advantageous properties.
 
 \subsection{Topological Approximations of $B$}
+
+\liam{This section currently just riffing on some genres of projections and embeddings. It's nothing cohesive.}
+
+In the previous section, we described combinatorial parameterizations of $B$ which may be considered trivial. To motivate a deeper sense of the category $\bfa$, we now consider topological approximations of $B$. This approach concerns studying the shape of quorum to understand which points, polygons, and holes might be added or removed, and what effect this has on the $Loss$ of the approximate algorithm from $B$.  
+
+For the sake of exposition, consider first several embeddings of the data of $B$ into a space which may behave as a suitable metric space.
+
+By our initial definition of consistency $Con$, quora are indexed by the natural numbers $o: \mathbb(N) < |Q| \twoheadrightarrow Q$. 
+
+To construct our initial projection, we will assume a bijection between the natural numbers and the replicas $p: \mathbb(N) < |P| \twoheadrightarrow P$.
+
+And, finally, we will assume a bijection between the natural numbers and the values $r' \in R$ $r: \mathbb(N) \twoheadrightarrow R$.
+
+We may naively project this into $\mathbb{R}^3$ by the identity inclusion $i(n) = n$ for each datum:
+
+\begin{flalign*}
+\phi_{r,o,p}: Q \to \mathbb{R}^3 = (i(r), i(o), i(p))
+\end{flalign*}
+
+This projection captures the raw values of the quora. Notably, data reflecting the same value at the same quorum index by different replicas can be arbitrarily far apart. To rectify this, we can scale the projection by $|P|$:
+
+\begin{flalign*}
+\phi_{r,o,p}: Q \to \mathbb{R}^3 = (i(r), i(o), \frac{i(p)}{|P|})
+\end{flalign*}
+
+This projection captures the values of the quora. Notably, however, points reflecting different quorum indexes and values from the same replica can be arbitrarily far apart. To rectify this, we can project pairwise commutations of the terms in $\phi_{r,o,p}$. We use $\cdot$ to mark an arbitrary commutator:
+
+\begin{flalign*}
+  \phi_{r,o,p,\cdot}: Q \to \mathbb{R}^3 = (i(r) \cdot i(o), i(r) \cdot \frac{i(p)}{|P|}, i(o) \cdot \frac{i(p)}{|P|})
+\end{flalign*}
+
+This correlates all components of the projection with each other. Alternatively, we can perform a non-commutative pairwise projection, denoted by $-$:
+
+\begin{flalign*}
+  &\phi_{r,o,p,-}: Q \to \mathbb{R}^6 = ( \\
+  &\quad i(r) - i(o), \\
+  &\quad i(r) - \frac{i(p)}{|P|}, \\
+  &\quad i(o) - \frac{i(p)}{|P|}, \\
+  &\quad i(o) - i(r), \\
+  &\quad i(o) - \frac{i(p)}{|P|}, \\
+  &\quad i(r) - \frac{i(p)}{|P|} \\
+  &)\\
+\end{flalign*}
+
+This correlates the all components of the projection with each other while preserving information about the nature of the formation of the pairwise interaction. 
+
+Finally, we consider a Order-2 projection in which each $\phi_{r,o,p,T}: Q \to \mathbb{R}^{|P| \times 2}$ wherein each quorum index and value pair is inserted into the matrix at the index of the replica:
+
+\begin{flalign*}
+& \phi_{r,o,T}(q)*{j,1} = \mathbf{1}*{{\rho_j\in q}}, i(o_{\rho_j}),\qquad \\
+& \phi_{r,o,T}(q)*{j,2} = \mathbf{1}*{{\rho_j\in q}},\frac{i_T(p_{\rho_j})}{|P|} \\
+\end{flalign*}
+
+\liam{
+  The richest space in which we may embed the data of $B$ is $\mathbb{R}^{|P| \times 2}$. This space allows us to capture the most information about the data. However, it is also the most complex space and thus the most difficult to work with.
+
+  Playing with writing the algorithm over the other spaces is a fun exercise. Beginning with trivial projections and implementations, and morphing to more complex ones, then approximating is a reflection of the category we're trying to build.
+}
+
 
 \section{Byzantine Fault Allowing}
 We define the category Byzantine Fault Allowing, denoted $\bfa$, as the category of fault-tolerant parametric state machine replica protocols. In the proceeding subsections, we first re-examine our approximations of $B$ as categorical constructions. We then generalize to provide the definition of $\bfa$. Finally, we identify additional elementary constructions which will be leveraged in the section on constructions and implementations.

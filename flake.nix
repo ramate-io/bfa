@@ -107,6 +107,7 @@
             preprint
             amsmath
             amsfonts
+            todonotes
           ]))
         ] ++ lib.optionals stdenv.isDarwin [
           frameworks.Security

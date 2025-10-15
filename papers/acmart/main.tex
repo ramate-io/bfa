@@ -522,15 +522,15 @@ As we shall continue to motivate via the topological considerations in the proce
 
 In the previous section, we described combinatorial parameterizations of $B$ which may be considered trivial. To motivate a deeper sense of the category $\bfa$, we now consider topological approximations of $B$. This approach concerns studying the shape of quorum to understand which points, polygons, and holes might be added or removed, and what effect this has on the $Loss$ of the approximate algorithm from $B$.  
 
-For the sake of exposition, consider first several embeddings of the data of $B$ into a space which may behave as a suitable metric space.
+For the sake of exposition, we shall consider first several embeddings of the data of $B$ into a space which may behave as a suitable metric space. All embeddings of $B$ will be denoted by $\phi$ and begin with the following assumptions:
 
-By our initial definition of consistency $Con$, quora are indexed by the natural numbers $o: \mathbb(N) < |Q| \twoheadrightarrow Q$. 
+\begin{itemize}
+  \item By our initial definition of consistency $Con$, quora are indexed by the natural numbers $o: \mathbb{N} \leq |Q| \twoheadrightarrow Q$. 
+  \item We assume a bijection between the natural numbers and the replicas $p: \mathbb{N} \leq |P| \twoheadrightarrow P$.
+  \item We assume a bijection between the natural numbers and the values $r' \in R$ denoted $r: \mathbb{N} \twoheadrightarrow R$.
+\end{itemize}
 
-To construct our initial projection, we will assume a bijection between the natural numbers and the replicas $p: \mathbb(N) < |P| \twoheadrightarrow P$.
-
-And, finally, we will assume a bijection between the natural numbers and the values $r' \in R$ $r: \mathbb(N) \twoheadrightarrow R$.
-
-We may naively project this into $\mathbb{R}^3$ by the identity inclusion $i(n) = n$ for each datum:
+Thus, we may naively project this into $\mathbb{R}^3$ by the identity inclusion $i(n) = n$ for each datum:
 
 \begin{flalign*}
 \phi_{r,o,p}: Q \to \mathbb{R}^3 = (i(r), i(o), i(p))
@@ -554,14 +554,14 @@ This correlates all components of the projection with each other. Alternatively,
   &\phi_{r,o,p,-}: Q \to \mathbb{R}^6 = ( \\
   &\quad i(r) - i(o), \\
   &\quad i(r) - \frac{i(p)}{|P|}, \\
-  &\quad i(o) - \frac{i(p)}{|P|}, \\
   &\quad i(o) - i(r), \\
   &\quad i(o) - \frac{i(p)}{|P|}, \\
-  &\quad i(r) - \frac{i(p)}{|P|} \\
+  &\quad \frac{i(p)}{|P|} - i(r), \\
+  &\quad \frac{i(p)}{|P|} - i(o) \\
   &)\\
 \end{flalign*}
 
-This correlates the all components of the projection with each other while preserving information about the nature of the formation of the pairwise interaction. 
+This correlates all components of the projection with each other while preserving information about the nature of the formation of the pairwise interaction. 
 
 Finally, we consider a Order-2 projection in which each $\phi_{r,o,p,T}: Q \to \mathbb{R}^{|P| \times 2}$ wherein each quorum index and value pair is inserted into the matrix at the index of the replica:
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  15 OCT 2025 22:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  15 OCT 2025 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1373,20 +1373,13 @@ File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
  ***********
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 93D38991A9153926F742E64E5BE00F1A;2304
-(rerunfilecheck)             After:  C4CCDBD70254EE8734B05C81955CF89E;2286.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: C4CCDBD70254EE8734B05C81955CF89E;2286.
  ) 
 Here is how much of TeX's memory you used:
  29061 strings out of 474986
  555791 string characters out of 5757256
- 1043117 words of memory out of 5000000
+ 1043114 words of memory out of 5000000
  50967 multiletter control sequences out of 15000+600000
  578014 words of font info for 182 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
@@ -1435,7 +1428,7 @@ e-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store
 ve-2024-env-texmfdist/fonts/type1/public/cm-super/sfrm0700.pfb></nix/store/gmwr
 bk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/cm-s
 uper/sfrm0900.pfb>
-Output written on main.pdf (6 pages, 511660 bytes).
+Output written on main.pdf (6 pages, 511657 bytes).
 PDF statistics:
  253 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams

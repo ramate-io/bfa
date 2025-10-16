@@ -110,9 +110,34 @@
 \usepackage{amsmath}
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
-\newcommand{\bfa}{\mathfrak{B}}
-\usepackage{subcaption}
+% --- Safe cross-engine definition for \bo ---
+\usepackage{iftex}
 
+\ifPDFTeX
+  \DeclareRobustCommand{\bo}{\mathfrak{B}}
+\else
+  \usepackage{fontspec}
+  \newfontfamily{\vaifont}{Noto Sans Vai}
+
+  % helper to typeset the glyph in text at the current math size
+  \newcommand{\vaibo}[1]{{\vaifont #1}}
+
+  \DeclareRobustCommand{\bo}{%
+    \ifmmode
+      \mathchoice
+        {\text{\vaibo{ꕸ}}}            % displaystyle
+        {\text{\vaibo{ꕸ}}}            % textstyle
+        {\scriptstyle\text{\vaibo{ꕸ}}}% scriptstyle
+        {\scriptscriptstyle\text{\vaibo{ꕸ}}}% scriptscriptstyle
+    \else
+      {\vaibo{ꕸ}}%
+    \fi
+  }
+\fi
+
+\newcommand{\bfa}{\bo}
+
+\usepackage{subcaption}
 \usepackage{tikz}
 
 \usepackage[colorinlistoftodos]{todonotes}
@@ -155,7 +180,7 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-    We define the category Byzantine Fault Allowing, denoted $\bfa$, which formalizes fault-tolerant state machine replica protocols. We begin by motivating $\bfa$ with developments in Byzantine fault-tolerant systems from both academia and industry. We then provide a theoretical motivation for $\bfa$ by introducing approximations of a Byzantine majority algorithm $B$ which later serves as a fixed-point in $\bfa$. Building on this foundation, we define an initial form of $\bfa$ and present several constructions within it. Finally, we discuss constructions of practical utility and benchmark those corresponding to implementable fault-tolerant systems.
+    We define the category Byzantine Fault Allowing, denoted $\bfa$ (pron. "BAH" or "BO"), which formalizes fault-tolerant state machine replica protocols. We begin by motivating $\bfa$ with developments in Byzantine fault-tolerant systems from both academia and industry. We then provide a theoretical motivation for $\bfa$ by introducing approximations of a Byzantine majority algorithm $B$ which later serves as a fixed-point in $\bfa$. Building on this foundation, we define an initial form of $\bfa$ and present several constructions within it. Finally, we discuss constructions of practical utility and benchmark those corresponding to implementable fault-tolerant systems.
 \end{abstract}
 
 %%

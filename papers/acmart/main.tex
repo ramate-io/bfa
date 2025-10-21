@@ -666,6 +666,19 @@ This implies that after $f-k$ such morphisms, we will have produced the algorith
 \end{tikzcd}
 \]
 
+\subsection{Definition}
+We define $\bfa$ as the permissive category of all subcategories $\mathcal{X} \hookrightarrow \bfa$ which have a fixed point $B$ in the category $\bfa$ together with a fixed point $\mathcal{U}_{\mathcal{X}}$ which indicates the point at which the behavior of the object in the subcategory is no longer defined. 
+
+Diagrammatically, we can represent this as:
+
+\[
+\begin{tikzcd}[row sep=2em, column sep=3em]
+  X_{k,f} \in \mathcal{D} \arrow[r, "\mathcal{d}"] & \cdots f-k \cdots \arrow[r, "\mathcal{d}"] & B \arrow[loop right, "\mathcal{d}"] \\
+\end{tikzcd}
+\]
+
+Accordingly, the combinatorial algorithms $X_{k,f}$ and the morphisms $\mathcal{d}$ and $\mathcal{d'}$ in $\mathcal{D}$ are in $\bfa$. Likewise, the topological algorithms $Y_{k,f}$ and their morphisms $\mathcal{t}$ and $\mathcal{t'}$ in $\mathcal{Tt}$ are in $\bfa$. In the following section, we discuss additional constructions within $\bfa$.
+
 \section{Constructions and Implementations}
 
 \section{Conclusion}

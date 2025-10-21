@@ -1683,111 +1683,89 @@ which pro-duces quora $\OML/cmm/m/it/9 Q[]\OT1/cmr/m/n/9 (\OML/cmm/m/it/9 r[]\O
 T1/cmr/m/n/9 ) \OMS/cmsy/m/n/9 
  []
 
-Processing 'acks' comment.
-\openout3 = comment.cut
- Comment 'acks' writing to comment.cut.
-Straight input of comment.cut. (./comment.cut)
-No file main.bbl.
 
-Class acmart Warning: Some images may lack descriptions.
-(acmart)              ACM is committed to complying with the upcoming US ADA ht
-tps://accessiblyapp.com/accessibility-compliance/ada/ and European Accessibilit
-y Act (EAA) https://accessiblyapp.com/accessibility-compliance/eaa/ regulations
- by actively working to ensure our publications and application services are ac
-cessible to individuals with disabilities, adhering to the WCAG guidelines to p
-rovide a seamless experience for all users, and regularly reviewing our accessi
-bility practices to maintain compliance with evolving standards. 
-(acmart)              To this end, we strongly encourage our authors to provide
- alternative text and captions for images and multimedia content. It is also im
-portant to optimize color contrast for the visually impaired. Taking these impo
-rtant steps when creating your papers will ensure that the widest possible audi
-ence can ingest your work..
+! Package pgf Error: No shape named `tikz@f@2-1-3' is known.
 
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help
+...
+l.677 I think the culprit is a tikzcd arrow in cell 2-1.
+\errmessage ...currentrow -\tikzcd@currentcolumn }
+                                                  
+l.678 \end{tikzcd}
+                
+? x
 
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 693.
-
-
-
-
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-
-(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
-eric/stringenc/se-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-)
-(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
-eric/stringenc/se-utf32be.def
-File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
-) [6.6] (./main.aux)
- ***********
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-10-09>
- ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C4CCDBD70254EE8734B05C81955CF89E;2286.
-)
 
 Here is how much of LuaTeX's memory you used:
- 31526 strings out of 475910
- 195483,1373583 words of node,token memory allocated
- 1221 words of node memory still in use:
-   9 hlist, 2 vlist, 2 rule, 1 local_par, 5 glue, 5 kern, 1 penalty, 1 margin_ke
-rn, 5 glyph, 142 attribute, 69 glue_spec, 142 attribute_list, 3 write, 2 pdf_col
-orstack nodes
-   avail lists: 1:8,2:2302,3:1032,4:274,5:1090,6:131,7:15916,8:94,9:1817,10:18,1
-1:1146
- 53337 multiletter control sequences out of 65536+600000
+ 31417 strings out of 475910
+ 195483,1373583 words of node,token memory allocated 46059 words of node memory still in use:
+   581 hlist, 40 vlist, 26 rule, 7 mark, 238 disc, 26 local_par, 4 dir, 260 math
+, 1187 glue, 261 kern, 98 penalty, 30 margin_kern, 2587 glyph, 1391 attribute, 7
+1 glue_spec, 1391 attribute_list, 3 temp, 2 if_stack, 10 write, 1 save_pos, 447 
+pdf_literal, 1 pdf_start_link, 1 pdf_end_link, 5 pdf_dest, 1 pdf_action, 8 pdf_c
+olorstack nodes
+   avail lists: 1:8,2:5,3:47,4:239,5:828,6:105,7:11892,8:94,9:1177,10:18,11:908
+ 53252 multiletter control sequences out of 65536+600000
  87 fonts using 6785183 bytes
- 87i,16n,128p,1000b,1028s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/
-lm/lmromandemi10-regular.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.0
-05-tex/fonts/opentype/public/lm/lmroman6-regular.otf></nix/store/swxn2kgfg47a8r0
-igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmromancaps10-regular.ot
-f></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/publi
-c/lm/lmsans8-regular.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-t
-ex/fonts/opentype/public/lm/lmroman7-italic.otf></nix/store/swxn2kgfg47a8r0igh45
-r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman7-regular.otf></nix/st
-ore/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmrom
-an8-italic.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/o
-pentype/public/lm/lmroman8-regular.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk
-92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman8-bold.otf></nix/store/swxn2kgf
-g47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman9-italic.o
-tf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/publ
-ic/lm/lmroman9-bold.otf></System/Library/Fonts/Supplemental/NotoSansVai-Regular.
-ttf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/pub
-lic/lm/lmroman9-regular.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.00
-5-tex/fonts/opentype/public/lm/lmroman10-bold.otf></nix/store/swxn2kgfg47a8r0igh
-45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman10-regular.otf></nix
-/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lm
-roman12-regular.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fo
-nts/opentype/public/lm/lmsans10-bold.otf></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pj
-j2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><
-/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-te
-xlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></nix/store/gm
-wrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/ams
-fonts/cm/cmmi6.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env
--texmfdist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></nix/store/gmwrbk5nkq0asr4i
-7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi9
-.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fon
-ts/type1/public/amsfonts/cm/cmr5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8
-d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store
-/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/
-amsfonts/cm/cmr9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-e
-nv-texmfdist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></nix/store/gmwrbk5nkq0asr
-4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cms
-y6.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/f
-onts/type1/public/amsfonts/cm/cmsy9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj
-2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb><
-/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (6 pages, 425567 bytes).
+ 87i,17n,128p,1000b,1028s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-PDF statistics: 286 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
- 31 named destinations out of 1000 (max. 131072)
- 125 words of extra memory for PDF output out of 10000 (max. 100000000)
+warning  (pdf backend): unreferenced destination with name 'page.6'
+
+warning  (pdf backend): unreferenced destination with name 'section*.11'
+
+warning  (pdf backend): unreferenced destination with name 'section.5'
+
+warning  (pdf backend): unreferenced destination with name 'section.4'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.3.1'
+
+warning  (pdf backend): unreferenced destination with name 'section.3'
+</nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/
+lm/lmroman6-regular.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-te
+x/fonts/opentype/public/lm/lmromancaps10-regular.otf></nix/store/swxn2kgfg47a8r0
+igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmsans8-regular.otf></ni
+x/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/l
+mroman7-italic.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fon
+ts/opentype/public/lm/lmroman7-regular.otf></nix/store/swxn2kgfg47a8r0igh45r51c7
+x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman8-italic.otf></nix/store/sw
+xn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman8-re
+gular.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/openty
+pe/public/lm/lmroman8-bold.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2
+.005-tex/fonts/opentype/public/lm/lmroman9-italic.otf></nix/store/swxn2kgfg47a8r
+0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman9-bold.otf></Sys
+tem/Library/Fonts/Supplemental/NotoSansVai-Regular.ttf></nix/store/swxn2kgfg47a8
+r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman9-regular.otf><
+/nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/l
+m/lmroman10-bold.otf></nix/store/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/f
+onts/opentype/public/lm/lmroman10-regular.otf></nix/store/swxn2kgfg47a8r0igh45r5
+1c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmroman12-regular.otf></nix/sto
+re/swxn2kgfg47a8r0igh45r51c7x3mk92s-lm-2.005-tex/fonts/opentype/public/lm/lmsans
+10-bold.otf></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfd
+ist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></nix/store/gmwrbk5nkq0asr4i7b
+m69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/font
+s/type1/public/amsfonts/cm/cmmi5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8
+d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></nix/stor
+e/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024
+-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></nix/store/gmwrbk5nkq0a
+sr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/c
+mr5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj
+2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr9.pfb></nix/st
+ore/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/publ
+ic/amsfonts/cm/cmsy5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-20
+24-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></nix/store/gmwrbk5nkq
+0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdi
+st/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store/gmwrbk5nkq0asr4i7b
+m69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on main.pdf (5 pages, 351581 bytes).
+
+PDF statistics: 272 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 131072)
+ 105 words of extra memory for PDF output out of 10000 (max. 100000000)
 

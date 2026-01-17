@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  16 JAN 2026 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  16 JAN 2026 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1117,7 +1117,6 @@ most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
 loading the todonotes package. on input line 156.
 
-Excluding 'CCSXML' comment.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1131,199 +1130,17 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+euf on input line 236
-.
-
-(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/lat
-ex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/lat
-ex/microtype/mt-euf.cfg
-File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
-
-)
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 238.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 238.
-
-
 
 [1.1
 
 {/nix/store/bqdhybyxdfidpwllvvjcnqn934w0bwwk-texlive-2024-env/share/texmf-var/f
-onts/map/pdftex/updmap/pdftex.map}{/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-
-texlive-2024-env-texmfdist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[2.2]
-
-[3.3]
-Overfull \hbox (14.99548pt too wide) in paragraph at lines 369--370
-[][][]\OT1/cmr/m/sc/10 (-20) Theorem 2.2. []\OT1/cmr/m/it/10 (-20) The Byzan-ti
-ne ma-jor-ity is loss-less un-der the as-sump-tion that $\OML/cmm/m/it/10 Obj\O
-T1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 Q\OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 
-r[]\OT1/cmr/m/n/10 (-20) )\OML/cmm/m/it/10 ; R[]\OT1/cmr/m/n/10 (-20) ) =
- []
-
-
-Underfull \vbox (badness 1226) has occurred while \output is active []
-
-
-
-[4.4]
-Overfull \hbox (4.39868pt too wide) in paragraph at lines 393--394
-[]\OT1/cmr/m/n/10 (-20) Substituting from Thereom 1 we have $(\OML/cmm/m/it/10 
-Q\OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 r[]\OT1/cmr/m/n/10 (-20) ) \OMS/cmsy/m
-/n/10 \ \OML/cmm/m/it/10 Q\OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 r[]\OT1/cmr/m
-/n/10 (-20) ) \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 H \OMS/cmsy/m/n/10 6\OT1/cmr/
-m/n/10 (-20) = \OMS/cmsy/m/n/10 ;\OT1/cmr/m/n/10 (-20) ) = 1$. Thus, $\OML/cmm/
-m/it/10 Obj\OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 Q\OT1/cmr/m/n/10 (-20) (\OML
-/cmm/m/it/10 r[]\OT1/cmr/m/n/10 (-20) )\OML/cmm/m/it/10 ; R[]\OT1/cmr/m/n/10 (-
-20) ) =
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 399.
-
-
-
-[5.5]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 457.
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--457
-[]\OT1/cmr/bx/n/10 (+20) [Liam Mon-ninger]: \OT1/cmr/m/n/10 (+20) TODO: All of 
-these lim-its need to re-formalized. For now, I'm
- []
-
-
-
-[6.6]
-Overfull \hbox (25.4687pt too wide) in paragraph at lines 483--484
-[]\OT1/cmr/m/n/10 (-20) Since $\OML/cmm/m/it/10 Pr\OT1/cmr/m/n/10 (-20) [\OMS/c
-msy/m/n/10 R\OT1/cmr/m/n/10 (-20) ](\OML/cmm/m/it/10 f; k\OT1/cmr/m/n/10 (-20) 
-) \OML/cmm/m/it/10 > []$ \OT1/cmr/m/n/10 (-20) and $\OML/cmm/m/it/10 Pr\OT1/cmr
-/m/n/10 (-20) [\OMS/cmsy/m/n/10 C\OT1/cmr/m/n/10 (-20) ](\OML/cmm/m/it/10 f; k\
-OT1/cmr/m/n/10 (-20) ) \OML/cmm/m/it/10 > \OT1/cmr/m/n/10 (-20) 0$ for all $\OM
-L/cmm/m/it/10 f; k \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 k < f$\OT1/cmr/m/n/10 (-
-20) , we have that $\OML/cmm/m/it/10 Pr\OT1/cmr/m/n/10 (-20) [\OML/cmm/m/it/10 
-Accepted\OT1/cmr/m/n/10 (-20) ](\OML/cmm/m/it/10 f; k\OT1/cmr/m/n/10 (-20) ) \O
-ML/cmm/m/it/10 >
- []
-
-
-Underfull \vbox (badness 2495) has occurred while \output is active []
-
-
-
-[7.7]
-<figures/pr_accepted_faulty.png, id=123, 1204.5pt x 702.625pt>
-File: figures/pr_accepted_faulty.png Graphic file (type png)
-<use figures/pr_accepted_faulty.png>
-Package pdftex.def Info: figures/pr_accepted_faulty.png  used on input line 534
-.
-(pdftex.def)             Requested size: 395.8225pt x 230.89133pt.
-<figures/pr_accepted_honest.png, id=124, 1204.5pt x 702.625pt>
-File: figures/pr_accepted_honest.png Graphic file (type png)
-<use figures/pr_accepted_honest.png>
-Package pdftex.def Info: figures/pr_accepted_honest.png  used on input line 540
-.
-(pdftex.def)             Requested size: 395.8225pt x 230.89133pt.
-
-
-[8.8]
-
-LaTeX Warning: Text page 9 contains only floats.
-
-
-
-[9.9 <./figures/pr_accepted_faulty.png> <./figures/pr_accepted_honest.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 553.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 553.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 555--555
-[]\OT1/cmr/bx/n/10 (+20) [Liam Mon-ninger]: \OT1/cmr/m/n/10 (+20) This sec-tion
- cur-rently just riff-ing on some gen-res of pro-jec-tions
- []
-
-
-
-[10.10]
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-[]\OT1/cmr/bx/n/10 (+20) [Liam Mon-ninger]:  \OT1/cmr/m/n/10 (+20) The rich-est
- space in which we may em-bed the data of $\OML/cmm/m/it/10 B$ \OT1/cmr/m/n/10 
-(+20) is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-[]\OT1/cmr/m/n/10 (+20) Playing with writ-ing the al-go-rithm over the other sp
-aces is a fun ex-er-cise. Be-gin-ning
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-\OT1/cmr/m/n/10 (+20) with triv-ial pro-jec-tions and im-ple-men-ta-tions, and 
-mor-ph-ing to more com-plex ones,
- []
-
-
-Class acmart Warning: A possible image without description on input line 650.
-
-
-
-[11.11]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 656.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 656.
-
-Processing 'acks' comment.
+onts/map/pdftex/updmap/pdftex.map}] Processing 'acks' comment.
 \openout3 = `comment.cut'.
 
- Comment 'acks' writing to comment.cut.
-Straight input of comment.cut. (./comment.cut)
+
+Comment 'acks' writing to comment.cut. Straight input of comment.cut.
+(./comment.cut)
 No file main.bbl.
-
-Class acmart Warning: Some images may lack descriptions.
-(acmart)              ACM is committed to complying with the upcoming US ADA ht
-tps://accessiblyapp.com/accessibility-compliance/ada/ and European Accessibilit
-y Act (EAA) https://accessiblyapp.com/accessibility-compliance/eaa/ regulations
- by actively working to ensure our publications and application services are ac
-cessible to individuals with disabilities, adhering to the WCAG guidelines to p
-rovide a seamless experience for all users, and regularly reviewing our accessi
-bility practices to maintain compliance with evolving standards. 
-(acmart)              To this end, we strongly encourage our authors to provide
- alternative text and captions for images and multimedia content. It is also im
-portant to optimize color contrast for the visually impaired. Taking these impo
-rtant steps when creating your papers will ensure that the widest possible audi
-ence can ingest your work..
-
-
-Class acmart Warning: \vspace should only be used to provide space above/below 
-surrounding objects on input line 715.
-
 
 
 
@@ -1334,68 +1151,44 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 (/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
 eric/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [12.12] (./main.aux)
+) [2.2] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E93CD140F640DE288E11E744F4FC43D9;2416.
+(rerunfilecheck)             Checksum: 3ED13C18BBF078F34BBB5C556F0A7FF3;647.
  ) 
 Here is how much of TeX's memory you used:
- 29047 strings out of 474986
- 555571 string characters out of 5757256
- 1022458 words of memory out of 5000000
- 50964 multiletter control sequences out of 15000+600000
- 576159 words of font info for 171 fonts, out of 8000000 for 9000
+ 28499 strings out of 474986
+ 544973 string characters out of 5757256
+ 1001028 words of memory out of 5000000
+ 50576 multiletter control sequences out of 15000+600000
+ 567761 words of font info for 100 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
- 90i,15n,131p,1001b,967s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,16n,131p,1001b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts
-/type1/public/amsfonts/cm/cmbx10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c
-8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></nix/st
+/type1/public/amsfonts/cm/cmex10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c
+8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/s
+tore/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive
+-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/gmwrbk
+5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-te
+xmfdist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/gmwrbk5nkq0asr4i7bm
+69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr9.pf
+b></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts
+/type1/public/amsfonts/cm/cmss10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c
+8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmss8.pfb></nix/st
 ore/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/pub
-lic/amsfonts/cm/cmcsc10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texliv
-e-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/store/gmwr
-bk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-en
-v-texmfdist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></nix/store/gmwrbk5nkq0asr
-4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cm
-mi7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist
-/fonts/type1/public/amsfonts/cm/cmmi9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8
-pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></n
-ix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type
-1/public/amsfonts/cm/cmr5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texl
-ive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/gmwr
-bk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsf
-onts/cm/cmr7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-
-texmfdist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/gmwrbk5nkq0asr4i7
-bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr9.
-pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fon
-ts/type1/public/amsfonts/cm/cmss10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj
-2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmss8.pfb></nix/
-store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/p
-ublic/amsfonts/cm/cmss9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texliv
-e-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></nix/store/gm
-wrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-
-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></nix/store/gmwrbk5nkq0a
-sr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/
-cmsy6.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdi
-st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dc
-l8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><
-/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/ty
-pe1/public/amsfonts/cm/cmti10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-
-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmti9.pfb></nix/store
-/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public
-/amsfonts/euler/eufm10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive
--2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store/
-gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texliv
-e-2024-env-texmfdist/fonts/type1/public/cm-super/sfrm0900.pfb>
-Output written on main.pdf (12 pages, 489585 bytes).
+lic/amsfonts/cm/cmssbx10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texli
+ve-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/gmw
+rbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb>
+Output written on main.pdf (2 pages, 151035 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
- 35 named destinations out of 1000 (max. 500000)
- 49295 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 100 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
+ 28733 words of extra memory for PDF output out of 29859 (max. 10000000)
 

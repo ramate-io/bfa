@@ -267,7 +267,7 @@ Let $Q: M \to 2^P$ be the function which maps a message to the set of processes 
 
 Importantly, this simple majority model does not account for the possibility that a process may fault. As it turns out, the most aggressive assumption we can make and still retain the possibility of these intersecting sets amongst non-faulty processes is that at most $f$ processes may fault. This is the Byzantine fault model.
 
-Let $H$ be the set of honest processes and $F$ be the set of faulty processes. Two quora must then intersect in at least $f+1$ replicas:
+Let $H$ be the set of honest processes and $F$ be the set of faulty processes. Two quora must then intersect in at least $f+1$ processes:
 
 \begin{flalign*}
 &|Q(M_1) \cap Q(M_2)|=\\
@@ -287,13 +287,13 @@ We may then use this fact to compute the intersection of two subsets of messages
   &|Q(M_1) \cap Q(M_2) \cap H| \geq f + 1 - f = 1\\
 \end{flalign*}
 
-A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). Without a prover system--which is common in practice owing to the computational expense of systems like ZKPs--BFT SMRs requires at least $2f+1$ of the honest replicas to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
+A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). Without a prover system--which is common in practice owing to the computational expense of systems like ZKPs--BFT SMRs requires at least $2f+1$ of the honest processes to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
 
 Roughly speaking, if a Byzantine fault-tolerant SMR protocol tolerates $f$ faulty processes, then it uses at best $\frac{1}{2f+1}$ of the available non-faulty compute.
 
 \section{A Byzantine Fault-allowing Protocol}
 
-If we want to access more compute, an obvious thought is to simply relax the requirement--to allow our total order to potentially fail and perhaps argue that such is acceptable. As it turns out, we can accomplish a simple protocol by taking advantage of a combinatorial property of samples. 
+If we want to access more compute, an obvious thought is to simply relax the requirement on order--to allow our total order to potentially fail and perhaps argue that such is acceptable. As it turns out, we can accomplish one such protocol simply by taking advantage of a combinatorial property of samples. 
 
 First, consider the following objective function which is minimized for $M_i$ when $Order(M_i) = 1$:
 
@@ -346,32 +346,47 @@ The probability of selecting a $\text{Right}$ subcommittee $Pr[\mathcal{R}](f, k
 \liam{TODO: All of these limits need to re-formalized. For now, I'm just recording the results.}
 
 \begin{flalign*}
-  &\lim_{f \to \infty} Pr[\mathcal{R'}](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
+  &\lim_{f \to \infty} Pr[\mathcal{R}](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
-However, the probability of selecting a $\text{Corrupt}$ subcommittee $Pr[\mathcal{C'}](\gamma, k)$ tends towards 0 as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
+The probability of selecting a $\text{Corrupt}$ subcommittee $Pr[\mathcal{C'}](\gamma, k)$ tends towards 0 as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
 
 \begin{flalign*}
-  &\lim_{f \to \infty} Pr[\mathcal{C'}](\gamma, k) = 0 \forall k \in \mathbb{N}: k < f \\
+  &\lim_{f \to \infty} Pr[\mathcal{C}](\gamma, k) = 0 \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
 This implies that the probability of selecting a $\text{Hung}$ subcommittee $Pr[\mathcal{H'}](\gamma, k)$ tends towards $\frac{1}{2}$ as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
 
 \begin{flalign*}
-  &\lim_{f \to \infty} Pr[\mathcal{H'}](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
+  &\lim_{f \to \infty} Pr[\mathcal{H}](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
-Observe that the $Obj(Resample(M_i)) = 1$ if and only if we eventually select a $\text{Faulty}$ subcommittee.
+Observe that the $Obj(Resample(M_i)) = 1$ if and only if we eventually select a $\text{Faulty}$ subcommittee. Because each sample step is independent, the probability of selecting a $\text{Faulty}$ subcommittee on the $n$th step is simply $Pr[\text{Faulty}]$ and terminating. This means that the probability of selecting a $\text{Faulty}$ subcommittee on the whole is the probability of selecting 0 $Right$ subcommittees during any of the $n$ steps.
 
-The algorithm uses at most $3k + 1$ replicas on each sample step to render a decision. The expected number of steps to render a decision is:
+
+Practically, this can be limited by a maximum number of resamples. But, we can also consider the expected number of resamples to render a decision.
+
+The expected number of resamples to render a decision is given by:
 
 \begin{flalign*}
-  Pr[\text{Resample Count} = n] &= \left(1 - \frac{1}{2}\right)^{n-1} \cdot \frac{1}{2} = \frac{1}{2^n} \\
+  \mathbb{E}[\text{Resample Count}] = \sum_{n = 1}^{\infty} n \cdot Pr[\text{Resample Count} = n] \\
+  &= \sum_{n = 1}^{\infty} n \cdot \left(1 - \frac{1}{2}\right)^{n-1} \cdot \frac{1}{2} \\
+  &= \sum_{n = 1}^{\infty} n \cdot \frac{1}{2^n} \\
+  &= 2 \\
+\end{flalign*}
+
+On average, we would expect $\mathbb{E}[Obj(Resample(M_i))] < 2 \cdot Pr[\text{Faulty}]$. Because $Pr[\text{Faulty}]$ tends towards 0 as $f$ increases and can be bounded, the likelihood of the protocol failing can be tuned quickly to be astronomically low.
+
+We now show that $\text{Resample}$ is computationally efficient. Observe that $\text{Resample}$ uses at most $3k + 1$ processes on each sample step to render a decision. The expected number of steps to render a decision is:
+
+\begin{flalign*}
   \Theta(\text{Resample}) =
   &\quad (3k + 1) \cdot \mathbb{E}[\text{Resample Count}] \\
   &= (3k + 1) \cdot \sum_{n = 1}^{\infty} n \cdot \frac{1}{2^n} \\
   &= 2(3k + 1) = 2 \gamma \cdot \Theta(B_f) \\
 \end{flalign*}
+
+For a fixed ratio $\gamma = \frac{k}{f} - 0.1$ we can reach cryptographically low probability of failure at fewer than 4096 processes. 
 
 %%
 %% The acknowledgments section is defined using the "acks" environment

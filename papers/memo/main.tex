@@ -236,7 +236,7 @@ A familiar example is subtraction on $\mathbb{N}$, which is naturally partial:
   \end{cases}
 \end{flalign*}
 
-Subtraction is also not commutative:
+And is also not commutative:
 
 \begin{flalign*}
   &\mathrm{sub}(5,3) = 2 \neq \mathrm{sub}(3,5) \text{ (undefined).}
@@ -246,9 +246,49 @@ In general, for a family $f_1, \ldots, f_n$ of partial functions, the composite 
 
 In distributed computing, we may instead refer to a set of processes $P$ which are able to share information with one another via messages $m \in M$ to varying degrees of success. Then, within this context, we hope to achieve results up to some notion of correctness and consistency, i.e., up to some notion of equivalence with the local hardware case.
 
-Put more provocatively, a distributed computing protocol often has to decide from a chaotic world of messages what a reasonable order should be. Signatures can be placed on messages to ensure they are authentic. Proving systems can be built to attest the correctness of the value of a partial function. But, these may mean little without a reasonable order.
+Put more provocatively, a distributed computing protocol often has to decide from a chaotic world of messages what a reasonable order of partial functions should be. Signatures can be placed on messages to ensure they are authentic. Prover systems can be built to attest the correctness of the value of a partial function. But, these may mean little without a reasonable order.
 
 \subsection{2f + 1}
+
+Often the success of a distributed computing protocol is framed in terms of its agreement or consensus. And, in the abundant cases where order matters, this necessarily means agreement on said order. 
+
+If we take set of processes $|P| = 3f + 1$ and ask for the messages $M_i \subseteq M$ which indicate unique messages from each process in the set $P$ which compute the partial function at index $i$, we may wonder what different requirements on the agreement of these messages might mean. 
+
+A simple majority $|M_i| > \frac{|P|}{2}$ would ensure by the Generalized Pigeonhole Principle that any two subsets of messages $M_{i}, M_{j}$ would intersect in at least one participant. In a sense, at least one participant can attest to each ordering step. By recurrence, this reads out a total order.
+
+Let $Q: M \to 2^P$ be the function which maps a message to the set of processes which have sent it. Then, we may define order as $Order(M_i)$ as follows:
+
+\begin{flalign*}
+  &O(M_i, M_j) \triangleq (Q(M_i) \cap Q(M_j) \neq \emptyset) \\
+  &Order(M_i) = Order(M_{i-1}) \land C(M_{i-1}, M_i) \\
+  &\quad = Order(M_0) \land C(M_0, M_1) \land \cdots \land  C(M_{i-1}, M_i) \\
+\end{flalign*}
+
+Importantly, this simple majority model does not account for the possibility that a process may fault. As it turns out, the most aggressive assumption we can make and still retain the possibility of these intersecting sets amongst non-faulty processes is that at most $f$ processes may fault. This is the Byzantine fault model.
+
+Let $H$ be the set of honest processes and $F$ be the set of faulty processes. Two quora must then intersect in at least $f+1$ replicas:
+
+\begin{flalign*}
+&|Q(M_1) \cap Q(M_2)|=\\
+&\quad |Q(M_1)| + |Q(M_2)| - |Q(M_1) \cup Q(M_2)| \\
+&\quad \geq (2f + 1) + (2f + 1) - (3f + 1)\\
+&= f + 1 \\
+\end{flalign*}
+
+We may then use this fact to compute the intersection of two messages $M_1, M_2$ in the presence of faulty processes:
+
+\begin{flalign*}
+  &|Q(M_1) \cap Q(M_2)|\\
+  &\quad = |Q(M_1) \cap Q(M_2) \cap H| + |Q(M_1) \cap Q(M_2) \cap F|\\
+  &|Q(M_1) \cap Q(M_2) \cap H|\\
+  &\quad = |Q(M_1) \cap Q(M_2)| - |Q(M_1) \cap Q(M_2) \cap F|\\
+  &f \geq |Q(M_1) \cap Q(M_2) \cap F|\\
+  &|Q(M_1) \cap Q(M_2) \cap H| \geq f + 1 - f = 1\\
+\end{flalign*}
+
+A straightforward interpretation of this fact renders the ubiquitous family of state machine replica protocol (SMR). Without a prover system--which is common owing to the computational expense of systems like ZKPs--SMRs requires at least $2f+1$ of the honest replicas to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
+
+Roughly speaking, if a Byzantine fault-tolerant SMR protocol tolerates $f$ faulty processes, then it uses at best $\frac{1}{2f+1}$ of the available non-faulty compute.
 
 %%
 %% The acknowledgments section is defined using the "acks" environment

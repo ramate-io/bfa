@@ -58,7 +58,7 @@
 \onecolumn
     
 
-%% Rights management information.  This information is sent to you
+%% RIGHTs management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
 %% the commands and values with those provided to you when you
@@ -302,7 +302,7 @@ First, consider the following objective function which is minimized for $M_i$ wh
   &Obj(M_i) =  1 \iff Order(M_i) = 0\\ 
 \end{flalign*}
 
-We define the following Byzantine fault-allowing protocol $\text{Resample}$:
+We define the following Byzantine fault-allowing protocol $\text{RESAMPLE}$:
 
 \begin{itemize}
   \item For a given index, $i$ on $M$, pick a random subcommittee $K_i \subseteq P$ s.t. $|K_i| = 3k + 1$.
@@ -312,9 +312,9 @@ We define the following Byzantine fault-allowing protocol $\text{Resample}$:
 Observe the following possible outcomes for selection of a random subcommittee:
 
 \begin{itemize}
-  \item $|K_i \cap H| \geq 2k + 1$. This represents a subcommittee which has an honest supermajority which computes $M_i$ correctly. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Right}$ and use the symbol $R$.
-  \item $k < |K_i \cap H| < 2k + 1$. This represents a subcommittee that has neither an honest nor dishonest supermajority and may either compute $M_i$ correctly or disagree internally and not render a supermajority. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Hung}$ and use the symbol $H$.
-  \item $|K_i \cap H| \leq k$. This represents a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Corrupt}$ and use the symbol $C$.
+  \item $|K_i \cap H| \geq 2k + 1 \iff \text{ RIGHT } = R$, representing a subcommittee which has an honest supermajority which computes $M_i$ correctly.
+  \item $|K_i \cap H| \leq k \iff \text{ CORRUPT } = C$, representing a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly.
+  \item $k < |K_i \cap H| < 2k + 1 \iff \text{ HUNG } = H$, representing all other cases wherein neither an honest nor dishonest supermajority exists and may either compute $M_i$ correctly or disagree internally and not render a supermajority.
 \end{itemize}
 
 Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcommittee without replacement:
@@ -323,25 +323,25 @@ Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcomm
   &\mathcal{S}(f, k) = \binom{3f + 1}{3k + 1} \\
 \end{flalign*}
 
-The total number of ways to select a $\text{Corrupt}$ subcommittee is:
+The total number of ways to select a $\text{CORRUPT}$ subcommittee is:
 
 \begin{flalign*}
   &\mathcal{S}_{C}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, f)} \binom{f}{i} \cdot \binom{2f + 1}{3k + 1 - i} \\
 \end{flalign*}
 
-The total number of ways to select a $\text{Right}$ subcommittee is:
+The total number of ways to select a $\text{RIGHT}$ subcommittee is:
 
 \begin{flalign*}
   &\mathcal{S}_{R}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, 2f + 1)} \binom{2f + 1}{i} \cdot \binom{f}{3k + 1 - i} \\
 \end{flalign*}
 
-All other outcomes are by definition $\text{Hung}$, so the total number of ways to select a $\text{Hung}$ subcommittee is:
+All other outcomes are by definition $\text{HUNG}$, so the total number of ways to select a $\text{HUNG}$ subcommittee is:
 
 \begin{flalign*}
   &\mathcal{S}_{H}(f, k) = \mathcal{S}(f, k) - \mathcal{S}_{C}(f, k) - \mathcal{S}_{R}(f, k) \\
 \end{flalign*}
 
-Let $S$ represent the transient state in which the \text{Resample} is sampling, i.e., has just started or produced a \text{Hung} subcommittee. Let $G$ represent the absorbing state in which \text{Resample} makes a "good" decision to select a \text{Right} subcommittee. Let $B$ represent the absorbing state in which \text{Resample} makes a "bad" decision to select a $\text{Corrupt}$ subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
+Let $S$ represent the transient state in which the \text{RESAMPLE} is sampling, i.e., has just started or produced a \text{HUNG} subcommittee. Let $G$ represent the absorbing state in which \text{RESAMPLE} makes a "good" decision to select a \text{RIGHT} subcommittee. Let $B$ represent the absorbing state in which \text{RESAMPLE} makes a "bad" decision to select a $\text{CORRUPT}$ subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
 
 \begin{flalign*}
 &\Omega = \{S, G, B\} \\
@@ -352,60 +352,38 @@ Let $S$ represent the transient state in which the \text{Resample} is sampling, 
 \end{pmatrix} \\
 \end{flalign*}
 
-The probability of the algorithm making a "bad" decision to select a $\text{Corrupt}$ subcommittee $Pr[B]$ is then:
+The probability of the algorithm making a "bad" decision to select a $\text{CORRUPT}$ subcommittee $Pr[B]$ is then:
 
 \begin{flalign*}
   &\text{Let } x \triangleq Pr[\text{ eventually hitting B } | \text{ start in S }] \\
   &x = Pr[C] \cdot 1 + Pr[R] \cdot 0 + Pr[H] \cdot x \\
   &x - Pr[H] \cdot x = Pr[C] \implies x \cdot (1 - Pr[H]) = Pr[C] \implies x = \frac{Pr[C]}{1 - Pr[H]} \\
-  &\text{Observe that } 1 - Pr[H] = Pr[R] + Pr[C] \implies \\
-  &Pr[b] = \frac{Pr[C]}{Pr[R] + Pr[C]} \\
+  &\text{Observe that... } \\
+  &1 - Pr[H] = Pr[R] + Pr[C] \implies Pr[B] = \frac{Pr[C]}{Pr[R] + Pr[C]} \\
  \end{flalign*}
 
-The probability of selecting a $\text{Right}$ subcommittee $Pr[R](f, k)$ tends downwards towards $\frac{1}{2}$ as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
+Conversely, the probability of the algorithm making a "good" decision to select a \text{RIGHT} subcommittee $Pr[G]$ is then:
+
+\begin{flalign*}
+  &Pr[G] = 1 - Pr[B] = 1 - \frac{Pr[C]}{Pr[R] + Pr[C]} = \frac{Pr[R]}{Pr[R] + Pr[C]} \\
+\end{flalign*}
+
+As I will show, the probability $Pr[B]$ drops off quickly for a fixed ratio sample size $\gamma = \frac{k}{f}$.
 
 \begin{flalign*}
   &\lim_{f \to \infty} Pr[R](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
-The probability of selecting a $\text{Corrupt}$ subcommittee $Pr[\mathcal{C'}](\gamma, k)$ tends towards 0 as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
+Meanwhile, the expect cost of the algorithm in terms of the number of processes used remains on the order $\Theta(k)$.
 
 \begin{flalign*}
   &\lim_{f \to \infty} Pr[C](\gamma, k) = 0 \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
-This implies that the probability of selecting a $\text{Hung}$ subcommittee $Pr[\mathcal{H'}](\gamma, k)$ tends towards $\frac{1}{2}$ as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
+Thus, RESAMPLE is a Byzantine fault-allowing protocol which is computationally efficient and has a low probability of failure.
 
-\begin{flalign*}
-  &\lim_{f \to \infty} Pr[H](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
-\end{flalign*}
+\section{An Expanded View}
 
-Observe that the $Obj(Resample(M_i)) = 1$ if and only if we eventually select a $\text{Faulty}$ subcommittee. Because each sample step is independent, the probability of selecting a $\text{Faulty}$ subcommittee on the $n$th step is simply $Pr[\text{Faulty}]$ and terminating. This means that the probability of selecting a $\text{Faulty}$ subcommittee on the whole is the probability of selecting 0 $Right$ subcommittees during any of the $n$ steps.
-
-
-Practically, this can be limited by a maximum number of resamples. But, we can also consider the expected number of resamples to render a decision.
-
-The expected number of resamples to render a decision is given by:
-
-\begin{flalign*}
-  \mathbb{E}[\text{Resample Count}] = \sum_{n = 1}^{\infty} n \cdot Pr[\text{Resample Count} = n] \\
-  &= \sum_{n = 1}^{\infty} n \cdot \left(1 - \frac{1}{2}\right)^{n-1} \cdot \frac{1}{2} \\
-  &= \sum_{n = 1}^{\infty} n \cdot \frac{1}{2^n} \\
-  &= 2 \\
-\end{flalign*}
-
-On average, we would expect $\mathbb{E}[Obj(Resample(M_i))] < 2 \cdot Pr[\text{Faulty}]$. Because $Pr[\text{Faulty}]$ tends towards 0 as $f$ increases and can be bounded, the likelihood of the protocol failing can be tuned quickly to be astronomically low.
-
-We now show that $\text{Resample}$ is computationally efficient. Observe that $\text{Resample}$ uses at most $3k + 1$ processes on each sample step to render a decision. The expected number of steps to render a decision is:
-
-\begin{flalign*}
-  \Theta(\text{Resample}) =
-  &\quad (3k + 1) \cdot \mathbb{E}[\text{Resample Count}] \\
-  &= (3k + 1) \cdot \sum_{n = 1}^{\infty} n \cdot \frac{1}{2^n} \\
-  &= 2(3k + 1) = 2 \gamma \cdot \Theta(B_f) \\
-\end{flalign*}
-
-For a fixed ratio $\gamma = \frac{k}{f} - 0.1$ we can reach cryptographically low probability of failure at fewer than 4096 processes. 
 
 %%
 %% The acknowledgments section is defined using the "acks" environment

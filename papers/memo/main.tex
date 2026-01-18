@@ -309,6 +309,12 @@ We define the following Byzantine fault-allowing protocol $\text{RESAMPLE}$:
   \item Accept $M_i$ if and only if $|Q_{K_i}(M_i)| \geq 2k + 1$. Otherwise, pick another random subcommittee and repeat.
 \end{itemize}
 
+Let...
+
+\begin{flalign*}
+  &f' = |K_i \cap F|, h' = |K_i \cap H|, f' + h' = |K_i| = 3k + 1
+\end{flalign*}
+
 Observe the following possible outcomes for selection of a random subcommittee:
 
 \begin{itemize}
@@ -326,13 +332,13 @@ Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcomm
 The total number of ways to select a $\text{Corrupt}$ subcommittee is:
 
 \begin{flalign*}
-  &\mathcal{R}_{C}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, f)} \binom{f}{i} \cdot \binom{2f + 1}{3k + 1 - i} \\
+  &\mathcal{S}_{C}(f, k) = \sum_{f' = 2k + 1}^{\min(3k + 1, f)} \binom{f}{f'} \cdot \binom{2f + 1}{3k + 1 - f'} \\
 \end{flalign*}
 
 The total number of ways to select a $\text{Divine}$ subcommittee is:
 
 \begin{flalign*}
-  &\mathcal{S}_{D}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, 2f + 1)} \binom{2f + 1}{i} \cdot \binom{f}{3k + 1 - i} \\
+  &\mathcal{S}_{D}(f, k) = \sum_{h' = 2k + 1}^{\min(3k + 1, 2f + 1)} \binom{2f + 1}{h'} \cdot \binom{f}{3k + 1 - h'} \\
 \end{flalign*}
 
 All other outcomes are by definition Undecided, so the total number of ways to select an Undecided subcommittee is:

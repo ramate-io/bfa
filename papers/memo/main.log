@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  17 JAN 2026 19:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  17 JAN 2026 19:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1156,7 +1156,7 @@ Straight input of comment.cut. (./comment.cut)
 No file main.bbl.
 
 
-[5.5]
+
 (/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
 eric/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
@@ -1164,63 +1164,50 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 (/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
 eric/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [6.5] (./main.aux)
+) [5.5] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  D2FBC1F995A9BDBBECC769FD89726061;1029.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D2FBC1F995A9BDBBECC769FD89726061;1029.
  ) 
 Here is how much of TeX's memory you used:
- 28526 strings out of 474986
- 545315 string characters out of 5757256
- 994387 words of memory out of 5000000
- 50578 multiletter control sequences out of 15000+600000
- 568546 words of font info for 110 fonts, out of 8000000 for 9000
+ 28524 strings out of 474986
+ 545253 string characters out of 5757256
+ 1000594 words of memory out of 5000000
+ 50582 multiletter control sequences out of 15000+600000
+ 568118 words of font info for 107 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
- 90i,16n,131p,1001b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,16n,131p,1001b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts
-/type1/public/amsfonts/cm/cmbx10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c
-8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/s
+/type1/public/amsfonts/cm/cmex10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c
+8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/s
 tore/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texliv
-e-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></nix/store/gmwrb
-k5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-
-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/gmwrbk5nkq0asr4i
-7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr7
-.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2
-c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr9.pfb></nix/st
-ore/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/pub
-lic/amsfonts/cm/cmss10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive
--2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmss8.pfb></nix/store/gmwrbk
+blic/amsfonts/cm/cmmi5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive
+-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/gmwrbk
 5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfon
-ts/cm/cmssbx10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-en
-v-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/gmwrbk5nkq0as
-r4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/c
-msy7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdis
-t/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store/gmwrbk5nkq0asr4i7b
-m69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb>
-Output written on main.pdf (6 pages, 217548 bytes).
+ts/cm/cmr10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-t
+exmfdist/fonts/type1/public/amsfonts/cm/cmr7.pfb></nix/store/gmwrbk5nkq0asr4i7b
+m69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/font
+s/type1/public/amsfonts/cm/cmr9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8
+d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmss10.pfb></nix/st
+ore/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/pub
+lic/amsfonts/cm/cmss8.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-
+2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></nix/store/gmwr
+bk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-en
+v-texmfdist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></nix/store/gmwrbk5nkq0asr
+4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist
+/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store/gmwrbk5nkq0asr4i7bm
+69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on main.pdf (5 pages, 214643 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 142 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
  14 named destinations out of 1000 (max. 500000)
- 30741 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 28749 words of extra memory for PDF output out of 29859 (max. 10000000)
 

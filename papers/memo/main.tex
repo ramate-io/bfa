@@ -305,16 +305,16 @@ First, consider the following objective function which is minimized for $M_i$ wh
 We define the following Byzantine fault-allowing protocol $\text{Resample}$:
 
 \begin{itemize}
-  \item For a given index, $i$ on $M$, pick a random subcommittee $K_i \subseteq M$ s.t. $|K_i| = 3k + 1$.
+  \item For a given index, $i$ on $M$, pick a random subcommittee $K_i \subseteq P$ s.t. $|K_i| = 3k + 1$.
   \item Accept $M_i$ if and only if $|Q_{K_i}(M_i)| \geq 2k + 1$. Otherwise, pick another random subcommittee and repeat.
 \end{itemize}
 
 Observe the following possible outcomes for selection of a random subcommittee:
 
 \begin{itemize}
-  \item $|K_i \cap H| \geq 2k + 1$. This represents a subcommittee which has an honest supermajority which computes $M_i$ correctly. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Right}$ and use the symbol $\mathcal{R}$.
-  \item $k < |K_i \cap H| < 2k + 1$. This represents a subcommittee that has neither an honest nor dishonest supermajority and may either compute $M_i$ correctly or disagree internally and not render a supermajority. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Hung}$ and use the symbol $\mathcal{H}$.
-  \item $|K_i \cap H| \leq k$. This represents a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Corrupt}$ and use the symbol $\mathcal{C}$.
+  \item $|K_i \cap H| \geq 2k + 1$. This represents a subcommittee which has an honest supermajority which computes $M_i$ correctly. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Right}$ and use the symbol $R$.
+  \item $k < |K_i \cap H| < 2k + 1$. This represents a subcommittee that has neither an honest nor dishonest supermajority and may either compute $M_i$ correctly or disagree internally and not render a supermajority. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Hung}$ and use the symbol $H$.
+  \item $|K_i \cap H| \leq k$. This represents a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly. For ease of reference, we shall refer to this as kind of subcommittee as $\text{Corrupt}$ and use the symbol $C$.
 \end{itemize}
 
 Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcommittee without replacement:
@@ -326,39 +326,58 @@ Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcomm
 The total number of ways to select a $\text{Corrupt}$ subcommittee is:
 
 \begin{flalign*}
-  &\mathcal{S}_{\mathcal{C}}(f, k) = \sum_{h = 2k + 1}^{\min(3k + 1, f)} \binom{f}{h} \cdot \binom{2f + 1}{3k + 1 - h} \\
+  &\mathcal{S}_{C}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, f)} \binom{f}{i} \cdot \binom{2f + 1}{3k + 1 - i} \\
 \end{flalign*}
 
 The total number of ways to select a $\text{Right}$ subcommittee is:
 
 \begin{flalign*}
-  &\mathcal{S}_{\mathcal{R}}(f, k) = \sum_{h = 2k + 1}^{\min(3k + 1, 2f + 1)} \binom{f}{h} \cdot \binom{f}{3k + 1 - h} \\
+  &\mathcal{S}_{R}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, 2f + 1)} \binom{2f + 1}{i} \cdot \binom{f}{3k + 1 - i} \\
 \end{flalign*}
 
-All other outcomes are $\text{Hung}$, so the total number of ways to select a $\text{Hung}$ subcommittee is:
+All other outcomes are by definition $\text{Hung}$, so the total number of ways to select a $\text{Hung}$ subcommittee is:
 
 \begin{flalign*}
-  &\mathcal{S}_{\mathcal{H}}(f, k) = \mathcal{S}(f, k) - \mathcal{S}_{\mathcal{C}}(f, k) - \mathcal{S}_{\mathcal{R}}(f, k) \\
+  &\mathcal{S}_{H}(f, k) = \mathcal{S}(f, k) - \mathcal{S}_{C}(f, k) - \mathcal{S}_{R}(f, k) \\
 \end{flalign*}
 
-The probability of selecting a $\text{Right}$ subcommittee $Pr[\mathcal{R}](f, k)$ tends downwards towards $\frac{1}{2}$ as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
-
-\liam{TODO: All of these limits need to re-formalized. For now, I'm just recording the results.}
+Let $S$ represent the transient state in which the \text{Resample} is sampling, i.e., has just started or produced a \text{Hung} subcommittee. Let $G$ represent the absorbing state in which \text{Resample} makes a "good" decision to select a \text{Right} subcommittee. Let $B$ represent the absorbing state in which \text{Resample} makes a "bad" decision to select a $\text{Corrupt}$ subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
 
 \begin{flalign*}
-  &\lim_{f \to \infty} Pr[\mathcal{R}](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
+&\Omega = \{S, G, B\} \\
+&T = \begin{pmatrix}
+  Pr[H] & Pr[R] & Pr[C] \\
+  0   & 1   & 0   \\
+  0   & 0   & 1
+\end{pmatrix} \\
+\end{flalign*}
+
+The probability of the algorithm making a "bad" decision to select a $\text{Corrupt}$ subcommittee $Pr[B]$ is then:
+
+\begin{flalign*}
+  &\text{Let } x \triangleq Pr[\text{ eventually hitting B } | \text{ start in S }] \\
+  &x = Pr[C] \cdot 1 + Pr[R] \cdot 0 + Pr[H] \cdot x \\
+  &x - Pr[H] \cdot x = Pr[C] \implies x \cdot (1 - Pr[H]) = Pr[C] \implies x = \frac{Pr[C]}{1 - Pr[H]} \\
+  &\text{Observe that } 1 - Pr[H] = Pr[R] + Pr[C] \implies \\
+  &Pr[b] = \frac{Pr[C]}{Pr[R] + Pr[C]} \\
+ \end{flalign*}
+
+The probability of selecting a $\text{Right}$ subcommittee $Pr[R](f, k)$ tends downwards towards $\frac{1}{2}$ as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
+
+\begin{flalign*}
+  &\lim_{f \to \infty} Pr[R](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
 The probability of selecting a $\text{Corrupt}$ subcommittee $Pr[\mathcal{C'}](\gamma, k)$ tends towards 0 as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
 
 \begin{flalign*}
-  &\lim_{f \to \infty} Pr[\mathcal{C}](\gamma, k) = 0 \forall k \in \mathbb{N}: k < f \\
+  &\lim_{f \to \infty} Pr[C](\gamma, k) = 0 \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
 This implies that the probability of selecting a $\text{Hung}$ subcommittee $Pr[\mathcal{H'}](\gamma, k)$ tends towards $\frac{1}{2}$ as $f$ increases for a fixed ratio $\gamma = \frac{k}{f}$.
 
 \begin{flalign*}
-  &\lim_{f \to \infty} Pr[\mathcal{H}](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
+  &\lim_{f \to \infty} Pr[H](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
 Observe that the $Obj(Resample(M_i)) = 1$ if and only if we eventually select a $\text{Faulty}$ subcommittee. Because each sample step is independent, the probability of selecting a $\text{Faulty}$ subcommittee on the $n$th step is simply $Pr[\text{Faulty}]$ and terminating. This means that the probability of selecting a $\text{Faulty}$ subcommittee on the whole is the probability of selecting 0 $Right$ subcommittees during any of the $n$ steps.

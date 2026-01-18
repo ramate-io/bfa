@@ -58,7 +58,7 @@
 \onecolumn
     
 
-%% RIGHTs management information.  This information is sent to you
+%% Divines management information.  This information is sent to you
 %% when you complete the rights form.  These commands have SAMPLE
 %% values in them; it is your responsibility as an author to replace
 %% the commands and values with those provided to you when you
@@ -312,9 +312,9 @@ We define the following Byzantine fault-allowing protocol $\text{RESAMPLE}$:
 Observe the following possible outcomes for selection of a random subcommittee:
 
 \begin{itemize}
-  \item $|K_i \cap H| \geq 2k + 1 \iff \text{ RIGHT } = R$, representing a subcommittee which has an honest supermajority which computes $M_i$ correctly.
-  \item $|K_i \cap H| \leq k \iff \text{ CORRUPT } = C$, representing a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly.
-  \item $k < |K_i \cap H| < 2k + 1 \iff \text{ HUNG } = H$, representing all other cases wherein neither an honest nor dishonest supermajority exists and may either compute $M_i$ correctly or disagree internally and not render a supermajority.
+  \item $|K_i \cap H| \geq 2k + 1 \iff \text{ Divine } = D$, representing a subcommittee which has an honest supermajority which computes $M_i$ correctly.
+  \item $|K_i \cap H| \leq k \iff \text{ Corrupt } = C$, representing a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly.
+  \item $k < |K_i \cap H| < 2k + 1 \iff \text{ Undecided } = U$, representing all other cases wherein neither an honest nor dishonest supermajority exists and may either compute $M_i$ correctly or disagree internally and not render a supermajority.
 \end{itemize}
 
 Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcommittee without replacement:
@@ -323,62 +323,59 @@ Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcomm
   &\mathcal{S}(f, k) = \binom{3f + 1}{3k + 1} \\
 \end{flalign*}
 
-The total number of ways to select a $\text{CORRUPT}$ subcommittee is:
+The total number of ways to select a $\text{Corrupt}$ subcommittee is:
 
 \begin{flalign*}
-  &\mathcal{S}_{C}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, f)} \binom{f}{i} \cdot \binom{2f + 1}{3k + 1 - i} \\
+  &\mathcal{R}_{C}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, f)} \binom{f}{i} \cdot \binom{2f + 1}{3k + 1 - i} \\
 \end{flalign*}
 
-The total number of ways to select a $\text{RIGHT}$ subcommittee is:
+The total number of ways to select a $\text{Divine}$ subcommittee is:
 
 \begin{flalign*}
-  &\mathcal{S}_{R}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, 2f + 1)} \binom{2f + 1}{i} \cdot \binom{f}{3k + 1 - i} \\
+  &\mathcal{S}_{D}(f, k) = \sum_{i = 2k + 1}^{\min(3k + 1, 2f + 1)} \binom{2f + 1}{i} \cdot \binom{f}{3k + 1 - i} \\
 \end{flalign*}
 
-All other outcomes are by definition $\text{HUNG}$, so the total number of ways to select a $\text{HUNG}$ subcommittee is:
+All other outcomes are by definition Undecided, so the total number of ways to select an Undecided subcommittee is:
 
 \begin{flalign*}
-  &\mathcal{S}_{H}(f, k) = \mathcal{S}(f, k) - \mathcal{S}_{C}(f, k) - \mathcal{S}_{R}(f, k) \\
+  &\mathcal{S}_{U}(f, k) = \mathcal{S}(f, k) - \mathcal{S}_{C}(f, k) - \mathcal{S}_{D}(f, k) \\
 \end{flalign*}
 
-Let $S$ represent the transient state in which the \text{RESAMPLE} is sampling, i.e., has just started or produced a \text{HUNG} subcommittee. Let $G$ represent the absorbing state in which \text{RESAMPLE} makes a "good" decision to select a \text{RIGHT} subcommittee. Let $B$ represent the absorbing state in which \text{RESAMPLE} makes a "bad" decision to select a $\text{CORRUPT}$ subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
+Let $S$ represent the transient state in which the RESAMPLE is sampling, i.e., has just started or produced a Undecided subcommittee. Let $G$ represent the absorbing state in which RESAMPLE makes a "good" decision to select a Divine subcommittee. Let $B$ represent the absorbing state in which RESAMPLE makes a "bad" decision to select a Corrupt subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
 
 \begin{flalign*}
 &\Omega = \{S, G, B\} \\
 &T = \begin{pmatrix}
-  Pr[H] & Pr[R] & Pr[C] \\
+  Pr[U] & Pr[D] & Pr[C] \\
   0   & 1   & 0   \\
   0   & 0   & 1
 \end{pmatrix} \\
 \end{flalign*}
 
-The probability of the algorithm making a "bad" decision to select a $\text{CORRUPT}$ subcommittee $Pr[B]$ is then:
+The probability of the algorithm making a "bad" decision to select a Corrupt subcommittee $Pr[B]$ is then:
 
 \begin{flalign*}
   &\text{Let } x \triangleq Pr[\text{ eventually hitting B } | \text{ start in S }] \\
-  &x = Pr[C] \cdot 1 + Pr[R] \cdot 0 + Pr[H] \cdot x \\
-  &x - Pr[H] \cdot x = Pr[C] \implies x \cdot (1 - Pr[H]) = Pr[C] \implies x = \frac{Pr[C]}{1 - Pr[H]} \\
+  &x = Pr[C] \cdot 1 + Pr[D] \cdot 0 + Pr[U] \cdot x \\
+  &x - Pr[U] \cdot x = Pr[C] \implies x \cdot (1 - Pr[U]) = Pr[C] \implies x = \frac{Pr[C]}{1 - Pr[U]} \\
   &\text{Observe that... } \\
-  &1 - Pr[H] = Pr[R] + Pr[C] \implies Pr[B] = \frac{Pr[C]}{Pr[R] + Pr[C]} \\
+  &1 - Pr[U] = Pr[D] + Pr[C] \implies Pr[B] = \frac{Pr[C]}{Pr[D] + Pr[C]} \\
  \end{flalign*}
 
-Conversely, the probability of the algorithm making a "good" decision to select a \text{RIGHT} subcommittee $Pr[G]$ is then:
+Conversely, the probability of the algorithm making a "good" decision to select a Divine subcommittee $Pr[G]$ is then:
 
 \begin{flalign*}
-  &Pr[G] = 1 - Pr[B] = 1 - \frac{Pr[C]}{Pr[R] + Pr[C]} = \frac{Pr[R]}{Pr[R] + Pr[C]} \\
+  &Pr[G] = 1 - Pr[B] = 1 - \frac{Pr[C]}{Pr[D] + Pr[C]} = \frac{Pr[D]}{Pr[D] + Pr[C]} \\
 \end{flalign*}
 
 As I will show, the probability $Pr[B]$ drops off quickly for a fixed ratio sample size $\gamma = \frac{k}{f}$.
 
 \begin{flalign*}
-  &\lim_{f \to \infty} Pr[R](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
+  &\lim_{f \to \infty} Pr[C](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
 \end{flalign*}
 
 Meanwhile, the expect cost of the algorithm in terms of the number of processes used remains on the order $\Theta(k)$.
 
-\begin{flalign*}
-  &\lim_{f \to \infty} Pr[C](\gamma, k) = 0 \forall k \in \mathbb{N}: k < f \\
-\end{flalign*}
 
 Thus, RESAMPLE is a Byzantine fault-allowing protocol which is computationally efficient and has a low probability of failure.
 

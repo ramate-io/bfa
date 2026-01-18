@@ -187,7 +187,7 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-    I've written this memo to describe to friends and colleagues the beginning of my study of a category of distributed computing protocols which I call Byzantine Fault Allowing. I begin with the motivation for the study. I then provide a trivial combinatorial example of a protocol assumed to be in the category. Finally, I suggest more abstract constructions with which the study is properly concerned.
+   This memo is for friends and colleagues to explain the beginnings of my study of a category of distributed computing protocols which I call Byzantine fault-allowing. Below, I will begin with a motivation for the study. I'll then provide a trivial combinatorial example of a protocol assumed to be in the category. Finally, I'll suggest more abstract constructions with which the study is properly concerned.
 
     Most terms and notation follow [HKR]. The final section introduces provisional and more suggestive terms. 
 \end{abstract}
@@ -198,6 +198,7 @@
 \maketitle
 
 \section{Motivation}
+The motivation for studying Byzantine fault-allowing protocols, as I have dubbed them, is derived primarily from two phenomena in the world of distributed computing: the need for fault-tolerant order and compute inefficiencies of Byzantine fault-tolerant replica-based protocols.
 
 \subsection{The General Need for Order}
 
@@ -242,7 +243,7 @@ And is also not commutative:
   &\mathrm{sub}(5,3) = 2 \neq \mathrm{sub}(3,5) \text{ (undefined).}
 \end{flalign*}
 
-In general, for a family $f_1, \ldots, f_n$ of partial functions, the composite is determined by the ordered sequence $(f_1, \ldots, f_n)$ not the unordered set $\{ f_1, \ldots, f_n \}$. In local hardware cases--such as a single hart--we can often form reasonable assumptions or conventions, such that something like a state machine reading through an assembly is equivalent to a sequence of partial functions. In the context of general distributed computing tasks, however, we tend to make these assumptions more minimal. 
+In general, for a family $f_1, \ldots, f_n$ of partial functions, the composite is determined by the ordered sequence $(f_1, \ldots, f_n)$ not the unordered set $\{ f_1, \ldots, f_n \}$. In local hardware cases---such as a single hart---we can often form reasonable assumptions or conventions, such that something like a state machine reading through an assembly is equivalent to a sequence of partial functions. In the context of general distributed computing tasks, however, we tend to make these assumptions more minimal. 
 
 In distributed computing, we may instead refer to a set of processes $P$ which are able to share information with one another via messages $m \in M$ to varying degrees of success. Then, within this context, we hope to achieve results up to some notion of correctness and consistency, i.e., up to some notion of equivalence with the local hardware case.
 
@@ -260,7 +261,7 @@ Let $Q: M \to 2^P$ be the function which maps a message to the set of processes 
 
 \begin{flalign*}
   &Q(M_i) = \bigsqcup_{m \in M_i} Q(m) \\
-  &O(M_i, M_j) \triangleq (Q(M_i) \cap Q(M_j) \neq \emptyset) \\
+  &O(M_i, M_j) := (Q(M_i) \cap Q(M_j) \neq \emptyset) \\
   &Order(M_i) = Order(M_{i-1}) \land C(M_{i-1}, M_i) \\
   &\quad = Order(M_0) \land O(M_0, M_1) \land \cdots \land  O(M_{i-1}, M_i) \\
 \end{flalign*}
@@ -287,13 +288,13 @@ We may then use this fact to compute the intersection of two subsets of messages
   &|Q(M_1) \cap Q(M_2) \cap H| \geq f + 1 - f = 1\\
 \end{flalign*}
 
-A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). Without a prover system--which is common in practice owing to the computational expense of systems like ZKPs--BFT SMRs requires at least $2f+1$ of the honest processes to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
+A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). Without a prover system---which is common in practice owing to the computational expense of systems like ZKPs---BFT SMRs requires at least $2f+1$ of the honest processes to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
 
 Roughly speaking, if a Byzantine fault-tolerant SMR protocol tolerates $f$ faulty processes, then it uses at best $\frac{1}{2f+1}$ of the available non-faulty compute.
 
 \section{A Byzantine Fault-allowing Protocol}
 
-If we want to access more compute, an obvious thought is to simply relax the requirement on order--to allow our total order to potentially fail and perhaps argue that such is acceptable. As it turns out, we can accomplish one such protocol simply by taking advantage of a combinatorial property of samples. 
+If we want to access more compute in a Byzantine fault-tolerant setting, an initial thought is to simply relax the requirement on order. Perhaps we can include fewer processes and allow our total order to fail with an acceptably low likelihood. 
 
 First, consider the following objective function which is minimized for $M_i$ when $Order(M_i) = 1$:
 
@@ -301,6 +302,8 @@ First, consider the following objective function which is minimized for $M_i$ wh
   &Obj(M_i) =  0 \iff Order(M_i) = 1\\ 
   &Obj(M_i) =  1 \iff Order(M_i) = 0\\ 
 \end{flalign*}
+
+\subsection{The RESAMPLE Protocol}
 
 We define the following Byzantine fault-allowing protocol $\text{RESAMPLE}$:
 
@@ -322,6 +325,8 @@ Observe the following possible outcomes for selection of a random subcommittee:
   \item $|K_i \cap H| \leq k \iff \text{ Corrupt } = C$, representing a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly.
   \item $k < |K_i \cap H| < 2k + 1 \iff \text{ Undecided } = U$, representing all other cases wherein neither an honest nor dishonest supermajority exists and may either compute $M_i$ correctly or disagree internally and not render a supermajority.
 \end{itemize}
+
+\subsection{The Loss of the RESAMPLE Protocol}
 
 Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcommittee without replacement:
 
@@ -352,33 +357,64 @@ Let $S$ represent the transient state in which the RESAMPLE is sampling, i.e., h
 \begin{flalign*}
 &\Omega = \{S, G, B\} \\
 &T = \begin{pmatrix}
-  Pr[U] & Pr[D] & Pr[C] \\
+  \Pr[U] & \Pr[D] & \Pr[C] \\
   0   & 1   & 0   \\
   0   & 0   & 1
 \end{pmatrix} \\
 \end{flalign*}
 
-The probability of the algorithm making a "bad" decision to select a Corrupt subcommittee $Pr[B]$ is then:
+The probability of the algorithm making a "bad" decision to select a Corrupt subcommittee $\Pr[B]$ is then:
 
 \begin{flalign*}
-  &\text{Let } x \triangleq Pr[\text{ eventually hitting B } | \text{ start in S }] \\
-  &x = Pr[C] \cdot 1 + Pr[D] \cdot 0 + Pr[U] \cdot x \\
-  &x - Pr[U] \cdot x = Pr[C] \implies x \cdot (1 - Pr[U]) = Pr[C] \implies x = \frac{Pr[C]}{1 - Pr[U]} \\
+  &\text{Let } x := \Pr[\text{ eventually hitting B } | \text{ start in S }] \\
+  &x = \Pr[C] \cdot 1 + \Pr[D] \cdot 0 + \Pr[U] \cdot x \\
+  &x - \Pr[U] \cdot x = \Pr[C] \implies x \cdot (1 - \Pr[U]) = \Pr[C] \implies x = \frac{\Pr[C]}{1 - \Pr[U]} \\
   &\text{Observe that... } \\
-  &1 - Pr[U] = Pr[D] + Pr[C] \implies Pr[B] = \frac{Pr[C]}{Pr[D] + Pr[C]} \\
+  &1 - \Pr[U] = \Pr[D] + \Pr[C] \implies \Pr[B] = \frac{\Pr[C]}{\Pr[D] + \Pr[C]} \\
  \end{flalign*}
 
-Conversely, the probability of the algorithm making a "good" decision to select a Divine subcommittee $Pr[G]$ is then:
+Conversely, the probability of the algorithm making a "good" decision to select a Divine subcommittee $\Pr[G]$ is then:
 
 \begin{flalign*}
-  &Pr[G] = 1 - Pr[B] = 1 - \frac{Pr[C]}{Pr[D] + Pr[C]} = \frac{Pr[D]}{Pr[D] + Pr[C]} \\
+  &\Pr[G] = 1 - \Pr[B] = 1 - \frac{\Pr[C]}{\Pr[D] + \Pr[C]} = \frac{\Pr[D]}{\Pr[D] + \Pr[C]} \\
 \end{flalign*}
 
-As I will show, the probability $Pr[B]$ drops off quickly for a fixed ratio sample size $\gamma = \frac{k}{f}$.
-
+As I will show, the probability $\Pr[C]$ drops off quickly for a fixed sampling ratio $\gamma = \frac{k}{f}$ (with, say, $k=\lfloor \gamma f \rfloor$). First observe that the number of faulty replicas in a sampled subcommittee follows a hypergeometric distribution:
 \begin{flalign*}
-  &\lim_{f \to \infty} Pr[C](\gamma, k) = \frac{1}{2} \forall k \in \mathbb{N}: k < f \\
+  &X := |K_i \cap F| \sim \text{Hypergeometric}(N,K,n), \\
+  &C \equiv \{X \ge 2k+1\}, \\
+  &\Pr[C](\gamma,f) = \frac{\mathcal{S}_C\!\left(f,\,\lfloor\gamma f\rfloor\right)}{\mathcal{S}\!\left(f,\,\lfloor\gamma f\rfloor\right)}.
 \end{flalign*}
+
+Standard large-deviation bounds for sampling without replacement give a KL-based tail bound:
+\begin{flalign*}
+  &\Pr[X \ge qn] \le \exp\!\left(-n \cdot D(q \,\|\, p)\right), \\
+  &D(q \,\|\, p) = q \log\!\left(\frac{q}{p}\right) + (1-q)\log\!\left(\frac{1-q}{1-p}\right).
+\end{flalign*}
+
+In our case $p=\frac{f}{3f+1}\approx \frac13$, $q=\frac{2k+1}{3k+1}\approx \frac23$, and $n=3k+1$. Hence
+\begin{flalign*}
+  &D\!\left(\frac23 \,\middle\|\, \frac13\right)
+    = \frac23 \log 2 + \frac13 \log \frac12
+    = \frac13 \log 2.
+\end{flalign*}
+
+Therefore,
+\begin{flalign*}
+  &\Pr[C] \lesssim \exp\!\left(-(3k+1)\cdot \frac13 \log 2\right)
+   = 2^{-(3k+1)/3}, \\
+  &\Pr[C](\gamma,f) \lesssim 2^{-(3\gamma f + 1)/3}
+   = 2^{-\gamma f - 1/3}
+   = 2^{-\Omega(f)}.
+\end{flalign*}
+
+In particular, for any fixed $\gamma\in(0,1)$,
+\begin{flalign*}
+  &\lim_{f \to \infty} \Pr[C](\gamma, f) = 0 \forall \gamma \in (0, 1) \\
+\end{flalign*}
+
+
+
 
 Meanwhile, the expect cost of the algorithm in terms of the number of processes used remains on the order $\Theta(k)$.
 

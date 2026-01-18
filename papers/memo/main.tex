@@ -158,7 +158,7 @@
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title{Byzantine Fault Allowing Protocols}
+\title{Parabyzantine Protocols}
 
 %%
 %% The "author" command and its associated commands are used to define
@@ -187,7 +187,7 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-   This memo is for friends and colleagues to explain the beginnings of my study of a category of distributed computing protocols which I call Byzantine fault-allowing. Below, I will begin with a motivation for the study. I'll then provide a trivial combinatorial example of a protocol assumed to be in the category. Finally, I'll suggest more abstract constructions with which the study is properly concerned.
+   This memo is for friends and colleagues to explain the beginnings of my study of a category of distributed computing protocols which I call Parabyzantine. Below, I will begin with a motivation for the study. I'll then provide a trivial combinatorial example of a protocol assumed to be in the category. Finally, I'll suggest more abstract constructions with which the study is properly concerned.
 
     Most terms and notation follow [HKR]. The final section introduces provisional and more suggestive terms. 
 \end{abstract}
@@ -198,7 +198,7 @@
 \maketitle
 
 \section{Motivation}
-The motivation for studying Byzantine fault-allowing protocols, as I have dubbed them, is derived primarily from two phenomena in the world of distributed computing: the need for fault-tolerant order and compute inefficiencies of Byzantine fault-tolerant replica-based protocols.
+My motivation for studying Parabyzantine protocols, as I have dubbed them, is derived primarily from two phenomena in the world of distributed computing: the need for fault-tolerant order and compute inefficiencies of Byzantine fault-tolerant replica-based protocols.
 
 \subsection{The General Need for Order}
 
@@ -218,9 +218,9 @@ When composing these partial functions, we axiomatize that undefinedness propaga
   &\quad f(g(x)) \text{ is defined} \\
 \end{flalign*}
 
-We find this to be a suitable model for modern machines, because we know how to design hardware which can logically represent functions with these properties and which is rarely corrupted by the surrounding environment.
+We find this to be a suitable model for programming modern machines, because we know how to design hardware which can logically represent functions with these properties and which is rarely corrupted by the surrounding environment.
 
-However, for general computing tasks, we often have partial functions which are not commutative. 
+However, for general computing tasks, we often have partial functions which are non-commutative. 
 
 \begin{flalign*}
   &f \circ g \neq g \circ f \\
@@ -237,7 +237,7 @@ A familiar example is subtraction on $\mathbb{N}$, which is naturally partial:
   \end{cases}
 \end{flalign*}
 
-And is also not commutative:
+And is also non-commutative:
 
 \begin{flalign*}
   &\mathrm{sub}(5,3) = 2 \neq \mathrm{sub}(3,5) \text{ (undefined).}
@@ -247,17 +247,17 @@ In general, for a family $f_1, \ldots, f_n$ of partial functions, the composite 
 
 In distributed computing, we may instead refer to a set of processes $P$ which are able to share information with one another via messages $m \in M$ to varying degrees of success. Then, within this context, we hope to achieve results up to some notion of correctness and consistency, i.e., up to some notion of equivalence with the local hardware case.
 
-Put more provocatively, a distributed computing protocol often has to decide from a chaotic world of messages what a reasonable order of partial functions should be. Signatures can be placed on messages to ensure they are authentic. Prover systems can be built to attest the correctness of the value of a partial function. But, these may mean little without a reasonable order.
+Put more provocatively, a distributed computing protocol often has to decide from a chaotic world of messages what a reasonable order of partial functions should be. Signatures can be placed on messages to ensure they are authentic. Prover systems can be built to attest to the correctness of the value of a partial function. But, these may mean little without a reasonable order.
 
 \subsection{2f + 1}
 
-Often the success of a distributed computing protocol is framed in terms of its agreement or consensus. And, in the abundant cases where order matters, this necessarily means agreement on said order. 
+Often the success of a distributed computing protocol is framed in terms of its ability to induce agreement or consensus. And, in the abundant cases where order matters, this necessarily means consensus on said order. 
 
 If we take set of processes $|P| = 3f + 1$ and ask for the unique messages $M_i \subseteq M$ which indicate computing the partial function at index $i$, we may wonder what different requirements on the agreement of these messages might mean. 
 
 A simple majority $|M_i| > \frac{|P|}{2}$ would ensure by the Generalized Pigeonhole Principle that any two subsets of messages $M_{i}, M_{j}$ would intersect in at least one process. In a sense, at least one process can attest to each ordering step. By recurrence, this reads out a total order.
 
-Let $Q: M \to 2^P$ be the function which maps a message to the set of processes which have sent it. Then, we may define order as $Order(M_i)$ as follows:
+Let $Q: M \to 2^P$ be the function which maps a message to the set of processes which have sent it, representing a quorum. Then, we may define order $Order(M_i)$ as follows:
 
 \begin{flalign*}
   &Q(M_i) = \bigsqcup_{m \in M_i} Q(m) \\
@@ -266,9 +266,9 @@ Let $Q: M \to 2^P$ be the function which maps a message to the set of processes 
   &\quad = Order(M_0) \land O(M_0, M_1) \land \cdots \land  O(M_{i-1}, M_i) \\
 \end{flalign*}
 
-Importantly, this simple majority model does not account for the possibility that a process may fault. As it turns out, the most aggressive assumption we can make and still retain the possibility of these intersecting sets amongst non-faulty processes is that at most $f$ processes may fault. This is the Byzantine fault model.
+Importantly, this simple majority model does not account for the possibility that a process may fault. As it turns out, the most aggressive assumption we can make and still retain the possibility of these intersecting sets amongst non-faulty processes is that at most $f$ processes may fault and quorums must be formed by at least $2f+1$ processes. This is the Byzantine fault model.
 
-Let $H$ be the set of honest processes and $F$ be the set of faulty processes. Two quora must then intersect in at least $f+1$ processes:
+Let $H$ be the set of honest processes and $F$ be the set of faulty processes. Any two quora, under the Byzantine fault model, must then intersect in at least $f+1$ processes:
 
 \begin{flalign*}
 &|Q(M_1) \cap Q(M_2)|=\\
@@ -277,7 +277,7 @@ Let $H$ be the set of honest processes and $F$ be the set of faulty processes. T
 &= f + 1 \\
 \end{flalign*}
 
-We may then use this fact to compute the intersection of two subsets of messages $M_1, M_2$ in the presence of faulty processes:
+We can further deduce that any two quora must intersect in at least one honest process $h \in H$ in the presence of $f$ faulty processes:
 
 \begin{flalign*}
   &|Q(M_1) \cap Q(M_2)|\\
@@ -288,24 +288,34 @@ We may then use this fact to compute the intersection of two subsets of messages
   &|Q(M_1) \cap Q(M_2) \cap H| \geq f + 1 - f = 1\\
 \end{flalign*}
 
-A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). Without a prover system---which is common in practice owing to the computational expense of systems like ZKPs---BFT SMRs requires at least $2f+1$ of the honest processes to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
+A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). Without a prover system---which is common in practice owing to the computational expense of systems like ZKPs---BFT SMRs require at least $2f+1$ of the honest processes to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
 
 Roughly speaking, if a Byzantine fault-tolerant SMR protocol tolerates $f$ faulty processes, then it uses at best $\frac{1}{2f+1}$ of the available non-faulty compute.
 
-\section{A Byzantine Fault-allowing Protocol}
+\section{A Parabyzantine Protocol}
 
-If we want to access more compute in a Byzantine fault-tolerant setting, an initial thought is to simply relax the requirement on order. Perhaps we can include fewer processes and allow our total order to fail with an acceptably low likelihood. 
+If we want to access more compute in a Byzantine fault-tolerant setting, an initial thought is to simply relax the requirement on order. Perhaps we can include fewer processes and allow our total order to fail with an acceptably low likelihood. Indeed, as I will show, even a fairly straightforward application of this concept yields a protocol which is computationally efficient and low loss. 
 
-First, consider the following objective function which is minimized for $M_i$ when $Order(M_i) = 1$:
+However, before we endeavor this protocol, let's first consider what computationally efficient and a low loss would mean.
+
+As referenced above, SMR requires at least $2f+1$ processes to certify each partial function. Thus, each logical step costs $\Theta(2f + 1)$ replicated work. So, in abstract, if we use fewer than $2f+1$ processes, we will have improved compute efficiency.
+
+What is meant by low loss may be less obvious. In the Byzantine fault-tolerant setting, we have described a discrete mathematical limit that tells us we cannot have a property we called $Order(M_i)$ without involving at least $2f+1$ processes. So, the notion that we can have protocol which is computationally more efficient seems to contradict this limit.
+
+However, we may consider the following objective function which is minimized for $M_i$ when $Order(M_i) = 1$:
 
 \begin{flalign*}
   &Obj(M_i) =  0 \iff Order(M_i) = 1\\ 
   &Obj(M_i) =  1 \iff Order(M_i) = 0\\ 
 \end{flalign*}
 
-\subsection{The RESAMPLE Protocol}
+In its discrete case, we cannot improve. But, if we constrain on the average case $E[Obj(M_i)] = Pr[Obj(M_i) = 1] \leq \epsilon$, we have much more flexibility.
 
-We define the following Byzantine fault-allowing protocol $\text{RESAMPLE}$:
+In a sense, it is precisely this sort of assumption which gives rise to the name Parabyzantine. These are protocols which act like Byzantine fault-tolerant protocols up to some well-understood point. In the case of the \textsc{Resample} protocol, this point will be an average-case guarantee. While we are under the veil of average case, \textsc{Resample} will be Byzantine fault-tolerant. Once we remove the veil, \textsc{Resample} will not be. 
+
+\subsection{The \textsc{Resample} Protocol}
+
+We define the following Byzantine fault-allowing protocol $\text{\textsc{Resample}}$:
 
 \begin{itemize}
   \item For a given index, $i$ on $M$, pick a random subcommittee $K_i \subseteq P$ s.t. $|K_i| = 3k + 1$.
@@ -326,7 +336,14 @@ Observe the following possible outcomes for selection of a random subcommittee:
   \item $k < |K_i \cap H| < 2k + 1 \iff \text{ Undecided } = U$, representing all other cases wherein neither an honest nor dishonest supermajority exists and may either compute $M_i$ correctly or disagree internally and not render a supermajority.
 \end{itemize}
 
-\subsection{The Loss of the RESAMPLE Protocol}
+\subsection{The Loss of the \textsc{Resample} Protocol}
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=\linewidth]{figures/pr_bad.png}
+  \caption{$\Pr[B]$ representing the probability of selecting a corrupt subcommittee as a function of $f$ for different sampling ratios $\gamma = \frac{k}{f}$.}
+  \label{fig:pr_bad}
+\end{figure}
 
 Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcommittee without replacement:
 
@@ -352,7 +369,7 @@ All other outcomes are by definition Undecided, so the total number of ways to s
   &\mathcal{S}_{U}(f, k) = \mathcal{S}(f, k) - \mathcal{S}_{C}(f, k) - \mathcal{S}_{D}(f, k) \\
 \end{flalign*}
 
-Let $S$ represent the transient state in which the RESAMPLE is sampling, i.e., has just started or produced a Undecided subcommittee. Let $G$ represent the absorbing state in which RESAMPLE makes a "good" decision to select a Divine subcommittee. Let $B$ represent the absorbing state in which RESAMPLE makes a "bad" decision to select a Corrupt subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
+Let $S$ represent the transient state in which the \textsc{Resample} is sampling, i.e., has just started or produced a Undecided subcommittee. Let $G$ represent the absorbing state in which \textsc{Resample} makes a "good" decision to select a Divine subcommittee. Let $B$ represent the absorbing state in which \textsc{Resample} makes a "bad" decision to select a Corrupt subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
 
 \begin{flalign*}
 &\Omega = \{S, G, B\} \\
@@ -413,13 +430,35 @@ In particular, for any fixed $\gamma\in(0,1)$,
   &\lim_{f \to \infty} \Pr[C](\gamma, f) = 0 \forall \gamma \in (0, 1) \\
 \end{flalign*}
 
+\subsection{The Cost of the \textsc{Resample} Protocol}
 
+The expected cost of \textsc{Resample}, measured in the total number of processes engaged across all sampling attempts, remains on the order $\Theta(k)$, but admits a constant-factor improvement over the $2f+1$ quorum required by standard SMR.
 
+Fix an index $i$ and write $\Pr[U] := \Pr[\mathcal{U}]$ for the probability that a uniformly sampled subcommittee of size $3k+1$ is \emph{Undecided}. Each sampling attempt terminates (i.e., yields a decision) precisely when the outcome is not $\mathcal{U}$. Thus, if $T$ denotes the number of sampling attempts until termination, then $T$ is geometric with success probability $1-\Pr[U]$:
 
-Meanwhile, the expect cost of the algorithm in terms of the number of processes used remains on the order $\Theta(k)$.
+\begin{flalign*}
+  &\Pr[T = t] = \Pr[U]^{t-1}\cdot (1-\Pr[U]) \qquad \text{for } t \in \mathbb{N},\\
+  &\mathbb{E}[T]
+    = \sum_{t=1}^{\infty} t \cdot \Pr[U]^{t-1}(1-\Pr[U])
+    = \frac{1}{1-\Pr[U]}.
+\end{flalign*}
 
+Each attempt engages at most $3k+1$ processes. Therefore the expected number of process-participations consumed per decision is
 
-Thus, RESAMPLE is a Byzantine fault-allowing protocol which is computationally efficient and has a low probability of failure.
+\begin{flalign*}
+  &\mathbb{E}[\text{Processes Used}]
+    = (3k+1)\cdot \mathbb{E}[T]
+    = \frac{3k+1}{1-\Pr[U]}.
+\end{flalign*}
+
+In regimes of interest (e.g., for a fixed sampling ratio $\gamma=\tfrac{k}{f}$ with large $f$), $\Pr[U]$ is typically bounded away from $1$; in particular, if $\Pr[U]\approx \tfrac{1}{2}$, then
+
+\begin{flalign*}
+  &\mathbb{E}[T] \approx \frac{1}{1-\frac{1}{2}} = 2,\\
+  &\mathbb{E}[\text{Processes Used}] \approx 2(3k+1) = \Theta(k).
+\end{flalign*}
+
+Thus, \textsc{Resample} is Parabyzantine in the sense described above: it replaces a worst-case quorum requirement with an average-case sampling cost, remaining computationally efficient while permitting a tunably low probability of failure.
 
 \section{An Expanded View}
 

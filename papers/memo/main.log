@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  17 JAN 2026 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  18 JAN 2026 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1150,7 +1150,7 @@ con-strain on the av-er-age case $\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (-20) [\OML
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
 (Font)              using `OT1/cmss/bx/n' instead on input line 316.
 
-<figures/pr_bad.png, id=75, 867.24pt x 505.89pt>
+<figures/pr_bad.png, id=83, 867.24pt x 505.89pt>
 File: figures/pr_bad.png Graphic file (type png)
 <use figures/pr_bad.png>
 Package pdftex.def Info: figures/pr_bad.png  used on input line 343.
@@ -1164,11 +1164,24 @@ Class acmart Warning: A possible image without description on input line 346.
 
 [5.5 <./figures/pr_bad.png>]
 
-[6.6] Processing 'acks' comment.
+[6.6]
+
+[7.7]
+
+
+(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
+eric/stringenc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+)
+(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
+eric/stringenc/se-utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+) [8.8] Processing 'acks' comment.
 \openout3 = `comment.cut'.
 
- Comment 'acks' writing to comment.cut.
-Straight input of comment.cut. (./comment.cut)
+
+Comment 'acks' writing to comment.cut. Straight input of comment.cut.
+(./comment.cut)
 No file main.bbl.
 
 Class acmart Warning: Some images may lack descriptions.
@@ -1187,15 +1200,12 @@ ence can ingest your work..
 
 
 
+[9.9]
 
-(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
-eric/stringenc/se-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-)
-(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
-eric/stringenc/se-utf8.def
-File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [7.7] (./main.aux)
+LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (8 not 9).
+               Rerun to correct this.
+
+(./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
@@ -1207,23 +1217,17 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: F82705294322C839EDB99A2C4D1567B5;1683
-(rerunfilecheck)             After:  8D9FA6A56D566F494A6DE33B7E292B85;1683.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 6384C1BA9E49311F017CA5D02859F3C6;2294.
  ) 
 Here is how much of TeX's memory you used:
- 28640 strings out of 474986
- 546778 string characters out of 5757256
- 1004015 words of memory out of 5000000
- 50628 multiletter control sequences out of 15000+600000
- 572607 words of font info for 144 fonts, out of 8000000 for 9000
+ 28660 strings out of 474986
+ 547078 string characters out of 5757256
+ 1005232 words of memory out of 5000000
+ 50637 multiletter control sequences out of 15000+600000
+ 572760 words of font info for 147 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
- 90i,16n,131p,1001b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,16n,131p,1001b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts
 /type1/public/amsfonts/cm/cmcsc10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2
 c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/
@@ -1234,31 +1238,38 @@ bk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsf
 onts/cm/cmmi6.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env
 -texmfdist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/gmwrbk5nkq0asr4
 i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmm
-i9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8p
-jj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr7.pfb></nix
-/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texliv
-e-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr9.pfb></nix/store/gmwrbk
-5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfon
-ts/cm/cmss10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-
-texmfdist/fonts/type1/public/amsfonts/cm/cmss8.pfb></nix/store/gmwrbk5nkq0asr4i
-7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmss
-9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/f
-onts/type1/public/amsfonts/cm/cmssbx10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl
-8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/ty
-pe1/public/amsfonts/cm/cmsy5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-t
-exlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/
-gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/
-amsfonts/cm/cmti10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-202
-4-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store/gmwr
-bk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb>
-Output written on main.pdf (7 pages, 326090 bytes).
+i8.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/
+fonts/type1/public/amsfonts/cm/cmmi9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8p
+jj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></ni
+x/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1
+/public/amsfonts/cm/cmr5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texli
+ve-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/gmwrb
+k5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-t
+exmfdist/fonts/type1/public/amsfonts/cm/cmr8.pfb></nix/store/gmwrbk5nkq0asr4i7b
+m69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr9.p
+fb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/font
+s/type1/public/amsfonts/cm/cmss10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2
+c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmss8.pfb></nix/s
+tore/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/pu
+blic/amsfonts/cm/cmss9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive
+-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></nix/store/gmw
+rbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-e
+nv-texmfdist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></nix/store/gmwrbk5nkq0as
+r4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/c
+msy6.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl
+8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
+nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-t
+exlive-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/
+store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (9 pages, 377234 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
- 41066 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 41082 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -262,7 +262,7 @@ Let $Q: M \to 2^P$ be the function which maps a message to the set of processes 
 \begin{flalign*}
   &Q(M_i) = \bigsqcup_{m \in M_i} Q(m) \\
   &O(M_i, M_j) := (Q(M_i) \cap Q(M_j) \neq \emptyset) \\
-  &Order(M_i) = Order(M_{i-1}) \land C(M_{i-1}, M_i) \\
+  &Order(M_i) = Order(M_{i-1}) \land O(M_{i-1}, M_i) \\
   &\quad = Order(M_0) \land O(M_0, M_1) \land \cdots \land  O(M_{i-1}, M_i) \\
 \end{flalign*}
 
@@ -460,7 +460,62 @@ In regimes of interest (e.g., for a fixed sampling ratio $\gamma=\tfrac{k}{f}$ w
 
 Thus, \textsc{Resample} is Parabyzantine in the sense described above: it replaces a worst-case quorum requirement with an average-case sampling cost, remaining computationally efficient while permitting a tunably low probability of failure.
 
-\section{An Expanded View}
+\section{An Expanded View of Parabyzantine Protocols}
+Now that we have found one Parabyzantine protocol, we might wonder if we can find others and under what conditions these others act like Byzantine fault-tolerant protocols. This is, however, a big universe, and it helps to explore it in a structured manner. 
+
+To this end, I have chosen to align my views along two vantages. The first is the rich perspective of topological distributed computing. The second is the category theoretic consideration of relationships between Parabyzantine protocols. 
+
+My exploration is further guided by the search for a non-trivial bridge between topological descriptions of protocols and non-topological descriptions of protocols---one that can be expressed in the morphisms of a category of Parabyzantine protocols.
+
+\subsection{Topological Protocols}
+The fields of topology and distributed computing have a well-established and fruitful intersection. We know, for example, that we can formulate Byzantine agreement as a problem of barycentric subdivision on a simplicial complex via protocols inheriting from Herlihy and Shavit, 1999 such as [HKR's] \textsc{BaryAgree}. Further, we know that \textsc{BaryAgree} achieves $Obj(M_i) = 0$ in the Byzantine fault-tolerant setting. 
+
+Much of this intersection is, in a word, unavoidable: it is hard to model agreement problems without something that looks like the sort of complex geometric object with which topology is concerned. And, indeed I have spent most of my own study digesting the various topological tools and constructions which are already invoked in the catalog of Byzantine fault-tolerant protocols. 
+
+Rather the spending the time reciting various twists and turns which I have not yet synthesized into a coherent contribution, I'd instead like to point at two reasons why the topological formulation of Byzantine agreement is acutely interesting to my study of Parabyzantine protocols.
+
+The first is that Byzantine agreement is often concerned with some kind of connected structure. Consider our recursive definition of $Order(M_i)$, which required consecutive quorums to intersect. Intuitively, these intersections form a connected structure in the process set $P$ such that we can move from one quorum to the next.
+
+To make this intuition precise, consider the following nerve construction. Let $P$ be the set of processes, and for each index $i$ let $Q_i \subseteq P$ denote the quorum of processes whose messages certify the $i$th step.\footnote{More generally, one may take $\mathcal{Q}$ to be a family of quorums and regard $\{Q\}_{Q\in\mathcal{Q}}$ as a cover of the participating process set.}
+
+Consider the family of subsets $\mathcal{U} = \{Q_i\}_{i\in I}$. Viewing $\mathcal{U}$ as a cover of
+\[
+X := \bigcup_{i\in I} Q_i \subseteq P,
+\]
+we may form the \emph{nerve} simplicial complex $N(\mathcal{U})$ defined by:
+\begin{flalign*}
+  &\mathrm{Vert}(N(\mathcal{U})) = \mathcal{U},\\
+  &\{Q_{i_0},\ldots,Q_{i_d}\} \text{ spans a $d$-simplex } \iff \bigcap_{j=0}^{d} Q_{i_j} \neq \emptyset.
+\end{flalign*}
+
+In this language, our intersection predicate $O(M_{i-1},M_i)$ asserts precisely that consecutive vertices in the nerve share an edge:
+\begin{flalign*}
+  &O(M_{i-1},M_i) \iff Q_{i-1}\cap Q_i \neq \emptyset
+    \iff \{Q_{i-1},Q_i\} \in N(\mathcal{U})^{(1)}.
+\end{flalign*}
+
+Thus, a run satisfying $Order(M_i)$ determines a path in the $1$-skeleton of the nerve. Or, in other words, it is the connectedness of a space with a topology describing the intersection of quorums with which the fundamental Byzantine assumption is concerned.
+
+The second reason for my interest in the topological formulation of Byzantine agreement is that topology is a rich discipline for studying non-standard equivalence relations.
+
+Recall that non-commutativity was a key consideration in arriving at our Byzantine fault-tolerant state machine replica protocol.
+
+\begin{flalign*}
+  &f \circ g \neq g \circ f \\
+\end{flalign*}
+
+When studying topologically, however, we may be able to show that $fg$ and $gf$ are equivalent up to homotopy:
+
+\begin{flalign*}
+  &f \circ g \simeq g \circ f \\
+\end{flalign*}
+
+In topology generally, we can access many of these non-standard equivalence relations. Homotopy, indistinguishability under a quotient space, and various more specific deformation relations, give us a lot of ways to relate two protocols which are not equivalent in the standard sense. As we used the average case to find the Parabyzantine \textsc{Resample} protocol, we may be able to infer other protocols which act like Byzantine fault-tolerant protocols up to some well-understood topological relationship and hence are Parabyzantine.
+
+Thus, in addition to its extensive corpus, the topological formulation of Byzantine agreement is both a fitting tool for describing the sorts of properties we would like to preserve and source of instruments for relaxing requirements into Parabyzantine protocols.
+
+
+\subsection{A Category of Parabyzantine Protocols}
 
 
 %%

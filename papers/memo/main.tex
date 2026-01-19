@@ -305,7 +305,7 @@ Before we endeavor this protocol, let's first consider what computationally effi
 \subsubsection{Computationally Efficient}
 Computational efficiency is fairly straightforward. As referenced above, SMR requires at least $2f+1$ processes to certify each partial function. Thus, each logical step costs $\Theta(2f + 1)$ replicated work. So, in abstract, if we use fewer than $2f+1$ processes, we will have improved compute efficiency.
 
-More interestingly, any constant-factor improvement over SMR yields a proportional increase in effective compute utilization across the replica set. In practical deployments this may have outsized effects on throughput, since the extra compute can be reinvested into tasks whose impact on subsequent rounds is non-linear, e.g., batching, compression, proof generation, or state access.
+More interestingly, any constant-factor improvement over SMR yields a proportional increase in effective compute utilization across the replica set. In practical deployments this may have outsized effects on throughput, since the extra compute can be reinvested into tasks whose impact on subsequent rounds is non-linear, e.g., computing optimistic paths, batching, compression, proof generation, or state access.
 
 \subsubsection{Low Loss}
 What is meant by low loss may be less obvious. In the Byzantine fault-tolerant setting, we have described a discrete mathematical limit that tells us we cannot have a property we called $Order(M_i)$ without involving at least $2f+1$ processes. So, the notion that we can have protocol which is computationally more efficient seems to contradict this limit.

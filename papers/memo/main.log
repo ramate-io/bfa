@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  19 JAN 2026 09:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  19 JAN 2026 09:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1224,11 +1224,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 3251D46F981FEEBAD010DE8E7EFEB4C0;2371.
  ) 
 Here is how much of TeX's memory you used:
- 28922 strings out of 474986
- 552095 string characters out of 5757256
+ 28920 strings out of 474986
+ 552081 string characters out of 5757256
  1005919 words of memory out of 5000000
  50817 multiletter control sequences out of 15000+600000
- 576863 words of font info for 177 fonts, out of 8000000 for 9000
+ 576812 words of font info for 176 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
  90i,18n,131p,1001b,969s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts
@@ -1273,7 +1273,7 @@ c/amsfonts/cm/cmti8.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-20
 k5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-202
 4-env-texmfdist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (12 pages, 424675 bytes).
+Output written on main.pdf (12 pages, 424708 bytes).
 PDF statistics:
  299 PDF objects out of 1000 (max. 8388607)
  233 compressed objects within 3 object streams

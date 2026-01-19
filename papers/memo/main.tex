@@ -121,7 +121,7 @@
 \usepackage{iftex}
 
 \ifPDFTeX
-  \DeclareRobustCommand{\bo}{\mathfrak{B}}
+  \DeclareRobustCommand{\bo}{\mathfrak{P}}
 \else
   \usepackage{fontspec}
   \newfontfamily{\vaifont}{Noto Sans Vai}
@@ -142,7 +142,7 @@
   }
 \fi
 
-\newcommand{\bfa}{\bo}
+\newcommand{\pb}{\bo}
 
 \usepackage{subcaption}
 \usepackage{tikz}
@@ -187,9 +187,9 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-   This memo is for friends and colleagues to explain the beginnings of my study of a category of distributed computing protocols which I call Parabyzantine. Below, I will begin with a motivation for the study. I'll then provide a trivial combinatorial example of a protocol assumed to be in the category. Finally, I'll suggest more abstract constructions with which the study is properly concerned.
+   This write-up is for friends and colleagues to explain the beginnings of my study of a category of distributed computing protocols which I call Parabyzantine. Below, I will begin with a motivation for the study which lies in the need for fault-tolerant order and compute efficiency. I'll then provide a trivial combinatorial example of a Parabyzantine protocol \textsc{Resample}. Finally, I'll suggest more abstract constructions with which the study is properly concerned, including an example from a suggestive formal category $\pb$.
 
-    Most terms and notation follow [HKR]. The final section introduces provisional and more suggestive terms. 
+    Most terms and notation loosely follow [HKR].
 \end{abstract}
 
 %%
@@ -292,6 +292,7 @@ A straightforward interpretation of this fact renders the ubiquitous family of B
 
 Roughly speaking, if a Byzantine fault-tolerant SMR protocol tolerates $f$ faulty processes, then it uses at best $\frac{1}{2f+1}$ of the available non-faulty compute.
 
+\newpage
 \section{A Parabyzantine Protocol}
 
 If we want to access more compute in a Byzantine fault-tolerant setting, an initial thought is to simply relax the requirement on order. Perhaps we can include fewer processes and allow our total order to fail with an acceptably low likelihood. Indeed, as I will show, even a fairly straightforward application of this concept yields a protocol which is computationally efficient and low loss. 
@@ -460,6 +461,7 @@ In regimes of interest (e.g., for a fixed sampling ratio $\gamma=\tfrac{k}{f}$ w
 
 Thus, \textsc{Resample} is Parabyzantine in the sense described above: it replaces a worst-case quorum requirement with an average-case sampling cost, remaining computationally efficient while permitting a tunably low probability of failure.
 
+\newpage
 \section{An Expanded View of Parabyzantine Protocols}
 Now that we have found one Parabyzantine protocol, we might wonder if we can find others and under what conditions these others act like Byzantine fault-tolerant protocols. This is, however, a big universe, and it helps to explore it in a structured manner. 
 
@@ -468,12 +470,13 @@ To this end, I have chosen to align my views along two vantages. The first is th
 My exploration is further guided by the search for a non-trivial bridge between topological descriptions of protocols and non-topological descriptions of protocols---one that can be expressed in the morphisms of a category of Parabyzantine protocols.
 
 \subsection{Topological Protocols}
-The fields of topology and distributed computing have a well-established and fruitful intersection. We know, for example, that we can formulate Byzantine agreement as a problem of barycentric subdivision on a simplicial complex via protocols inheriting from Herlihy and Shavit, 1999 such as [HKR's] \textsc{BaryAgree}. Further, we know that \textsc{BaryAgree} achieves $Obj(M_i) = 0$ in the Byzantine fault-tolerant setting. 
+The fields of topology and distributed computing have a well-established and fruitful intersection. We know, for example, that we can formulate Byzantine agreement as a problem of barycentric subdivision on a simplicial complex via the toplogical framework of Herlihy and Shavit, 1999 such as [HKR's] \textsc{BaryAgree}. Further, we know that \textsc{BaryAgree} achieves $Obj(M_i) = 0$ in the Byzantine fault-tolerant setting. 
 
 Much of this intersection is, in a word, unavoidable: it is hard to model agreement problems without something that looks like the sort of complex geometric object with which topology is concerned. And, indeed I have spent most of my own study digesting the various topological tools and constructions which are already invoked in the catalog of Byzantine fault-tolerant protocols. 
 
 Rather the spending the time reciting various twists and turns which I have not yet synthesized into a coherent contribution, I'd instead like to point at two reasons why the topological formulation of Byzantine agreement is acutely interesting to my study of Parabyzantine protocols.
 
+\subsubsection{Connected Structures}
 The first is that Byzantine agreement is often concerned with some kind of connected structure. Consider our recursive definition of $Order(M_i)$, which required consecutive quorums to intersect. Intuitively, these intersections form a connected structure in the process set $P$ such that we can move from one quorum to the next.
 
 To make this intuition precise, consider the following nerve construction. Let $P$ be the set of processes, and for each index $i$ let $Q_i \subseteq P$ denote the quorum of processes whose messages certify the $i$th step.\footnote{More generally, one may take $\mathcal{Q}$ to be a family of quorums and regard $\{Q\}_{Q\in\mathcal{Q}}$ as a cover of the participating process set.}
@@ -496,6 +499,7 @@ In this language, our intersection predicate $O(M_{i-1},M_i)$ asserts precisely 
 
 Thus, a run satisfying $Order(M_i)$ determines a path in the $1$-skeleton of the nerve. Or, in other words, it is the connectedness of a space with a topology describing the intersection of quorums with which the fundamental Byzantine assumption is concerned.
 
+\subsubsection{Non-Standard Equivalence Relations}
 The second reason for my interest in the topological formulation of Byzantine agreement is that topology is a rich discipline for studying non-standard equivalence relations.
 
 Recall that non-commutativity was a key consideration in arriving at our Byzantine fault-tolerant state machine replica protocol.
@@ -504,7 +508,7 @@ Recall that non-commutativity was a key consideration in arriving at our Byzanti
   &f \circ g \neq g \circ f \\
 \end{flalign*}
 
-When studying topologically, however, we may be able to show that $fg$ and $gf$ are equivalent up to homotopy:
+When studying topologically, however, we may be able to show that $f \circ g$ and $g \circ f$ are equivalent up to homotopy:
 
 \begin{flalign*}
   &f \circ g \simeq g \circ f \\
@@ -514,9 +518,77 @@ In topology generally, we can access many of these non-standard equivalence rela
 
 Thus, in addition to its extensive corpus, the topological formulation of Byzantine agreement is both a fitting tool for describing the sorts of properties we would like to preserve and source of instruments for relaxing requirements into Parabyzantine protocols.
 
-
 \subsection{A Category of Parabyzantine Protocols}
 
+My category-theoretic interest in Parabyzantine protocols is motivated by two questions:
+
+\begin{itemize}
+  \item Can we define meaningful morphisms between objects representing Parabyzantine protocols?
+  \item Can composition of these morphisms reveal useful non-trivial protocols?
+\end{itemize}
+
+A category of distributed protocols is a large undertaking. For the purposes of this memo, I will instead describe a small provisional construction which captures one dimension of protocol variation: the tradeoff between quorum cost and the strength of the order guarantee.
+
+Let $\pb$ be a provisional category whose objects are Parabyzantine protocols together with their parameters. In particular, let $\mathcal{R}\hookrightarrow \pb$ be the full subcategory whose objects are resampling instances
+\begin{flalign*}
+& X_{k,f} := \textsc{Resample}(k,f) \\
+\end{flalign*}
+where $f$ is the global fault parameter ($|P|=3f+1$) and $k$ is the resampling parameter ($|K|=3k+1$).
+
+We will regard two protocol instances as equivalent when they induce the same quorum structure and the same induced order semantics at the level of this memo. In particular, when $k=f$ the resampling committee is the full population, so $\textsc{Resample}(f,f)$ is equivalent to the ``full quorum'' protocol $\mathcal{P}$.
+
+\medskip
+
+\subsubsection{A Thin Category of Refinements}
+Rather than attempt to define all morphisms in $\pb$, we focus on a simple and compositional family of maps inside $\mathcal{R}$. Define a morphism
+\begin{flalign*}
+  &\mathcal{d}_{k,f} : X_{k,f} \to X_{k+1,f} \\
+\end{flalign*}
+which increments the sampling parameter by one. Intuitively, $\mathcal{d}_{k,f}$ is a refinement map: it increases committee size and thus moves the protocol closer to the full-quorum behavior.
+
+Because these refinements compose, we obtain for any $k \leq \ell \leq f$ a canonical composite
+\begin{flalign*}
+  &\mathcal{d}^{\ell-k} : X_{k,f} \to X_{\ell,f},\\
+  &\mathcal{d}^{\ell-k} \triangleq \mathcal{d}_{\ell-1,f}\circ \cdots \circ \mathcal{d}_{k,f}.
+\end{flalign*}
+
+In particular, applying $\mathcal{d}$ $f-k$ times yields a morphism from any resampling instance to the full-quorum instance:
+\begin{flalign*}
+X_{k,f} \xrightarrow{\;\mathcal{d}^{f-k}\;} X_{f,f} \simeq \mathcal{P}.
+\end{flalign*}
+This expresses, in categorical language, a basic but useful fact: within the resampling family, there is a directed path of refinements from cheaper (smaller committees) to more classical (full quorum) behavior.
+
+One may view $\mathcal{P}$ as an absorbing point of this refinement chain: once $k$ reaches $f$, further increments no longer change the induced quorum semantics. In this sense, $\mathcal{P}$ behaves like a fixed point of the refinement operation.
+
+\[
+\begin{tikzcd}[row sep=2em, column sep=3em]
+  X_{k,f} \arrow[r, "\mathcal{d}"] & \cdots \arrow[r, "\mathcal{d}"] & X_{f,f} \simeq \mathcal{P} \arrow[loop right, "\mathcal{d}"] \\
+\end{tikzcd}
+\]
+
+\medskip
+
+\subsubsection{A Suggestive Bridge to Topology}
+Now suppose we have a class of protocols $\mathcal{T}\hookrightarrow \pb$ which admit a topological semantics, e.g., via simplicial complexes and subdivision. It is tempting to imagine a functorial assignment
+\begin{flalign*}
+\Phi : \mathcal{R} \to \mathcal{T}
+\end{flalign*}
+which sends a resampling instance $X_{k,f}$ to a topological object $Y_{k,f}:=\Phi(X_{k,f})$ whose semantics approximate those of the full-quorum protocol $\mathcal{P}$, but only up to a weaker equivalence relation (e.g. homotopy or a quotient identifying indistinguishable executions).
+
+In the most optimistic case, one might have
+\begin{flalign*}
+  &\Phi(X_{f,f}) \simeq \Phi(\mathcal{P}) \\
+  &\quad\text{and}\quad \\
+  &\Phi(X_{k,f}) \simeq \Phi(\mathcal{P}) \text{ up to a controlled deformation.} \\
+\end{flalign*}
+Even in this trivial resampling example, such a construction would amount to a bridge between a combinatorial protocol family and a topological description.
+
+The hope, as the category $\pb$ is explored beyond $\mathcal{R}$, is that more meaningful morphisms and their compositions reveal non-trivial Parabyzantine protocols: not merely refinements in committee size, but systematic transformations which preserve some notion of correctness while relaxing others in a controlled way. 
+
+To analogize, $\pb$ becomes a map of regions in Byzantine fault-tolerant computing that we know. Building bridges between these regions may reveal higher-order patterns which lead us to non-trivial constructions and better protocols.
+
+
+\section{Last Remarks}
 
 %%
 %% The acknowledgments section is defined using the "acks" environment

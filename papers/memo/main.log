@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  18 JAN 2026 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  18 JAN 2026 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1130,6 +1130,18 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+LaTeX Font Info:    Trying to load font information for U+euf on input line 198
+.
+
+(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/lat
+ex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/lat
+ex/microtype/mt-euf.cfg
+File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
+
+)
 
 [1.1
 
@@ -1139,7 +1151,7 @@ onts/map/pdftex/updmap/pdftex.map}]
 [2.2]
 
 [3.3]
-Overfull \hbox (6.3418pt too wide) in paragraph at lines 312--313
+Overfull \hbox (6.3418pt too wide) in paragraph at lines 313--314
 []\OT1/cmr/m/n/10 (-20) In its dis-crete case, we can-not im-prove. But, if we 
 con-strain on the av-er-age case $\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (-20) [\OML
 /cmm/m/it/10 Obj\OT1/cmr/m/n/10 (-20) (\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 (-20
@@ -1148,15 +1160,15 @@ con-strain on the av-er-age case $\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (-20) [\OML
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/sc' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 316.
+(Font)              using `OT1/cmss/bx/n' instead on input line 317.
 
-<figures/pr_bad.png, id=83, 867.24pt x 505.89pt>
+<figures/pr_bad.png, id=89, 867.24pt x 505.89pt>
 File: figures/pr_bad.png Graphic file (type png)
 <use figures/pr_bad.png>
-Package pdftex.def Info: figures/pr_bad.png  used on input line 343.
+Package pdftex.def Info: figures/pr_bad.png  used on input line 344.
 (pdftex.def)             Requested size: 395.8225pt x 230.8982pt.
 
-Class acmart Warning: A possible image without description on input line 346.
+Class acmart Warning: A possible image without description on input line 347.
 
 
 
@@ -1168,20 +1180,30 @@ Class acmart Warning: A possible image without description on input line 346.
 
 [7.7]
 
+[8.8]
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 480.
 
-(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
-eric/stringenc/se-pdfdoc.def
-File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
-)
-(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
-eric/stringenc/se-utf8.def
-File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [8.8] Processing 'acks' comment.
+
+
+[9.9]
+
+[10.10]
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 540.
+
+
+Class acmart Warning: \vspace should only be used to provide space above/below 
+surrounding objects on input line 569.
+
+
+
+[11.11] Processing 'acks' comment.
 \openout3 = `comment.cut'.
 
-
-Comment 'acks' writing to comment.cut. Straight input of comment.cut.
-(./comment.cut)
+ Comment 'acks' writing to comment.cut.
+Straight input of comment.cut. (./comment.cut)
 No file main.bbl.
 
 Class acmart Warning: Some images may lack descriptions.
@@ -1200,12 +1222,15 @@ ence can ingest your work..
 
 
 
-[9.9]
 
-LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (8 not 9).
-               Rerun to correct this.
-
-(./main.aux)
+(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
+eric/stringenc/se-pdfdoc.def
+File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
+)
+(/nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/tex/gen
+eric/stringenc/se-utf8.def
+File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
+) [12.12] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
@@ -1214,20 +1239,17 @@ L3 programming layer <2024-10-09>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6384C1BA9E49311F017CA5D02859F3C6;2294.
+(rerunfilecheck)             Checksum: A276992C40E5C8C8035F4DDE5B628081;2414.
  ) 
 Here is how much of TeX's memory you used:
- 28660 strings out of 474986
- 547078 string characters out of 5757256
- 1005232 words of memory out of 5000000
- 50637 multiletter control sequences out of 15000+600000
- 572760 words of font info for 147 fonts, out of 8000000 for 9000
+ 28862 strings out of 474986
+ 551365 string characters out of 5757256
+ 1003935 words of memory out of 5000000
+ 50791 multiletter control sequences out of 15000+600000
+ 575917 words of font info for 169 fonts, out of 8000000 for 9000
  447 hyphenation exceptions out of 8191
- 90i,16n,131p,1001b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,18n,131p,1001b,969s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts
 /type1/public/amsfonts/cm/cmcsc10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2
 c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/
@@ -1255,21 +1277,24 @@ tore/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/pu
 blic/amsfonts/cm/cmss9.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive
 -2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></nix/store/gmw
 rbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-e
-nv-texmfdist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></nix/store/gmwrbk5nkq0as
-r4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/c
-msy6.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdis
-t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl
-8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
-nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-t
-exlive-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/
-store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (9 pages, 377234 bytes).
+fonts/cm/cmssi10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-
+env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/gmwrbk5nkq0
+asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm
+/cmsy5.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfd
+ist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></nix/store/gmwrbk5nkq0asr4i7bm69d
+cl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-
+texlive-2024-env-texmfdist/fonts/type1/public/amsfonts/cm/cmti10.pfb></nix/stor
+e/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/publi
+c/amsfonts/euler/eufm10.pfb></nix/store/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texliv
+e-2024-env-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store
+/gmwrbk5nkq0asr4i7bm69dcl8pjj2c8d-texlive-2024-env-texmfdist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (12 pages, 401656 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 41082 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 263 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 45186 words of extra memory for PDF output out of 51595 (max. 10000000)
 

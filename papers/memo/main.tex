@@ -187,9 +187,9 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-   This write-up is for friends and colleagues to explain the beginnings of my study of a category of distributed computing protocols which I call Parabyzantine. Below, I will begin with a motivation for the study which lies in the need for fault-tolerant order and compute efficiency. I'll then provide a trivial combinatorial example of a Parabyzantine protocol \textsc{Resample}. Finally, I'll suggest more abstract constructions with which the study is properly concerned, including an example from a suggestive formal category $\pb$.
+   This write-up is for friends and colleagues to explain the beginnings of my study of a category of distributed computing protocols which I call Parabyzantine. Below, I begin with my motivation which lies in the need for fault-tolerant order and compute efficiency. I then provide a trivial combinatorial example of an efficient Parabyzantine protocol called \textsc{Resample}. I finally suggest more abstract constructions with which the study is properly concerned, including an example from a suggestive formal category $\pb$.
 
-    Most terms and notation loosely follow [HKR].
+    Most terms and notation loosely follow Herlihy, Kozlov, and Rajsbaum~\cite{HKR2013} (hereafter, HKR).
 \end{abstract}
 
 %%
@@ -198,7 +198,12 @@
 \maketitle
 
 \section{Motivation}
-My motivation for studying Parabyzantine protocols, as I have dubbed them, is derived primarily from two phenomena in the world of distributed computing: the need for fault-tolerant order and compute inefficiencies of Byzantine fault-tolerant replica-based protocols.
+My motivation for studying Parabyzantine protocols, as I have dubbed them, is derived primarily from two phenomena in the world of distributed computing:
+
+\begin{itemize}
+  \item the need for fault-tolerant order;
+  \item and, the compute inefficiencies of Byzantine fault-tolerant replica-based protocols.
+\end{itemize}
 
 \subsection{The General Need for Order}
 
@@ -245,19 +250,19 @@ And is also non-commutative:
 
 In general, for a family $f_1, \ldots, f_n$ of partial functions, the composite is determined by the ordered sequence $(f_1, \ldots, f_n)$ not the unordered set $\{ f_1, \ldots, f_n \}$. In local hardware cases---such as a single hart---we can often form reasonable assumptions or conventions, such that something like a state machine reading through an assembly is equivalent to a sequence of partial functions. In the context of general distributed computing tasks, however, we tend to make these assumptions more minimal. 
 
-In distributed computing, we may instead refer to a set of processes $P$ which are able to share information with one another via messages $m \in M$ to varying degrees of success. Then, within this context, we hope to achieve results up to some notion of correctness and consistency, i.e., up to some notion of equivalence with the local hardware case.
+In distributed computing, we may instead refer to a set of processes $P$ which are able to share information with one another via messages $m \in M$ to varying degrees of success. Then, within this context, we hope to achieve results up to some notion of correctness, typically up to some notion of equivalence with the local hardware case.
 
-Put more provocatively, a distributed computing protocol often has to decide from a chaotic world of messages what a reasonable order of partial functions should be. Signatures can be placed on messages to ensure they are authentic. Prover systems can be built to attest to the correctness of the value of a partial function. But, these may mean little without a reasonable order.
+Put more provocatively, a distributed computing protocol often has to decide from a chaotic world of messages what a reasonable order of partial functions should be. Signatures can be placed on messages to ensure they are authentic. Prover systems can be built to attest to the correctness of the value of a partial function. But, these may mean little without a reasonable order.\footnote{This is not to disregard the value of modeling specific problem domains where the meaning of reasonable order may not require a total order. However, for simplicity, most of this write-up will be concerned with the total order case.}
 
 \subsection{2f + 1}
 
-Often the success of a distributed computing protocol is framed in terms of its ability to induce agreement or consensus. And, in the abundant cases where order matters, this necessarily means consensus on said order. 
+Often the success of a distributed computing protocol is framed in terms of its ability to induce agreement. And, in the abundant cases where order matters, this necessarily means agreement on said order. 
 
-If we take set of processes $|P| = 3f + 1$ and ask for the unique messages $M_i \subseteq M$ which indicate computing the partial function at index $i$, we may wonder what different requirements on the agreement of these messages might mean. 
+If we take set of processes $|P| = 3f + 1$ and ask for the unique agreeing set of messages $M_i \subseteq M$ which indicate computing the partial function at index $i$, we may wonder what different requirements on this subset might mean.
 
-A simple majority $|M_i| > \frac{|P|}{2}$ would ensure by the Generalized Pigeonhole Principle that any two subsets of messages $M_{i}, M_{j}$ would intersect in at least one process. In a sense, at least one process can attest to each ordering step. By recurrence, this reads out a total order.
+For example, a simple majority $|M_i| > \frac{|P|}{2}$ would ensure by the Generalized Pigeonhole Principle that any two indexed subsets of messages $M_{i}, M_{j}$ would intersect in at least one process. In a sense, at least one process can attest to each ordering step. By recurrence, this reads out a total order.\footnote{In an applied setting, what constitutes a useful total order also invokes questions of authenticity, fairness, safety, and liveness.}
 
-Let $Q: M \to 2^P$ be the function which maps a message to the set of processes which have sent it, representing a quorum. Then, we may define order $Order(M_i)$ as follows:
+More formally, let $Q: M \to 2^P$ be the function which maps a message to the set of processes which have sent it, representing a quorum. Then, we may define order $Order(M_i)$ as follows:
 
 \begin{flalign*}
   &Q(M_i) = \bigsqcup_{m \in M_i} Q(m) \\
@@ -266,41 +271,43 @@ Let $Q: M \to 2^P$ be the function which maps a message to the set of processes 
   &\quad = Order(M_0) \land O(M_0, M_1) \land \cdots \land  O(M_{i-1}, M_i) \\
 \end{flalign*}
 
-Importantly, this simple majority model does not account for the possibility that a process may fault. As it turns out, the most aggressive assumption we can make and still retain the possibility of these intersecting sets amongst non-faulty processes is that at most $f$ processes may fault and quorums must be formed by at least $2f+1$ processes. This is the Byzantine fault model.
+Importantly, this simple majority model does not account for the possibility that a process may fault. As it turns out, the most aggressive assumption we can make and still retain the possibility of these intersecting sets amongst non-faulty processes---which give rise to our total order--is that at most $f$ processes may fault and quorums must be formed by at least $2f+1$ processes. This is the Byzantine fault model.
 
 Let $H$ be the set of honest processes and $F$ be the set of faulty processes. Any two quora, under the Byzantine fault model, must then intersect in at least $f+1$ processes:
 
 \begin{flalign*}
-&|Q(M_1) \cap Q(M_2)|=\\
-&\quad |Q(M_1)| + |Q(M_2)| - |Q(M_1) \cup Q(M_2)| \\
-&\quad \geq (2f + 1) + (2f + 1) - (3f + 1)\\
-&= f + 1 \\
+&|Q(M_1) \cap Q(M_2)| = |Q(M_1)| + |Q(M_2)| - |Q(M_1) \cup Q(M_2)| \\
+&\quad \geq (2f + 1) + (2f + 1) - (3f + 1) = f + 1 \\
 \end{flalign*}
 
-We can further deduce that any two quora must intersect in at least one honest process $h \in H$ in the presence of $f$ faulty processes:
+We can further deduce that any two quora must intersect in at least one honest process $h \in H$ in the presence of at most $f$ faulty processes:
 
 \begin{flalign*}
-  &|Q(M_1) \cap Q(M_2)|\\
-  &\quad = |Q(M_1) \cap Q(M_2) \cap H| + |Q(M_1) \cap Q(M_2) \cap F|\\
-  &|Q(M_1) \cap Q(M_2) \cap H|\\
-  &\quad = |Q(M_1) \cap Q(M_2)| - |Q(M_1) \cap Q(M_2) \cap F|\\
+  &|Q(M_1) \cap Q(M_2)| = |Q(M_1) \cap Q(M_2) \cap H| + |Q(M_1) \cap Q(M_2) \cap F|, \\
+  &|Q(M_1) \cap Q(M_2) \cap H| = |Q(M_1) \cap Q(M_2)| - |Q(M_1) \cap Q(M_2) \cap F|, \\
   &f \geq |Q(M_1) \cap Q(M_2) \cap F|\\
-  &|Q(M_1) \cap Q(M_2) \cap H| \geq f + 1 - f = 1\\
+  &\quad \implies |Q(M_1) \cap Q(M_2) \cap H| \geq f + 1 - f = 1\\
 \end{flalign*}
 
-A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). Without a prover system---which is common in practice owing to the computational expense of systems like ZKPs---BFT SMRs require at least $2f+1$ of the honest processes to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
+A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). In these protocols, each process executes the same deterministic transition function to emit messages certifying the ordered outcome of state machine transitions, i.e., partial functions.
 
-Roughly speaking, if a Byzantine fault-tolerant SMR protocol tolerates $f$ faulty processes, then it uses at best $\frac{1}{2f+1}$ of the available non-faulty compute.
+Without a prover system\footnote{Prover systems are not common in practice owing to the computational expense of systems like ZKPs.}, BFT SMRs require at least $2f+1$ of the honest processes to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
+
+If a Byzantine fault-tolerant SMR protocol tolerates $f$ faulty processes, then the cost of computing one index worth of work is $\Theta(2f + 1)$.
 
 \newpage
 \section{A Parabyzantine Protocol}
 
-If we want to access more compute in a Byzantine fault-tolerant setting, an initial thought is to simply relax the requirement on order. Perhaps we can include fewer processes and allow our total order to fail with an acceptably low likelihood. Indeed, as I will show, even a fairly straightforward application of this concept yields a protocol which is computationally efficient and low loss. 
+If we want to better use available compute in a Byzantine fault-tolerant setting, an initial thought is to simply relax the requirement on order. Perhaps we can include fewer processes and allow our total order to fail with an acceptably low likelihood. Indeed, as I will show, even a fairly straightforward application of this concept yields a protocol which is computationally efficient and low loss. 
 
-However, before we endeavor this protocol, let's first consider what computationally efficient and a low loss would mean.
+Before we endeavor this protocol, let's first consider what computationally efficient and a low loss would mean.
 
-As referenced above, SMR requires at least $2f+1$ processes to certify each partial function. Thus, each logical step costs $\Theta(2f + 1)$ replicated work. So, in abstract, if we use fewer than $2f+1$ processes, we will have improved compute efficiency.
+\subsubsection{Computationally Efficient}
+Computational efficiency is fairly straightforward. As referenced above, SMR requires at least $2f+1$ processes to certify each partial function. Thus, each logical step costs $\Theta(2f + 1)$ replicated work. So, in abstract, if we use fewer than $2f+1$ processes, we will have improved compute efficiency.
 
+More interestingly, any constant-factor improvement over SMR yields a proportional increase in effective compute utilization across the replica set. In practical deployments this may have outsized effects on throughput, since the extra compute can be reinvested into tasks whose impact on subsequent rounds is non-linear, e.g., batching, compression, proof generation, or state access.
+
+\subsubsection{Low Loss}
 What is meant by low loss may be less obvious. In the Byzantine fault-tolerant setting, we have described a discrete mathematical limit that tells us we cannot have a property we called $Order(M_i)$ without involving at least $2f+1$ processes. So, the notion that we can have protocol which is computationally more efficient seems to contradict this limit.
 
 However, we may consider the following objective function which is minimized for $M_i$ when $Order(M_i) = 1$:
@@ -310,18 +317,19 @@ However, we may consider the following objective function which is minimized for
   &Obj(M_i) =  1 \iff Order(M_i) = 0\\ 
 \end{flalign*}
 
-In its discrete case, we cannot improve. But, if we constrain on the average case $E[Obj(M_i)] = Pr[Obj(M_i) = 1] \leq \epsilon$, we have much more flexibility.
+In its current form, we cannot improve. But, if we constrain on the average case $\text{Loss} = E[Obj(M_i)] = Pr[Obj(M_i) = 1] \leq \epsilon$, we have much more flexibility.
 
 In a sense, it is precisely this sort of assumption which gives rise to the name Parabyzantine. These are protocols which act like Byzantine fault-tolerant protocols up to some well-understood point. In the case of the \textsc{Resample} protocol, this point will be an average-case guarantee. While we are under the veil of average case, \textsc{Resample} will be Byzantine fault-tolerant. Once we remove the veil, \textsc{Resample} will not be. 
 
 \subsection{The \textsc{Resample} Protocol}
 
-We define the following Byzantine fault-allowing protocol $\text{\textsc{Resample}}$:
+We define the following Byzantine fault-allowing protocol \textsc{Resample}:
 
-\begin{itemize}
-  \item For a given index, $i$ on $M$, pick a random subcommittee $K_i \subseteq P$ s.t. $|K_i| = 3k + 1$.
+\begin{enumerate}
+  \item For a given index $i$ on $M$, pick a random subcommittee $K_i \subseteq P$ such that $|K_i| = 3k + 1$.
   \item Accept $M_i$ if and only if $|Q_{K_i}(M_i)| \geq 2k + 1$. Otherwise, pick another random subcommittee and repeat.
-\end{itemize}
+\end{enumerate}
+
 
 Let...
 
@@ -332,9 +340,9 @@ Let...
 Observe the following possible outcomes for selection of a random subcommittee:
 
 \begin{itemize}
-  \item $|K_i \cap H| \geq 2k + 1 \iff \text{ Divine } = D$, representing a subcommittee which has an honest supermajority which computes $M_i$ correctly.
-  \item $|K_i \cap H| \leq k \iff \text{ Corrupt } = C$, representing a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly.
-  \item $k < |K_i \cap H| < 2k + 1 \iff \text{ Undecided } = U$, representing all other cases wherein neither an honest nor dishonest supermajority exists and may either compute $M_i$ correctly or disagree internally and not render a supermajority.
+  \item $|K_i \cap H| \geq 2k + 1 \iff \text{Divine} = D$, representing a subcommittee which has an honest supermajority which computes $M_i$ correctly.
+  \item $|K_i \cap H| \leq k \iff \text{Corrupt} = C$, representing a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly.
+  \item $k < |K_i \cap H| < 2k + 1 \iff \text{Undecided} = U$, representing all other cases wherein neither an honest nor dishonest supermajority exists and may either compute $M_i$ correctly or disagree internally and not render a supermajority.
 \end{itemize}
 
 \subsection{The Loss of the \textsc{Resample} Protocol}
@@ -370,7 +378,7 @@ All other outcomes are by definition Undecided, so the total number of ways to s
   &\mathcal{S}_{U}(f, k) = \mathcal{S}(f, k) - \mathcal{S}_{C}(f, k) - \mathcal{S}_{D}(f, k) \\
 \end{flalign*}
 
-Let $S$ represent the transient state in which the \textsc{Resample} is sampling, i.e., has just started or produced a Undecided subcommittee. Let $G$ represent the absorbing state in which \textsc{Resample} makes a "good" decision to select a Divine subcommittee. Let $B$ represent the absorbing state in which \textsc{Resample} makes a "bad" decision to select a Corrupt subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
+Let $S$ represent the transient state in which the \textsc{Resample} is sampling, i.e., has just started or produced an Undecided subcommittee. Let $G$ represent the absorbing state in which \textsc{Resample} makes a ``good'' decision to select a Divine subcommittee. Let $B$ represent the absorbing state in which \textsc{Resample} makes a ``bad'' decision to select a Corrupt subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
 
 \begin{flalign*}
 &\Omega = \{S, G, B\} \\
@@ -381,7 +389,7 @@ Let $S$ represent the transient state in which the \textsc{Resample} is sampling
 \end{pmatrix} \\
 \end{flalign*}
 
-The probability of the algorithm making a "bad" decision to select a Corrupt subcommittee $\Pr[B]$ is then:
+The probability of the algorithm making a ``bad'' decision to select a Corrupt subcommittee $\Pr[B]$ is then:
 
 \begin{flalign*}
   &\text{Let } x := \Pr[\text{ eventually hitting B } | \text{ start in S }] \\
@@ -391,13 +399,13 @@ The probability of the algorithm making a "bad" decision to select a Corrupt sub
   &1 - \Pr[U] = \Pr[D] + \Pr[C] \implies \Pr[B] = \frac{\Pr[C]}{\Pr[D] + \Pr[C]} \\
  \end{flalign*}
 
-Conversely, the probability of the algorithm making a "good" decision to select a Divine subcommittee $\Pr[G]$ is then:
+Conversely, the probability of the algorithm making a ``good'' decision to select a Divine subcommittee $\Pr[G]$ is then:
 
 \begin{flalign*}
   &\Pr[G] = 1 - \Pr[B] = 1 - \frac{\Pr[C]}{\Pr[D] + \Pr[C]} = \frac{\Pr[D]}{\Pr[D] + \Pr[C]} \\
 \end{flalign*}
 
-As I will show, the probability $\Pr[C]$ drops off quickly for a fixed sampling ratio $\gamma = \frac{k}{f}$ (with, say, $k=\lfloor \gamma f \rfloor$). First observe that the number of faulty replicas in a sampled subcommittee follows a hypergeometric distribution:
+The probability $\Pr[C]$ drops off quickly for a fixed sampling ratio $\gamma = \frac{k}{f}$ (with, say, $k=\lfloor \gamma f \rfloor$). First observe that the number of faulty replicas in a sampled subcommittee follows a hypergeometric distribution:
 \begin{flalign*}
   &X := |K_i \cap F| \sim \text{Hypergeometric}(N,K,n), \\
   &C \equiv \{X \ge 2k+1\}, \\
@@ -410,14 +418,14 @@ Standard large-deviation bounds for sampling without replacement give a KL-based
   &D(q \,\|\, p) = q \log\!\left(\frac{q}{p}\right) + (1-q)\log\!\left(\frac{1-q}{1-p}\right).
 \end{flalign*}
 
-In our case $p=\frac{f}{3f+1}\approx \frac13$, $q=\frac{2k+1}{3k+1}\approx \frac23$, and $n=3k+1$. Hence
+In our case $p=\frac{f}{3f+1}\approx \frac13$, $q=\frac{2k+1}{3k+1}\approx \frac23$, and $n=3k+1$. Hence...
 \begin{flalign*}
   &D\!\left(\frac23 \,\middle\|\, \frac13\right)
     = \frac23 \log 2 + \frac13 \log \frac12
     = \frac13 \log 2.
 \end{flalign*}
 
-Therefore,
+Therefore...
 \begin{flalign*}
   &\Pr[C] \lesssim \exp\!\left(-(3k+1)\cdot \frac13 \log 2\right)
    = 2^{-(3k+1)/3}, \\
@@ -426,10 +434,12 @@ Therefore,
    = 2^{-\Omega(f)}.
 \end{flalign*}
 
-In particular, for any fixed $\gamma\in(0,1)$,
+In particular, for any fixed $\gamma\in(0,1)$...
 \begin{flalign*}
   &\lim_{f \to \infty} \Pr[C](\gamma, f) = 0 \forall \gamma \in (0, 1) \\
 \end{flalign*}
+
+That is, \textsc{Resample} is Parabyzantine protocol with exponentially decreasing loss as the fault parameter $f$ increases for a fixed sampling ratio $\gamma$.
 
 \subsection{The Cost of the \textsc{Resample} Protocol}
 
@@ -465,19 +475,29 @@ Thus, \textsc{Resample} is Parabyzantine in the sense described above: it replac
 \section{An Expanded View of Parabyzantine Protocols}
 Now that we have found one Parabyzantine protocol, we might wonder if we can find others and under what conditions these others act like Byzantine fault-tolerant protocols. This is, however, a big universe, and it helps to explore it in a structured manner. 
 
-To this end, I have chosen to align my views along two vantages. The first is the rich perspective of topological distributed computing. The second is the category theoretic consideration of relationships between Parabyzantine protocols. 
+To this end, I have chosen to align my views along two vantages:
+
+\begin{enumerate}
+  \item the rich perspective of topological frameworks for distributed computing;
+  \item and, the category theoretic consideration of relationships between Parabyzantine protocols.
+\end{enumerate}
 
 My exploration is further guided by the search for a non-trivial bridge between topological descriptions of protocols and non-topological descriptions of protocols---one that can be expressed in the morphisms of a category of Parabyzantine protocols.
 
 \subsection{Topological Protocols}
-The fields of topology and distributed computing have a well-established and fruitful intersection. We know, for example, that we can formulate Byzantine agreement as a problem of barycentric subdivision on a simplicial complex via the toplogical framework of Herlihy and Shavit, 1999 such as [HKR's] \textsc{BaryAgree}. Further, we know that \textsc{BaryAgree} achieves $Obj(M_i) = 0$ in the Byzantine fault-tolerant setting. 
+The fields of topology and distributed computing have a well-established and fruitful intersection. We know, for example, that we can formulate Byzantine agreement as a problem of barycentric subdivision on a simplicial complex via the toplogical framework of Herlihy and Shavit \cite{herlihy_shavit_1999} such as in HKR's \textsc{BaryAgree} \cite{HKR2013}.\footnote{Barycentric agreement is a form of the more general lattice agreement.} Further, we know that \textsc{BaryAgree} achieves $Obj(M_i) = 0$ in the Byzantine fault-tolerant setting. 
 
-Much of this intersection is, in a word, unavoidable: it is hard to model agreement problems without something that looks like the sort of complex geometric object with which topology is concerned. And, indeed I have spent most of my own study digesting the various topological tools and constructions which are already invoked in the catalog of Byzantine fault-tolerant protocols. 
+Much of this intersection is, in a word, unavoidable: it is hard to model agreement problems without something that looks like the sort of complex geometric object with which topology is concerned. And, indeed I have spent most of my own study digesting the various topological tools and constructions which are already invoked in the catalog of Byzantine agreement problems.
 
-Rather the spending the time reciting various twists and turns which I have not yet synthesized into a coherent contribution, I'd instead like to point at two reasons why the topological formulation of Byzantine agreement is acutely interesting to my study of Parabyzantine protocols.
+Rather than spending time reciting various twists and turns which I have not yet synthesized into a coherent contribution, I would instead like to point to two reasons why the topological formulation of Byzantine agreement is acutely interesting to my study of Parabyzantine protocols: 
 
-\subsubsection{Connected Structures}
-The first is that Byzantine agreement is often concerned with some kind of connected structure. Consider our recursive definition of $Order(M_i)$, which required consecutive quorums to intersect. Intuitively, these intersections form a connected structure in the process set $P$ such that we can move from one quorum to the next.
+\begin{enumerate}
+  \item its relevance to connected structure;
+  \item and, its rich supply of non-standard equivalence relations.
+\end{enumerate}
+
+\subsubsection{Connected Structure}
+Byzantine agreement is often concerned with some kind of connected structure. Consider our recursive definition of $Order(M_i)$, which required consecutive quorums to intersect. Intuitively, these intersections form a connected structure in the process set $P$ such that we can move from one quorum to the next.
 
 To make this intuition precise, consider the following nerve construction. Let $P$ be the set of processes, and for each index $i$ let $Q_i \subseteq P$ denote the quorum of processes whose messages certify the $i$th step.\footnote{More generally, one may take $\mathcal{Q}$ to be a family of quorums and regard $\{Q\}_{Q\in\mathcal{Q}}$ as a cover of the participating process set.}
 
@@ -485,7 +505,7 @@ Consider the family of subsets $\mathcal{U} = \{Q_i\}_{i\in I}$. Viewing $\mathc
 \[
 X := \bigcup_{i\in I} Q_i \subseteq P,
 \]
-we may form the \emph{nerve} simplicial complex $N(\mathcal{U})$ defined by:
+we may form the nerve simplicial complex $N(\mathcal{U})$ defined by:
 \begin{flalign*}
   &\mathrm{Vert}(N(\mathcal{U})) = \mathcal{U},\\
   &\{Q_{i_0},\ldots,Q_{i_d}\} \text{ spans a $d$-simplex } \iff \bigcap_{j=0}^{d} Q_{i_j} \neq \emptyset.
@@ -508,26 +528,26 @@ Recall that non-commutativity was a key consideration in arriving at our Byzanti
   &f \circ g \neq g \circ f \\
 \end{flalign*}
 
-When studying topologically, however, we may be able to show that $f \circ g$ and $g \circ f$ are equivalent up to homotopy:
+When studying topologically, however, we may be able to show, for example, that $f \circ g$ and $g \circ f$ are equivalent up to homotopy:
 
 \begin{flalign*}
   &f \circ g \simeq g \circ f \\
 \end{flalign*}
 
-In topology generally, we can access many of these non-standard equivalence relations. Homotopy, indistinguishability under a quotient space, and various more specific deformation relations, give us a lot of ways to relate two protocols which are not equivalent in the standard sense. As we used the average case to find the Parabyzantine \textsc{Resample} protocol, we may be able to infer other protocols which act like Byzantine fault-tolerant protocols up to some well-understood topological relationship and hence are Parabyzantine.
+In topology generally, we can access many of these non-standard equivalence relations. Homotopy, indistinguishability under a quotient space, and various more specific deformation relations, give us a lot of ways to relate two objects which are not equivalent in the standard sense. Similar to how we used the average case to find the Parabyzantine \textsc{Resample} protocol, we may be able to infer other protocols which act like Byzantine fault-tolerant protocols up to some well-understood topological relationship and hence are Parabyzantine.
 
-Thus, in addition to its extensive corpus, the topological formulation of Byzantine agreement is both a fitting tool for describing the sorts of properties we would like to preserve and source of instruments for relaxing requirements into Parabyzantine protocols.
+Thus, in addition to its extensive corpus, the topological formulation of Byzantine agreement is both a fitting tool for describing the sorts of properties we would like to preserve and a source of instruments for relaxing requirements into Parabyzantine protocols.
 
 \subsection{A Category of Parabyzantine Protocols}
 
 My category-theoretic interest in Parabyzantine protocols is motivated by two questions:
 
-\begin{itemize}
+\begin{enumerate}
   \item Can we define meaningful morphisms between objects representing Parabyzantine protocols?
   \item Can composition of these morphisms reveal useful non-trivial protocols?
-\end{itemize}
+\end{enumerate}
 
-A category of distributed protocols is a large undertaking. For the purposes of this memo, I will instead describe a small provisional construction which captures one dimension of protocol variation: the tradeoff between quorum cost and the strength of the order guarantee.
+A category of distributed protocols is a large undertaking. For the purposes of this write-up, I will instead describe a small provisional construction which captures one dimension of protocol variation: the tradeoff between quorum cost and the strength of the order guarantee.
 
 Let $\pb$ be a provisional category whose objects are Parabyzantine protocols together with their parameters. In particular, let $\mathcal{R}\hookrightarrow \pb$ be the full subcategory whose objects are resampling instances
 \begin{flalign*}
@@ -535,9 +555,8 @@ Let $\pb$ be a provisional category whose objects are Parabyzantine protocols to
 \end{flalign*}
 where $f$ is the global fault parameter ($|P|=3f+1$) and $k$ is the resampling parameter ($|K|=3k+1$).
 
-We will regard two protocol instances as equivalent when they induce the same quorum structure and the same induced order semantics at the level of this memo. In particular, when $k=f$ the resampling committee is the full population, so $\textsc{Resample}(f,f)$ is equivalent to the ``full quorum'' protocol $\mathcal{P}$.
+We will regard two protocol instances as equivalent when they induce the same quorum structure and the same induced order semantics. In particular, when $k=f$ the resampling committee is the full population, so $\textsc{Resample}(f,f)$ is equivalent to the ``full quorum'' protocol $\mathcal{P}$.
 
-\medskip
 
 \subsubsection{A Thin Category of Refinements}
 Rather than attempt to define all morphisms in $\pb$, we focus on a simple and compositional family of maps inside $\mathcal{R}$. Define a morphism
@@ -556,7 +575,7 @@ In particular, applying $\mathcal{d}$ $f-k$ times yields a morphism from any res
 \begin{flalign*}
 X_{k,f} \xrightarrow{\;\mathcal{d}^{f-k}\;} X_{f,f} \simeq \mathcal{P}.
 \end{flalign*}
-This expresses, in categorical language, a basic but useful fact: within the resampling family, there is a directed path of refinements from cheaper (smaller committees) to more classical (full quorum) behavior.
+This expresses, in categorical language, a basic but useful fact: within the resampling family, there is a directed path of refinements from cheaper, smaller committees to more classical, full-quorum behavior.
 
 One may view $\mathcal{P}$ as an absorbing point of this refinement chain: once $k$ reaches $f$, further increments no longer change the induced quorum semantics. In this sense, $\mathcal{P}$ behaves like a fixed point of the refinement operation.
 
@@ -566,7 +585,6 @@ One may view $\mathcal{P}$ as an absorbing point of this refinement chain: once 
 \end{tikzcd}
 \]
 
-\medskip
 
 \subsubsection{A Suggestive Bridge to Topology}
 Now suppose we have a class of protocols $\mathcal{T}\hookrightarrow \pb$ which admit a topological semantics, e.g., via simplicial complexes and subdivision. It is tempting to imagine a functorial assignment
@@ -583,28 +601,19 @@ In the most optimistic case, one might have
 \end{flalign*}
 Even in this trivial resampling example, such a construction would amount to a bridge between a combinatorial protocol family and a topological description.
 
-The hope, as the category $\pb$ is explored beyond $\mathcal{R}$, is that more meaningful morphisms and their compositions reveal non-trivial Parabyzantine protocols: not merely refinements in committee size, but systematic transformations which preserve some notion of correctness while relaxing others in a controlled way. 
+The hope, as the category $\pb$ is explored beyond $\mathcal{R}$, is that more meaningful morphisms and their compositions reveal non-trivial Parabyzantine protocols---not merely refinements in committee size, but systematic transformations which preserve some notion of correctness while relaxing others in a controlled way. 
 
-To analogize, $\pb$ becomes a map of regions in Byzantine fault-tolerant computing that we know. Building bridges between these regions may reveal higher-order patterns which lead us to non-trivial constructions and better protocols.
+To analogize, $\pb$ becomes a map of regions in Byzantine fault-tolerant computing. Building bridges between these regions may reveal higher-order patterns which lead us to non-trivial constructions and better protocols.
 
 
-\section{Last Remarks}
-
-%%
-%% The acknowledgments section is defined using the "acks" environment
-%% (and NOT an unnumbered section). This ensures the proper
-%% identification of the section in the article metadata, and the
-%% consistent spelling of the heading.
-\begin{acks}
-
-\end{acks}
+\section{Afterword}
+As alluded to previously, my study of Parabyzantine protocols has naturally encouraged me to review much of the existing literature on topological frameworks for distributed computing. I expect to be in this review process for some time. Hence, for those readers coming from my work on the OAC project, the Gwrdfa API will likely contain only protocols related to the $\textsc{Resample}$ protocol for some time---though adapted for an applied setting.
 
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{sample-base}
-
+\bibliography{base}
 
 %%
 %% If your work has an appendix, this is the place to put it.

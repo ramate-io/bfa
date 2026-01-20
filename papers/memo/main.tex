@@ -1,0 +1,625 @@
+%%
+%% This is file `sample-manuscript.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,manuscript')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-manuscript.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+\documentclass[acmsmall,nonacm]{acmart}
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\settopmatter{printacmref=false} % removes ACM reference format block
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes copyright footnote
+\pagestyle{plain} % optional: removes fancy headers
+
+\onecolumn
+    
+
+%% Divines management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{acmlicensed}
+\copyrightyear{2025}
+\acmYear{2025}
+\acmDOI{XXXXXXX.XXXXXXX}
+%% These commands are for a PROCEEDINGS abstract or paper.
+\acmConference[Conference acronym 'XX]{N/A}{Jun 2025 - Dec 2025}{Woodstock, NY}
+%%
+%%  Uncomment \acmBooktitle if the title of the proceedings is different
+%%  from ``Proceedings of ...''!
+%%
+%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%%  June 03--05, 2018, Woodstock, NY}
+\acmISBN{978-1-4503-XXXX-X/2018/06}
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+\usepackage{amssymb}
+\usepackage{amsmath}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+% --- Safe cross-engine definition for \bo ---
+\usepackage{iftex}
+
+\ifPDFTeX
+  \DeclareRobustCommand{\bo}{\mathfrak{P}}
+\else
+  \usepackage{fontspec}
+  \newfontfamily{\vaifont}{Noto Sans Vai}
+
+  % helper to typeset the glyph in text at the current math size
+  \newcommand{\vaibo}[1]{{\vaifont #1}}
+
+  \DeclareRobustCommand{\bo}{%
+    \ifmmode
+      \mathchoice
+        {\text{\vaibo{ꕸ}}}            % displaystyle
+        {\text{\vaibo{ꕸ}}}            % textstyle
+        {\scriptstyle\text{\vaibo{ꕸ}}}% scriptstyle
+        {\scriptscriptstyle\text{\vaibo{ꕸ}}}% scriptscriptstyle
+    \else
+      {\vaibo{ꕸ}}%
+    \fi
+  }
+\fi
+
+\newcommand{\pb}{\bo}
+
+\usepackage{subcaption}
+\usepackage{tikz}
+
+\usepackage[colorinlistoftodos]{todonotes}
+
+% Define author-specific todos
+\newcommand{\liam}[1]{\todo[inline, color=blue!40]{\begin{minipage}{\textwidth-4pt}\textbf{[Liam Monninger]:} #1\end{minipage}}}
+\usetikzlibrary{cd}
+
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Parabyzantine Protocols}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Liam Monninger}
+\email{liam@ramate.io}
+\affiliation{%
+  \institution{Ramate LLC}
+  \city{Durham}
+  \state{California}
+  \country{USA}
+}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Monninger}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+   This write-up is for friends and colleagues to explain the beginnings of my study of a category of distributed computing protocols which I call Parabyzantine. These protocols act like Byzantine fault-tolerant protocols up to some well-understood point. Below, I begin with my motivation which lies in the need for fault-tolerant order and compute efficiency. I then provide a trivial combinatorial example of an efficient Parabyzantine protocol called \textsc{Resample}. I finally suggest more abstract constructions with which the study is properly concerned, including an example from a suggestive formal category $\pb$.
+
+    Most terms and notation loosely follow Herlihy, Kozlov, and Rajsbaum~\cite{HKR2013} (hereafter, HKR).
+\end{abstract}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{Motivation}
+My motivation for studying Parabyzantine protocols, as I have dubbed them, is derived primarily from two phenomena in the world of distributed computing:
+
+\begin{enumerate}
+  \item the need for fault-tolerant order;
+  \item and, the compute inefficiencies of Byzantine fault-tolerant replica-based protocols.
+\end{enumerate}
+
+\subsection{The General Need for Order}
+
+In computing, we typically reason about partial functions. These are functions which deterministically map one value to another, but may not be defined for all inputs.
+
+\begin{flalign*}
+  &\hat{f}: S \to S \cup \{ \bot \} \text{ is a lifted partial function.} \\
+  &f: S \rightharpoonup S \text{ is a partial function in its native category.} \\
+\end{flalign*}
+
+When composing these partial functions, we axiomatize that undefinedness propagates through the composition.
+
+\begin{flalign*}
+  &f, g: S \rightharpoonup S \\
+  &f \circ g \text{ is defined if and only if} \\
+  &\quad g(x) \text{ is defined and } \\
+  &\quad f(g(x)) \text{ is defined} \\
+\end{flalign*}
+
+We find this to be a suitable model for programming modern machines, because we know how to design hardware which can logically represent functions with these properties and which is rarely corrupted by the surrounding environment.
+
+However, for general computing tasks, we often have partial functions which are non-commutative. 
+
+\begin{flalign*}
+  &f \circ g \neq g \circ f \\
+\end{flalign*}
+
+A familiar example is subtraction on $\mathbb{N}$, which is naturally partial:
+
+\begin{flalign*}
+  &\mathrm{sub} : \mathbb{N} \times \mathbb{N} \rightharpoonup \mathbb{N} \\
+  &\mathrm{sub}(a,b) =
+  \begin{cases}
+    a-b & \text{if } a \ge b,\\
+    \text{undefined} & \text{otherwise.}
+  \end{cases}
+\end{flalign*}
+
+And is also non-commutative:
+
+\begin{flalign*}
+  &\mathrm{sub}(5,3) = 2 \neq \mathrm{sub}(3,5) \text{ (undefined).}
+\end{flalign*}
+
+In general, for a family $f_1, \ldots, f_n$ of partial functions, the composite is determined by the ordered sequence $(f_1, \ldots, f_n)$ not the unordered set $\{ f_1, \ldots, f_n \}$. In local hardware cases---such as a single hart---we can often form reasonable assumptions or conventions, such that something like a state machine reading through an assembly is equivalent to a sequence of partial functions. In the context of general distributed computing tasks, however, we tend to make these assumptions more minimal. 
+
+In distributed computing, we may instead refer to a set of processes $P$ which are able to share information with one another via messages $m \in M$ to varying degrees of success. Then, within this context, we hope to achieve results up to some notion of correctness, typically up to some notion of equivalence with the local hardware case.
+
+Put more provocatively, a distributed computing protocol often has to decide from a chaotic world of messages what a reasonable order of partial functions should be. Signatures can be placed on messages to ensure they are authentic. Prover systems can be built to attest to the correctness of the value of a partial function. But, these may mean little without a reasonable order.\footnote{This is not to disregard the value of modeling specific problem domains where the meaning of reasonable order may not require a total order. However, for simplicity, most of this write-up will be concerned with the total order case.}
+
+\subsection{2f + 1}
+
+Often the success of a distributed computing protocol is framed in terms of its ability to induce agreement. And, in the abundant cases where order matters, this necessarily means agreement on said order. 
+
+If we take set of processes $|P| = 3f + 1$ and ask for the unique agreeing set of messages $M_i \subseteq M$ which indicate computing the partial function at index $i$, we may wonder what different requirements on this subset might mean.
+
+For example, a simple majority $|M_i| > \frac{|P|}{2}$ would ensure by the Generalized Pigeonhole Principle that any two indexed subsets of messages $M_{i}, M_{j}$ would intersect in at least one process. In a sense, at least one process can attest to each ordering step. By recurrence, this reads out a total order.\footnote{In an applied setting, what constitutes a useful total order also invokes questions of authenticity, fairness, safety, and liveness.}
+
+More formally, let $Q: M \to 2^P$ be the function which maps a message to the set of processes which have sent it, representing a quorum. Then, we may define order $Order(M_i)$ as follows:
+
+\begin{flalign*}
+  &Q(M_i) = \bigsqcup_{m \in M_i} Q(m) \\
+  &O(M_i, M_j) := (Q(M_i) \cap Q(M_j) \neq \emptyset) \\
+  &Order(M_i) = Order(M_{i-1}) \land O(M_{i-1}, M_i) \\
+  &\quad = Order(M_0) \land O(M_0, M_1) \land \cdots \land  O(M_{i-1}, M_i) \\
+\end{flalign*}
+
+Importantly, this simple majority model does not account for the possibility that a process may fault. As it turns out, the most aggressive assumption we can make and still retain the possibility of these intersecting sets amongst non-faulty processes---which give rise to our total order--is that at most $f$ processes may fault and quorums must be formed by at least $2f+1$ processes. This is the Byzantine fault model.
+
+Let $H$ be the set of honest processes and $F$ be the set of faulty processes. Any two quora, under the Byzantine fault model, must then intersect in at least $f+1$ processes:
+
+\begin{flalign*}
+&|Q(M_1) \cap Q(M_2)| = |Q(M_1)| + |Q(M_2)| - |Q(M_1) \cup Q(M_2)| \\
+&\quad \geq (2f + 1) + (2f + 1) - (3f + 1) = f + 1 \\
+\end{flalign*}
+
+We can further deduce that any two quora must intersect in at least one honest process $h \in H$ in the presence of at most $f$ faulty processes:
+
+\begin{flalign*}
+  &|Q(M_1) \cap Q(M_2)| = |Q(M_1) \cap Q(M_2) \cap H| + |Q(M_1) \cap Q(M_2) \cap F|, \\
+  &|Q(M_1) \cap Q(M_2) \cap H| = |Q(M_1) \cap Q(M_2)| - |Q(M_1) \cap Q(M_2) \cap F|, \\
+  &f \geq |Q(M_1) \cap Q(M_2) \cap F|\\
+  &\quad \implies |Q(M_1) \cap Q(M_2) \cap H| \geq f + 1 - f = 1\\
+\end{flalign*}
+
+A straightforward interpretation of this fact renders the ubiquitous family of Byzantine fault-tolerant state machine replication protocols (BFT SMR). In these protocols, each process executes the same deterministic transition function to emit messages certifying the ordered outcome of state machine transitions, i.e., partial functions.
+
+Without a prover system\footnote{Prover systems are not common in practice owing to the computational expense of systems like ZKPs.}, BFT SMRs require at least $2f+1$ of the honest processes to be engaged in the computing and broadcasting a partial function $f_i, f_{i+1}, \cdots, f_n$. With prover systems, this requirement holds up to the task of ordering. 
+
+If a Byzantine fault-tolerant SMR protocol tolerates $f$ faulty processes, then the cost of computing one index worth of work is $\Theta(2f + 1)$.
+
+\newpage
+\section{A Parabyzantine Protocol}
+
+If we want to better use available compute in a Byzantine fault-tolerant setting, an initial thought is to simply relax the requirement on order. Perhaps we can include fewer processes and allow our total order to fail with an acceptably low likelihood. Indeed, as I will show, even a fairly straightforward application of this concept yields a protocol which is computationally efficient and low loss. 
+
+Before we endeavor this protocol, let's first consider what computationally efficient and a low loss would mean.
+
+\subsubsection{Computationally Efficient}
+Computational efficiency is fairly straightforward. As referenced above, SMR requires at least $2f+1$ processes to certify each partial function. Thus, each logical step costs $\Theta(2f + 1)$ replicated work. So, in abstract, if we use fewer than $2f+1$ processes, we will have improved compute efficiency.
+
+More interestingly, any constant-factor improvement over SMR yields a proportional increase in effective compute utilization across the replica set. In practical deployments this may have outsized effects on throughput, since the extra compute can be reinvested into tasks whose impact on subsequent rounds is non-linear, e.g., computing optimistic paths, batching, compression, proof generation, or state access.
+
+\subsubsection{Low Loss}
+What is meant by low loss may be less obvious. In the Byzantine fault-tolerant setting, we have described a discrete mathematical limit that tells us we cannot have a property we called $Order(M_i)$ without involving at least $2f+1$ processes. So, the notion that we can have protocol which is computationally more efficient seems to contradict this limit.
+
+However, we may consider the following objective function which is minimized for $M_i$ when $Order(M_i) = 1$:
+
+\begin{flalign*}
+  &Obj(M_i) =  0 \iff Order(M_i) = 1\\ 
+  &Obj(M_i) =  1 \iff Order(M_i) = 0\\ 
+\end{flalign*}
+
+In its current form, we cannot improve. But, if we constrain on the average case $\text{Loss} = E[Obj(M_i)] = Pr[Obj(M_i) = 1] \leq \epsilon$, we have much more flexibility.
+
+In a sense, it is precisely this sort of assumption which gives rise to the name Parabyzantine. These are protocols which act like Byzantine fault-tolerant protocols up to some well-understood point. In the case of the \textsc{Resample} protocol, this point will be an average-case guarantee. While we are under the veil of average case, \textsc{Resample} will be Byzantine fault-tolerant. Once we remove the veil, \textsc{Resample} will not be. 
+
+\subsection{The \textsc{Resample} Protocol}
+
+We define the following Byzantine fault-allowing protocol \textsc{Resample}:
+
+\begin{enumerate}
+  \item For a given index $i$ on $M$, pick a random subcommittee $K_i \subseteq P$ such that $|K_i| = 3k + 1$.
+  \item Accept $M_i$ if and only if $|Q_{K_i}(M_i)| \geq 2k + 1$. Otherwise, pick another random subcommittee and repeat.
+\end{enumerate}
+
+
+Let...
+
+\begin{flalign*}
+  &f' = |K_i \cap F|, h' = |K_i \cap H|, f' + h' = |K_i| = 3k + 1
+\end{flalign*}
+
+Observe the following possible outcomes for selection of a random subcommittee:
+
+\begin{itemize}
+  \item $|K_i \cap H| \geq 2k + 1 \iff \text{Divine} = D$, representing a subcommittee which has an honest supermajority which computes $M_i$ correctly.
+  \item $|K_i \cap H| \leq k \iff \text{Corrupt} = C$, representing a subcommittee which has a dishonest supermajority and may compute $M_i$ incorrectly.
+  \item $k < |K_i \cap H| < 2k + 1 \iff \text{Undecided} = U$, representing all other cases wherein neither an honest nor dishonest supermajority exists and may either compute $M_i$ correctly or disagree internally and not render a supermajority.
+\end{itemize}
+
+\subsection{The Loss of the \textsc{Resample} Protocol}
+
+\begin{figure}[hbt!]
+  \centering
+  \includegraphics[width=\linewidth]{figures/pr_bad.png}
+  \caption{$\Pr[B]$ representing the probability of selecting a corrupt subcommittee as a function of $f$ for different sampling ratios $\gamma = \frac{k}{f}$.}
+  \label{fig:pr_bad}
+\end{figure}
+
+Let $\mathcal{S}(f, k)$ represent the total number of ways to select the subcommittee without replacement:
+
+\begin{flalign*}
+  &\mathcal{S}(f, k) = \binom{3f + 1}{3k + 1} \\
+\end{flalign*}
+
+The total number of ways to select a $\text{Corrupt}$ subcommittee is:
+
+\begin{flalign*}
+  &\mathcal{S}_{C}(f, k) = \sum_{f' = 2k + 1}^{\min(3k + 1, f)} \binom{f}{f'} \cdot \binom{2f + 1}{3k + 1 - f'} \\
+\end{flalign*}
+
+The total number of ways to select a $\text{Divine}$ subcommittee is:
+
+\begin{flalign*}
+  &\mathcal{S}_{D}(f, k) = \sum_{h' = 2k + 1}^{\min(3k + 1, 2f + 1)} \binom{2f + 1}{h'} \cdot \binom{f}{3k + 1 - h'} \\
+\end{flalign*}
+
+All other outcomes are by definition Undecided, so the total number of ways to select an Undecided subcommittee is:
+
+\begin{flalign*}
+  &\mathcal{S}_{U}(f, k) = \mathcal{S}(f, k) - \mathcal{S}_{C}(f, k) - \mathcal{S}_{D}(f, k) \\
+\end{flalign*}
+
+Let $S$ represent the transient state in which the \textsc{Resample} is sampling, i.e., has just started or produced an Undecided subcommittee. Let $G$ represent the absorbing state in which \textsc{Resample} makes a ``good'' decision to select a Divine subcommittee. Let $B$ represent the absorbing state in which \textsc{Resample} makes a ``bad'' decision to select a Corrupt subcommittee. The Markov Chain is then given by the state space $\Omega$ and transition matrix $T$.
+
+\begin{flalign*}
+&\Omega = \{S, G, B\} \\
+&T = \begin{pmatrix}
+  \Pr[U] & \Pr[D] & \Pr[C] \\
+  0   & 1   & 0   \\
+  0   & 0   & 1
+\end{pmatrix} \\
+\end{flalign*}
+
+The probability of the algorithm making a ``bad'' decision to select a Corrupt subcommittee $\Pr[B]$ is then:
+
+\begin{flalign*}
+  &\text{Let } x := \Pr[\text{ eventually hitting B } | \text{ start in S }] \\
+  &x = \Pr[C] \cdot 1 + \Pr[D] \cdot 0 + \Pr[U] \cdot x \\
+  &x - \Pr[U] \cdot x = \Pr[C] \implies x \cdot (1 - \Pr[U]) = \Pr[C] \implies x = \frac{\Pr[C]}{1 - \Pr[U]} \\
+  &\text{Observe that... } \\
+  &1 - \Pr[U] = \Pr[D] + \Pr[C] \implies \Pr[B] = \frac{\Pr[C]}{\Pr[D] + \Pr[C]} \\
+ \end{flalign*}
+
+Conversely, the probability of the algorithm making a ``good'' decision to select a Divine subcommittee $\Pr[G]$ is then:
+
+\begin{flalign*}
+  &\Pr[G] = 1 - \Pr[B] = 1 - \frac{\Pr[C]}{\Pr[D] + \Pr[C]} = \frac{\Pr[D]}{\Pr[D] + \Pr[C]} \\
+\end{flalign*}
+
+The probability $\Pr[C]$ drops off quickly for a fixed sampling ratio $\gamma = \frac{k}{f}$ (with, say, $k=\lfloor \gamma f \rfloor$). First observe that the number of faulty replicas in a sampled subcommittee follows a hypergeometric distribution:
+\begin{flalign*}
+  &X := |K_i \cap F| \sim \text{Hypergeometric}(N,K,n), \\
+  &C \equiv \{X \ge 2k+1\}, \\
+  &\Pr[C](\gamma,f) = \frac{\mathcal{S}_C\!\left(f,\,\lfloor\gamma f\rfloor\right)}{\mathcal{S}\!\left(f,\,\lfloor\gamma f\rfloor\right)}.
+\end{flalign*}
+
+Standard large-deviation bounds for sampling without replacement give a KL-based tail bound:
+\begin{flalign*}
+  &\Pr[X \ge qn] \le \exp\!\left(-n \cdot D(q \,\|\, p)\right), \\
+  &D(q \,\|\, p) = q \log\!\left(\frac{q}{p}\right) + (1-q)\log\!\left(\frac{1-q}{1-p}\right).
+\end{flalign*}
+
+In our case $p=\frac{f}{3f+1}\approx \frac13$, $q=\frac{2k+1}{3k+1}\approx \frac23$, and $n=3k+1$. Hence...
+\begin{flalign*}
+  &D\!\left(\frac23 \,\middle\|\, \frac13\right)
+    = \frac23 \log 2 + \frac13 \log \frac12
+    = \frac13 \log 2.
+\end{flalign*}
+
+Therefore...
+\begin{flalign*}
+  &\Pr[C] \lesssim \exp\!\left(-(3k+1)\cdot \frac13 \log 2\right)
+   = 2^{-(3k+1)/3}, \\
+  &\Pr[C](\gamma,f) \lesssim 2^{-(3\gamma f + 1)/3}
+   = 2^{-\gamma f - 1/3}
+   = 2^{-\Omega(f)}.
+\end{flalign*}
+
+In particular, for any fixed $\gamma\in(0,1)$...
+\begin{flalign*}
+  &\lim_{f \to \infty} \Pr[C](\gamma, f) = 0 \forall \gamma \in (0, 1) \\
+\end{flalign*}
+
+That is, \textsc{Resample} is Parabyzantine protocol with exponentially decreasing loss as the fault parameter $f$ increases for a fixed sampling ratio $\gamma$.
+
+\subsection{The Cost of the \textsc{Resample} Protocol}
+
+The expected cost of \textsc{Resample}, measured in the total number of processes engaged across all sampling attempts, remains on the order $\Theta(k)$, but admits a constant-factor improvement over the $2f+1$ quorum required by standard SMR.
+
+Fix an index $i$ and write $\Pr[U] := \Pr[\mathcal{U}]$ for the probability that a uniformly sampled subcommittee of size $3k+1$ is \emph{Undecided}. Each sampling attempt terminates (i.e., yields a decision) precisely when the outcome is not $\mathcal{U}$. Thus, if $T$ denotes the number of sampling attempts until termination, then $T$ is geometric with success probability $1-\Pr[U]$:
+
+\begin{flalign*}
+  &\Pr[T = t] = \Pr[U]^{t-1}\cdot (1-\Pr[U]) \qquad \text{for } t \in \mathbb{N},\\
+  &\mathbb{E}[T]
+    = \sum_{t=1}^{\infty} t \cdot \Pr[U]^{t-1}(1-\Pr[U])
+    = \frac{1}{1-\Pr[U]}.
+\end{flalign*}
+
+Each attempt engages at most $3k+1$ processes. Therefore the expected number of process-participations consumed per decision is
+
+\begin{flalign*}
+  &\mathbb{E}[\text{Processes Used}]
+    = (3k+1)\cdot \mathbb{E}[T]
+    = \frac{3k+1}{1-\Pr[U]}.
+\end{flalign*}
+
+In regimes of interest (e.g., for a fixed sampling ratio $\gamma=\tfrac{k}{f}$ with large $f$), $\Pr[U]$ is typically bounded away from $1$; in particular, if $\Pr[U]\approx \tfrac{1}{2}$, then
+
+\begin{flalign*}
+  &\mathbb{E}[T] \approx \frac{1}{1-\frac{1}{2}} = 2,\\
+  &\mathbb{E}[\text{Processes Used}] \approx 2(3k+1) = \Theta(k).
+\end{flalign*}
+
+Thus, \textsc{Resample} is Parabyzantine in the sense described above: it replaces a worst-case quorum requirement with an average-case sampling cost, remaining computationally efficient while permitting a tunably low probability of failure.
+
+\newpage
+\section{An Expanded View of Parabyzantine Protocols}
+Now that we have found one Parabyzantine protocol, we might wonder if we can find others and under what conditions these others act like Byzantine fault-tolerant protocols. This is, however, a big universe, and it helps to explore it in a structured manner. 
+
+To this end, I have chosen to align my views along two vantages:
+
+\begin{enumerate}
+  \item the rich perspective of topological frameworks for distributed computing;
+  \item and, the category theoretic consideration of relationships between Parabyzantine protocols.
+\end{enumerate}
+
+My exploration is further guided by the search for a non-trivial bridge between topological descriptions of protocols and non-topological descriptions of protocols---one that can be expressed in the morphisms of a category of Parabyzantine protocols.
+
+\subsection{Topological Protocols}
+The fields of topology and distributed computing have a well-established and fruitful intersection. We know, for example, that we can formulate Byzantine agreement as a problem of barycentric subdivision on a simplicial complex via the toplogical framework of Herlihy and Shavit \cite{herlihy_shavit_1999} such as in HKR's \textsc{BaryAgree} \cite{HKR2013}.\footnote{Barycentric agreement is a form of the more general lattice agreement.} Further, we know that \textsc{BaryAgree} achieves $Obj(M_i) = 0$ in the Byzantine fault-tolerant setting. 
+
+Much of this intersection is, in a word, unavoidable: it is hard to model agreement problems without something that looks like the sort of complex geometric object with which topology is concerned. And, indeed I have spent most of my own study digesting the various topological tools and constructions which are already invoked in the catalog of Byzantine agreement problems.
+
+Rather than spending time reciting various twists and turns which I have not yet synthesized into a coherent contribution, I would instead like to point to two reasons why the topological formulation of Byzantine agreement is acutely interesting to my study of Parabyzantine protocols: 
+
+\begin{enumerate}
+  \item its relevance to connected structure;
+  \item and, its rich supply of non-standard equivalence relations.
+\end{enumerate}
+
+\subsubsection{Connected Structure}
+Byzantine agreement is often concerned with some kind of connected structure. Consider our recursive definition of $Order(M_i)$, which required consecutive quorums to intersect. Intuitively, these intersections form a connected structure in the process set $P$ such that we can move from one quorum to the next.
+
+To make this intuition precise, consider the following nerve construction. Let $P$ be the set of processes, and for each index $i$ let $Q_i \subseteq P$ denote the quorum of processes whose messages certify the $i$th step.\footnote{More generally, one may take $\mathcal{Q}$ to be a family of quorums and regard $\{Q\}_{Q\in\mathcal{Q}}$ as a cover of the participating process set.}
+
+Consider the family of subsets $\mathcal{U} = \{Q_i\}_{i\in I}$. Viewing $\mathcal{U}$ as a cover of
+\[
+X := \bigcup_{i\in I} Q_i \subseteq P,
+\]
+we may form the nerve simplicial complex $N(\mathcal{U})$ defined by:
+\begin{flalign*}
+  &\mathrm{Vert}(N(\mathcal{U})) = \mathcal{U},\\
+  &\{Q_{i_0},\ldots,Q_{i_d}\} \text{ spans a $d$-simplex } \iff \bigcap_{j=0}^{d} Q_{i_j} \neq \emptyset.
+\end{flalign*}
+
+In this language, our intersection predicate $O(M_{i-1},M_i)$ asserts precisely that consecutive vertices in the nerve share an edge:
+\begin{flalign*}
+  &O(M_{i-1},M_i) \iff Q_{i-1}\cap Q_i \neq \emptyset
+    \iff \{Q_{i-1},Q_i\} \in N(\mathcal{U})^{(1)}.
+\end{flalign*}
+
+Thus, a run satisfying $Order(M_i)$ determines a path in the $1$-skeleton of the nerve. Or, in other words, it is the connectedness of a space with a topology describing the intersection of quorums with which the fundamental Byzantine assumption is concerned.
+
+\subsubsection{Non-Standard Equivalence Relations}
+The second reason for my interest in the topological formulation of Byzantine agreement is that topology is a rich discipline for studying non-standard equivalence relations.
+
+Recall that non-commutativity was a key consideration in arriving at our Byzantine fault-tolerant state machine replica protocol.
+
+\begin{flalign*}
+  &f \circ g \neq g \circ f \\
+\end{flalign*}
+
+When studying topologically, however, we may be able to show, for example, that $f \circ g$ and $g \circ f$ are equivalent up to homotopy:
+
+\begin{flalign*}
+  &f \circ g \simeq g \circ f \\
+\end{flalign*}
+
+In topology generally, we can access many of these non-standard equivalence relations. Homotopy, indistinguishability under a quotient space, and various more specific deformation relations, give us a lot of ways to relate two objects which are not equivalent in the standard sense. Similar to how we used the average case to find the Parabyzantine \textsc{Resample} protocol, we may be able to infer other protocols which act like Byzantine fault-tolerant protocols up to some well-understood topological relationship and hence are Parabyzantine.
+
+Thus, in addition to its extensive corpus, the topological formulation of Byzantine agreement is both a fitting tool for describing the sorts of properties we would like to preserve and a source of instruments for relaxing requirements into Parabyzantine protocols.
+
+\subsection{A Category of Parabyzantine Protocols}
+
+My category-theoretic interest in Parabyzantine protocols is motivated by two questions:
+
+\begin{enumerate}
+  \item Can we define meaningful morphisms between objects representing Parabyzantine protocols?
+  \item Can composition of these morphisms reveal useful non-trivial protocols?
+\end{enumerate}
+
+A category of distributed protocols is a large undertaking. For the purposes of this write-up, I will instead describe a small provisional construction which captures one dimension of protocol variation: the tradeoff between quorum cost and the strength of the order guarantee.
+
+Let $\pb$ be a provisional category whose objects are Parabyzantine protocols together with their parameters. In particular, let $\mathcal{R}\hookrightarrow \pb$ be the full subcategory whose objects are resampling instances
+\begin{flalign*}
+& X_{k,f} := \textsc{Resample}(k,f) \\
+\end{flalign*}
+where $f$ is the global fault parameter ($|P|=3f+1$) and $k$ is the resampling parameter ($|K|=3k+1$).
+
+We will regard two protocol instances as equivalent when they induce the same quorum structure and the same induced order semantics. In particular, when $k=f$ the resampling committee is the full population, so $\textsc{Resample}(f,f)$ is equivalent to the ``full quorum'' protocol $\mathcal{P}$.
+
+
+\subsubsection{A Thin Category of Refinements}
+Rather than attempt to define all morphisms in $\pb$, we focus on a simple and compositional family of maps inside $\mathcal{R}$. Define a morphism
+\begin{flalign*}
+  &\mathcal{d}_{k,f} : X_{k,f} \to X_{k+1,f} \\
+\end{flalign*}
+which increments the sampling parameter by one. Intuitively, $\mathcal{d}_{k,f}$ is a refinement map: it increases committee size and thus moves the protocol closer to the full-quorum behavior.
+
+Because these refinements compose, we obtain for any $k \leq \ell \leq f$ a canonical composite
+\begin{flalign*}
+  &\mathcal{d}^{\ell-k} : X_{k,f} \to X_{\ell,f},\\
+  &\mathcal{d}^{\ell-k} \triangleq \mathcal{d}_{\ell-1,f}\circ \cdots \circ \mathcal{d}_{k,f}.
+\end{flalign*}
+
+In particular, applying $\mathcal{d}$ $f-k$ times yields a morphism from any resampling instance to the full-quorum instance:
+\begin{flalign*}
+X_{k,f} \xrightarrow{\;\mathcal{d}^{f-k}\;} X_{f,f} \simeq \mathcal{P}.
+\end{flalign*}
+This expresses, in categorical language, a basic but useful fact: within the resampling family, there is a directed path of refinements from cheaper, smaller committees to more classical, full-quorum behavior.
+
+One may view $\mathcal{P}$ as an absorbing point of this refinement chain: once $k$ reaches $f$, further increments no longer change the induced quorum semantics. In this sense, $\mathcal{P}$ behaves like a fixed point of the refinement operation.
+
+\[
+\begin{tikzcd}[row sep=2em, column sep=3em]
+  X_{k,f} \arrow[r, "\mathcal{d}"] & \cdots \arrow[r, "\mathcal{d}"] & X_{f,f} \simeq \mathcal{P} \arrow[loop right, "\mathcal{d}"] \\
+\end{tikzcd}
+\]
+
+
+\subsubsection{A Suggestive Bridge to Topology}
+Now suppose we have a class of protocols $\mathcal{T}\hookrightarrow \pb$ which admit a topological semantics, e.g., via simplicial complexes and subdivision. It is tempting to imagine a functorial assignment
+\begin{flalign*}
+\Phi : \mathcal{R} \to \mathcal{T}
+\end{flalign*}
+which sends a resampling instance $X_{k,f}$ to a topological object $Y_{k,f}:=\Phi(X_{k,f})$ whose semantics approximate those of the full-quorum protocol $\mathcal{P}$, but only up to a weaker equivalence relation (e.g. homotopy or a quotient identifying indistinguishable executions).
+
+In the most optimistic case, one might have
+\begin{flalign*}
+  &\Phi(X_{f,f}) \simeq \Phi(\mathcal{P}) \\
+  &\quad\text{and}\quad \\
+  &\Phi(X_{k,f}) \simeq \Phi(\mathcal{P}) \text{ up to a controlled deformation.} \\
+\end{flalign*}
+Even in this trivial resampling example, such a construction would amount to a bridge between a combinatorial protocol family and a topological description.
+
+The hope, as the category $\pb$ is explored beyond $\mathcal{R}$, is that more meaningful morphisms and their compositions reveal non-trivial Parabyzantine protocols---not merely refinements in committee size, but systematic transformations which preserve some notion of correctness while relaxing others in a controlled way. 
+
+To analogize, $\pb$ becomes a map of regions in Byzantine fault-tolerant computing. Building bridges between these regions may reveal higher-order patterns which lead us to non-trivial constructions and better protocols.
+
+
+\section{Afterword}
+As alluded to previously, my study of Parabyzantine protocols has naturally encouraged me to review much of the existing literature on topological frameworks for distributed computing. I expect to be in this review process for some time. Hence, for those readers coming from my work on the OAC project, the Gwrdfa API will likely contain only protocols related to the $\textsc{Resample}$ protocol for some time---though adapted for an applied setting.
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{base}
+
+%%
+%% If your work has an appendix, this is the place to put it.
+\appendix
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-manuscript.tex'.
